@@ -3,69 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - [name]</title>
+  <title>Home</title>
   <link rel="stylesheet" href="/style.css">
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head>
+
 <body>
 
+  <div class="top-left-buttons">
+    <a href="index.html" class="button">Home</a>
+    <a href="experience.html" class="button">Experience</a>
+    <a href="portfolio.html" class="button">Portfolio</a>
+  </div>  
+
   <!-- Flexbox container for LinkedIn, Info, GitHub cards -->
-<div class="container fade-in">
+  <div class="container fade-in">
     <!-- LinkedIn Card -->
-    <a href="https://www.linkedin.com/in/will-maberry" target="_blank" class="card social-card linkedin" data-aos="fade-up">
+    <a href="https://www.linkedin.com/" target="_blank" class="card social-card linkedin" data-aos="fade-up">
       <img src="/images/LI-In-Bug.png" alt="LinkedIn Logo">
       <p>Connect with me on LinkedIn</p>
     </a>
   
     <!-- Main Information Card -->
     <div class="card info-card" data-aos="zoom-in">
-      <h1>Hi, I'm Will Maberry</h1>
-      <p>I'm attending The University of Texas - Arlington and pursuing a B.S. in Computer Science. <br> <br>
-         Currently, I'm helping lead engagement initiatives for OpenAI as their engagement manager.</p>
+      <h1>Hi, I'm </h1>
+      <p>description.</p>
     </div>
   
     <!-- GitHub Card -->
-    <a href="https://github.com/dinosaur-oatmeal" target="_blank" class="card social-card github" data-aos="fade-up">
+    <a href="https://github.com/" target="_blank" class="card social-card github" data-aos="fade-up">
       <img src="/images/github-mark-white.png" alt="GitHub Logo">
       <p>Check out my projects on GitHub</p>
     </a>
   </div>
-  
 
-  <!-- Portfolio Section (Fades in with the rest of the content) -->
-  <section class="portfolio fade-in">
-    <h2>My Projects</h2>
-    <div class="portfolio-grid">
-      <!-- Multiplayer word game in Java -->
-      <div class="portfolio-item">
-        <h3>Real-time Multiplayer Word Game in Java</h3>
-        <p> - Utilizing WebSocket connections and JSON strings, developed a realtime 2 - 4 player word search game <br> <br>
-            - Created automatic JUnit tests to ensure project requirements were met <br> <br>
-            - Managed project requirements through Excel and designed the system's architecture with UML diagrams <br> <br></p>
-        <p><strong>Technologies Used:</strong> Maven, Unix Virtual Machine (VM), VS Code, Java WebSockets, HTML, CSS, JavaScript, JSON, & JUnit</p>
-      </div>
+  <section class="testimonials fade-in">
+    <h2>What People Say</h2>
+    <blockquote>
+      "An exceptional problem solver with a keen eye for detail. Truly impressive!"
+      <footer>— John Doe, Colleague</footer>
+    </blockquote>
+  </section>
 
-      <!-- Malloc in C -->
-      <div class="portfolio-item">
-        <h3>Malloc, Free, Split, and Coalesce in C</h3>
-        <p> - Created my own implementation of malloc utilizing structures making up a linked list <br> <br>
-            - Added functionalities for splitting, coalescing, and reusing memory blocks in the heap <br> <br> 
-            - Benchmarked my four different allocation algorithms of malloc against the default system malloc</p>
-        <p><strong>Technologies Used:</strong> GitHub Codespaces, GDB, & GCC</p>
-      </div>
-
-      <!-- Cipher Education in Java -->
-      <div class="portfolio-item">
-        <h3>Cipher Education in Java</h3>
-        <p> - Educating users on monoalphabetic and transposition ciphers, my project incorporates an interactive GUI developed with Java's AWT and Swing libraries <br> <br>
-            - Utilized HashMap, ArrayList, and Array structures throughout the program to keep track of data <br> <br>
-            - Decoding of messages possible by the program by reversing the encoding functions used</p>
-        <p><strong>Technologies Used:</strong> JGrasp, AWT, & Swing</p>
-      </div>
+  <section class="skills-grid fade-in">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="grid-item">JavaScript</div>
+      <div class="grid-item">HTML/CSS</div>
+      <div class="grid-item">Java</div>
+      <div class="grid-item">Python</div>
     </div>
   </section>
+
+  
 
 
   <!-- Particles.js -->
@@ -79,137 +71,106 @@
   </script>
 
   <!-- Initialize Particles.js -->
-    <script>
-        particlesJS('particles-js', {
-        "particles": {
-            "number": {
-            "value": 80,
-            "density": {
-                "enable": true,
-                "value_area": 800
-            }
-            },
-            "color": {
-            "value": "#ffd700"  /* Glowing yellow particles */
-            },
-            "shape": {
-            "type": "circle",
-            "stroke": {
-                "width": 0,
-                "color": "#000000"
-            },
-            "polygon": {
-                "nb_sides": 5
-            }
-            },
-            "opacity": {
-            "value": 0.5,
-            "random": false
-            },
-            "size": {
-            "value": 3,
-            "random": true
-            },
+  <script>
+    particlesJS('particles-js', {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#ffd700"  /* Glowing yellow particles */
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+              "nb_sides": 5
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false
+        },
+        "size": {
+          "value": 3,
+          "random": true
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffd700",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 140,
             "line_linked": {
-            "enable": true,
-            "distance": 150,
-            "color": "#ffd700",
-            "opacity": 0.4,
-            "width": 1
-            },
-            "move": {
-            "enable": true,
-            "speed": 2,
-            "direction": "none",
-            "random": false,
-            "straight": false,
-            "out_mode": "out",
-            "bounce": false,
-            "attract": {
-                "enable": false,
-                "rotateX": 600,
-                "rotateY": 1200
+              "opacity": 1
             }
-            }
-        },
-        "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-            "onhover": {
-                "enable": true,
-                "mode": "grab"
-            },
-            "onclick": {
-                "enable": true,
-                "mode": "push"
-            },
-            "resize": true
-            },
-            "modes": {
-            "grab": {
-                "distance": 140,
-                "line_linked": {
-                "opacity": 1
-                }
-            },
-            "bubble": {
-                "distance": 400,
-                "size": 40,
-                "duration": 2,
-                "opacity": 8,
-                "speed": 3
-            },
-            "repulse": {
-                "distance": 200,
-                "duration": 0.4
-            },
-            "push": {
-                "particles_nb": 4
-            },
-            "remove": {
-                "particles_nb": 2
-            }
-            }
-        },
-        "retina_detect": true
-        });
-    </script>
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
 
-    <script>
-        AOS.init({
-        duration: 500, // Adjust animation duration
-        });
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        const cards = document.querySelectorAll(".card");
-        const container = document.querySelector(".container");
-        const portfolio = document.querySelector(".portfolio");
-        const banner = document.querySelector(".banner");
-    
-        // Ensure portfolio is initially hidden
-        portfolio.style.opacity = 0;
-    
-        // Add click event listener to all cards
-        cards.forEach(card => {
-            card.addEventListener("click", () => {
-            // Fade out the container and banner
-            container.classList.add("fade-out");
-            banner.classList.add("fade-out");
-    
-            // After fade out, hide the container and show the portfolio
-            setTimeout(() => {
-                container.style.display = "none";
-                banner.style.display = "none";
-                portfolio.style.display = "block";
-                setTimeout(() => {
-                portfolio.classList.add("fade-in");
-                }, 10); // Slight delay to trigger the fade-in effect
-            }, 1000); // Match this delay to the CSS transition duration
-            });
-        });
-        });
-    </script>
+  <script>
+    AOS.init({
+      duration: 500, // Adjust animation duration
+    });
+  </script>
 </body>
 </html>

@@ -3,50 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects</title>
+  <title>Experience</title>
   <link rel="stylesheet" href="/style.css">
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
 
-    <div class="top-left-buttons">
-        <a href="index.html" class="button">Home</a>
-        <a href="experience.html" class="button">Experience</a>
-        <a href="portfolio.html" class="button">Portfolio</a>
-      </div>  
-
-  <!-- Particles.js Background -->
+  <!-- Particles Background -->
   <div id="particles-js"></div>
+  
+  <div class="top-left-buttons">
+    <a href="index.html" class="button">Home</a>
+    <a href="experience.html" class="button">Experience</a>
+    <a href="portfolio.html" class="button">Portfolio</a>
+  </div> 
 
-  <!-- Portfolio Section (Moved from Home Page) -->
-  <section class="portfolio fade-in">
-    <h2>My Projects</h2>
-    <div class="portfolio-grid">
-      <!-- Portfolio Items Here -->
-      <div class="portfolio-item">
-        <h3>Real-time Multiplayer Word Game in Java</h3>
-        <p> - Utilizing WebSocket connections and JSON strings, developed a realtime 2 - 4 player word search game <br> <br>
-            - Created automatic JUnit tests to ensure project requirements were met <br> <br>
-            - Managed project requirements through Excel and designed the system's architecture with UML diagrams <br> <br></p>
-        <p><strong>Technologies Used:</strong> Maven, Unix Virtual Machine (VM), VS Code, Java WebSockets, HTML, CSS, JavaScript, JSON, & JUnit</p>
-      </div>
-      <div class="portfolio-item">
-        <h3>Malloc, Free, Split, and Coalesce in C</h3>
-        <p> - Created my own implementation of malloc utilizing structures making up a linked list <br> <br>
-            - Added functionalities for splitting, coalescing, and reusing memory blocks in the heap <br> <br>
-            - Benchmarked my four different allocation algorithms of malloc against the default system malloc</p>
-        <p><strong>Technologies Used:</strong> GitHub Codespaces, GDB, & GCC</p>
-      </div>
-      <div class="portfolio-item">
-        <h3>Cipher Education in Java</h3>
-        <p> - Educating users on monoalphabetic and transposition ciphers, my project incorporates an interactive GUI developed with Java's AWT and Swing libraries <br> <br>
-            - Utilized HashMap, ArrayList, and Array structures throughout the program to keep track of data <br> <br>
-            - Decoding of messages possible by the program by reversing the encoding functions used</p>
-        <p><strong>Technologies Used:</strong> JGrasp, AWT, & Swing</p>
-      </div>
+  <div class="container fade-in">
+    <div class="card info-card" data-aos="fade-up">
+      <h1>Work History</h1>
+      <ul>
+        <li><strong>Job Title 1</strong> – Company 1 (Year-Year)</li>
+        <li><strong>Job Title 2</strong> – Company 2 (Year-Year)</li>
+      </ul>
     </div>
-  </section>
-
+  
+    <div class="card info-card" data-aos="fade-up">
+      <h1>University Extracurriculars</h1>
+      <ul>
+        <li><strong>Role 1</strong> – Club or Organization (Year-Year)</li>
+        <li><strong>Role 2</strong> – Club or Organization (Year-Year)</li>
+      </ul>
+    </div>
+  </div>
+  
   <!-- Initialize Particles.js -->
   <script>
     particlesJS('particles-js', {
@@ -150,5 +139,10 @@
     });
   </script>
 
+  <script>
+    AOS.init({
+      duration: 1000,
+    });
+  </script>
 </body>
 </html>

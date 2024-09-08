@@ -15,7 +15,7 @@ body {
     position: relative;
 }
 
-/* Add tiled GIF as background using ::before */
+/* Add tiled GIF as background */
 body::before {
     content: "";
     position: absolute;
@@ -50,6 +50,38 @@ body::before {
     }
 }
 
+/* Style for the button container */
+.top-left-buttons {
+    position: absolute;
+    top: 20px;  /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    display: flex;
+    gap: 15px;  /* Space between buttons */
+    z-index: 100;  /* Ensure it’s above other elements */
+  }
+  
+  /* Button styling */
+  .top-left-buttons .button {
+    background-color: #2c2c2c;  /* Matches your card styling */
+    color: #ffd700;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+  }
+  
+  /* Button hover effect */
+  .top-left-buttons .button:hover {
+    background-color: #ffd700;
+    color: #2c2c2c;
+  }
+  
+  /* Optional: Make buttons slightly larger on hover */
+  .top-left-buttons .button:hover {
+    transform: scale(1.05);
+  }
+
 /* Remove underline for the entire clickable card */
 a.card {
     text-decoration: none;
@@ -66,9 +98,9 @@ a.card:hover {
     display: flex;
     justify-content: center;
     gap: 30px;
-    padding-top: 120px; /* Aligns the tiles toward the top */
+    padding-top: 240px; /* Aligns the tiles toward the top */
     width: 100%;
-    max-width: 1400px;
+    max-width: 1600px;
 }
 
 /* Card styling */
@@ -99,6 +131,51 @@ a.card:hover {
     color: #ffd700;
 }
 
+.testimonials {
+    padding: 50px;
+    text-align: center;
+    color: #f1f1f1;
+  }
+  
+  .testimonials h2 {
+    color: #ffd700;
+    margin-bottom: 20px;
+  }
+  
+  .testimonials blockquote {
+    font-size: 1.3em;
+    font-style: italic;
+    color: #ffd700;
+    margin: 0;
+  }
+  
+  .testimonials footer {
+    font-size: 1em;
+    color: #f1f1f1;
+  }
+
+  .skills-grid {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .grid-item {
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 5px;
+    color: #ffd700;
+    width: 150px;
+    text-align: center;
+  }
+  
+
 /* Portfolio Section Styling */
 .portfolio {
     opacity: 0;
@@ -106,7 +183,7 @@ a.card:hover {
     width: 100%;
     max-width: 2100px;
     text-align: center;
-    animation: fadeIn 2.5s forwards ease-in; /* Fade in with slight delay */
+    animation: fadeIn 0.5s forwards ease-in; /* Fade in with slight delay */
 }
 
 .portfolio h2 {
