@@ -1,0 +1,183 @@
+/* General Body Styling */
+body {
+     margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: #f1f1f1;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+/* Add tiled GIF as background using ::before */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/noise-texture.gif') repeat;  /* Tiled background */
+    background-size: 150px 150px;  /* Adjust size of each tile */
+    opacity: 0.05;  /* Make it barely visible */
+    z-index: -1;  /* Positioned behind content */
+    pointer-events: none;  /* Make sure it doesn’t interfere with interactions */
+}
+
+/* Keyframes for animating the gradient */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;  /* Start at the left */
+    }
+    50% {
+        background-position: 100% 50%;  /* Move to the right */
+    }
+    100% {
+        background-position: 0% 50%;  /* Back to the left */
+    }
+}
+
+/* Keyframes for fading in the body */
+@keyframes fadeInBody {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Remove underline for the entire clickable card */
+a.card {
+    text-decoration: none;
+    color: inherit; /* Keep the text color inherited from the parent */
+}
+
+/* Hover state for links (if needed) */
+a.card:hover {
+    text-decoration: none; /* Ensure no underline appears on hover */
+}
+  
+/* Container for the 3 tiles */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 120px; /* Aligns the tiles toward the top */
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* Card styling */
+.card {
+    background-color: #2c2c2c;
+    border-radius: 20px;
+    padding: 60px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 500px;
+    max-width: 600px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Image inside the card (LinkedIn, GitHub icons) */
+.social-card img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.card h1, .card p {
+    font-size: 1.3em;
+    color: #ffd700;
+}
+
+/* Portfolio Section Styling */
+.portfolio {
+    opacity: 0;
+    padding: 150px 20px;
+    width: 100%;
+    max-width: 2100px;
+    text-align: center;
+    animation: fadeIn 2.5s forwards ease-in; /* Fade in with slight delay */
+}
+
+.portfolio h2 {
+    color: #ffd700;
+    margin-bottom: 30px;
+}
+
+.portfolio-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.portfolio-item {
+    background-color: #2c2c2c;
+    padding: 30px;
+    border-radius: 10px;
+    width: 450px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+}
+
+.portfolio-item h3 {
+    color: #ffd700;
+    font-size: 1.5em;
+}
+
+.portfolio-item p {
+    color: #f1f1f1;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+/* Keyframes for fading in */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portfolio-grid {
+        flex-direction: column;
+    }
+
+    .card {
+        max-width: 100%; /* Allow cards to take full width on mobile */
+    }
+
+    .portfolio-item {
+        width: 100%; /* Full width for portfolio items on mobile */
+    }
+}
+
+/* Ensure particles layer is higher than noise texture but below content */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;  /* Below content, above body background */
+    top: 0;
+    left: 0;
+}
