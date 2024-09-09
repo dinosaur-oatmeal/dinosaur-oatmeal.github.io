@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link rel="stylesheet" href="/style.css">
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/style.css">
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Include AOS JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- Include the shared particles configuration file -->
+    <script src="particles-config.js" defer></script>
+    <!-- Add AOS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
 
 <body>
+
+  <!-- Particles.js -->
+  <div id="particles-js"></div>
 
   <div class="top-left-buttons">
     <a href="index.html" class="button">Home</a>
@@ -28,8 +38,9 @@
   
     <!-- Main Information Card -->
     <div class="card info-card" data-aos="zoom-in">
-      <h1>Hi, I'm </h1>
-      <p>description.</p>
+      <h1>Hi, I'm Will Maberry</h1>
+      <p>I'm currently studying computer science at the University of Texas - Arlington. <br> <br>
+      Outside of the classroom, I work at OpenAI as an engagement manager.</p>
     </div>
   
     <!-- GitHub Card -->
@@ -40,132 +51,26 @@
   </div>
 
   <section class="testimonials fade-in">
-    <h2>What People Say</h2>
     <blockquote>
-      "An exceptional problem solver with a keen eye for detail. Truly impressive!"
-      <footer>— John Doe, Colleague</footer>
+      "The meaning of life is to find your gift. The purpose of life is to give it away."
+      <footer>— Pablo Picasso </footer>
     </blockquote>
   </section>
 
-  <section class="skills-grid fade-in">
-    <h2>Skills</h2>
+  <section class="skills-section fade-in">
+    <h1><i class="fas fa-tools" style="margin-right: 10px;"></i> Skills</h1>
+    <!-- Skill Grid -->
     <div class="grid">
-      <div class="grid-item">JavaScript</div>
-      <div class="grid-item">HTML/CSS</div>
-      <div class="grid-item">Java</div>
-      <div class="grid-item">Python</div>
+      <div class="grid-item"><i class="fab fa-java"></i> Java</div>
+      <div class="grid-item"><i class="fas fa-file-code"></i> C Programming</div>
+      <div class="grid-item"><i class="fab fa-windows"></i> Windows</div>
+      <div class="grid-item"><i class="fas fa-terminal"></i> UNIX</div>
+      <div class="grid-item"><i class="fas fa-code"></i> VS Code</div>
+      <div class="grid-item"><i class="fas fa-laptop-code"></i> JGrasp</div>
+      <div class="grid-item"><i class="fab fa-github"></i> GitHub</div>
+      <div class="grid-item"><i class="fas fa-bug"></i> GDB</div>
     </div>
-  </section>
-
-  
-
-
-  <!-- Particles.js -->
-  <div id="particles-js"></div>
-  
-  <!-- Initialize AOS -->
-  <script>
-    AOS.init({
-      duration: 1000, // Animation duration
-    });
-  </script>
-
-  <!-- Initialize Particles.js -->
-  <script>
-    particlesJS('particles-js', {
-      "particles": {
-        "number": {
-          "value": 80,
-          "density": {
-            "enable": true,
-            "value_area": 800
-          }
-        },
-        "color": {
-          "value": "#ffd700"  /* Glowing yellow particles */
-        },
-        "shape": {
-          "type": "circle",
-          "stroke": {
-            "width": 0,
-            "color": "#000000"
-          },
-          "polygon": {
-              "nb_sides": 5
-          }
-        },
-        "opacity": {
-          "value": 0.5,
-          "random": false
-        },
-        "size": {
-          "value": 3,
-          "random": true
-        },
-        "line_linked": {
-          "enable": true,
-          "distance": 150,
-          "color": "#ffd700",
-          "opacity": 0.4,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 2,
-          "direction": "none",
-          "random": false,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": false,
-          "attract": {
-            "enable": false,
-            "rotateX": 600,
-            "rotateY": 1200
-          }
-        }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-          "onhover": {
-            "enable": true,
-            "mode": "grab"
-          },
-          "onclick": {
-            "enable": true,
-            "mode": "push"
-          },
-          "resize": true
-        },
-        "modes": {
-          "grab": {
-            "distance": 140,
-            "line_linked": {
-              "opacity": 1
-            }
-          },
-          "bubble": {
-            "distance": 400,
-            "size": 40,
-            "duration": 2,
-            "opacity": 8,
-            "speed": 3
-          },
-          "repulse": {
-            "distance": 200,
-            "duration": 0.4
-          },
-          "push": {
-            "particles_nb": 4
-          },
-          "remove": {
-            "particles_nb": 2
-          }
-        }
-      },
-      "retina_detect": true
-    });
-  </script>
+</section>
 
   <script>
     AOS.init({

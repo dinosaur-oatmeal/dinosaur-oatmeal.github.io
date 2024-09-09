@@ -1,147 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Experience</title>
-  <link rel="stylesheet" href="/style.css">
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience</title>
+    <link rel="stylesheet" href="/style.css">
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Include AOS JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- Include the shared particles configuration file -->
+    <script src="particles-config.js" defer></script>
+    <!-- Add AOS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
 <body>
 
   <!-- Particles Background -->
   <div id="particles-js"></div>
   
+  <!-- Navigation Buttons -->
   <div class="top-left-buttons">
     <a href="index.html" class="button">Home</a>
     <a href="experience.html" class="button">Experience</a>
     <a href="portfolio.html" class="button">Portfolio</a>
-  </div> 
+  </div>
 
-  <div class="container fade-in">
-    <div class="card info-card" data-aos="fade-up">
-      <h1>Work History</h1>
-      <ul>
-        <li><strong>Job Title 1</strong> – Company 1 (Year-Year)</li>
-        <li><strong>Job Title 2</strong> – Company 2 (Year-Year)</li>
-      </ul>
+  <!-- Add some spacing after the buttons -->
+  <div style="margin-top: 50px;"></div> <!-- Adjust margin as needed -->
+
+  <!-- Experience Section -->
+  <div class="experience-grid">
+    <!-- Work History Timeline -->
+    <div class="experience-card info-card" data-aos="fade-up">
+      <h1><i class="fas fa-briefcase"></i> Work History</h1>
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-up">
+          <h2>Engagement Manager</h2>
+          <p><i class="fas fa-building"></i> OpenAI</p>
+          <p>July 2024 - Present</p>
+          <p>Develop, organize, and promote initiatives to drive user engagement <br><br>
+             Collaborate with a global matrix team to align engagement strategies with product enhancements <br><br>
+             Analyze key performance indicators (KPIs) and gather community feedback to identify areas of improvement</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-up">
+          <h2>Audiovisual Technician</h2>
+          <p><i class="fas fa-building"></i> Melissa United Methodist Church</p>
+          <p>August 2019 - July 2023</p>
+          <p>Helped launch a cutting-edge AV system in a newly built church facility.<br><br>
+            Ran multiple aspects of the audiovisual system for in-person and online services, including: ProPresenter, camera operations, lighting, livestream chats, and soundboard.<br><br>
+            Trusted to run AV during COVID-19 lockdown (sometimes independently).<br><br>
+            Helped troubleshoot and resolve system issues.</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-up">
+          <h2>Customer Experience / Server</h2>
+          <p><i class="fas fa-building"></i> The Red Feather</p>
+          <p>January 2022 - August 2022</p>
+          <p>Cared for guest parties of up to 20 people.<br><br>
+            Worked under the guidance of 2 sommeliers.<br><br>
+            Left to attend The University of Texas at Arlington.</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-up">
+          <h2>Math Tutor</h2>
+          <p><i class="fas fa-building"></i> Worked under a retired teacher</p>
+          <p>September 2019 - March 2020</p>
+          <p>Private tutor (employed by former public school teacher).<br><br>
+            Tutored students in grades 4 - 8 in math.<br><br>
+            Job ended due to COVID restrictions on in-person learning.</p>
+        </div>
+      </div>
     </div>
-  
-    <div class="card info-card" data-aos="fade-up">
-      <h1>University Extracurriculars</h1>
-      <ul>
-        <li><strong>Role 1</strong> – Club or Organization (Year-Year)</li>
-        <li><strong>Role 2</strong> – Club or Organization (Year-Year)</li>
-      </ul>
+
+  <!-- Volunteering Timeline -->
+  <div class="experience-card info-card" data-aos="fade-up">
+    <h1><i class="fas fa-hands-helping"></i> Volunteering</h1>
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-up">
+        <h2>Outreach Officer</h2>
+        <p><i class="fas fa-user-graduate"></i> Associaton of Computing Machinery (ACM)</p>
+        <p>August 2024 - Present</p>
+        <p>Outreach to companies about workshop and promotional activities.<br><br>
+        Represent the greater ACM chapter.</p>
+      </div>
+      <div class="timeline-item" data-aos="fade-up">
+        <h2>Student Board Representative</h2>
+        <p><i class="fas fa-hands-helping"></i> The Wesley</p>
+        <p>July 2024 - Present</p>
+        <p>Serve as the only student representative on the UTA Wesley campus ministry board.<br><br>
+        Vote on legislation impacting the greater community.</p>
+      </div>
+      <div class="timeline-item" data-aos="fade-up">
+        <h2>Discord Feedback Group Member</h2>
+        <p><i class="fas fa-building"></i> Discord</p>
+        <p>October 2023 - Present</p>
+        <p>Share feedback about recently launched and internal features coming to the Discord platform.<br><br>
+        Selected NDA project participant.</p>
+      </div>
+      <div class="timeline-item" data-aos="fade-up">
+        <h2>Wesley Lead Team Member</h2>
+        <p><i class="fas fa-hands-helping"></i> The Wesley</p>
+        <p>August 2023 - Present</p>
+        <p>Partner with UTA/Arlington organizations to create an inclusive and affirming space for students.<br><br>
+        Table and outreach to the greater student body on UTA's campus</p>
+      </div>
+      <div class="timeline-item" data-aos="fade-up">
+        <h2>OpenAI Community Volunteer</h2>
+        <p><i class="fas fa-building"></i> OpenAI</p>
+        <p>September 2022 - July 2024</p>
+        <p>Help company with community outreach initiatives.<br><br>
+        Monitor and maintain orderly online community (3+ million members at peak); run community events.<br><br>
+        Selected NDA project participant.</p>
+      </div>
     </div>
   </div>
   
-  <!-- Initialize Particles.js -->
-  <script>
-    particlesJS('particles-js', {
-      "particles": {
-        "number": {
-          "value": 80,
-          "density": {
-            "enable": true,
-            "value_area": 800
-          }
-        },
-        "color": {
-          "value": "#ffd700"  /* Glowing yellow particles */
-        },
-        "shape": {
-          "type": "circle",
-          "stroke": {
-            "width": 0,
-            "color": "#000000"
-          },
-          "polygon": {
-              "nb_sides": 5
-          }
-        },
-        "opacity": {
-          "value": 0.5,
-          "random": false
-        },
-        "size": {
-          "value": 3,
-          "random": true
-        },
-        "line_linked": {
-          "enable": true,
-          "distance": 150,
-          "color": "#ffd700",
-          "opacity": 0.4,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 2,
-          "direction": "none",
-          "random": false,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": false,
-          "attract": {
-            "enable": false,
-            "rotateX": 600,
-            "rotateY": 1200
-          }
-        }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-          "onhover": {
-            "enable": true,
-            "mode": "grab"
-          },
-          "onclick": {
-            "enable": true,
-            "mode": "push"
-          },
-          "resize": true
-        },
-        "modes": {
-          "grab": {
-            "distance": 140,
-            "line_linked": {
-              "opacity": 1
-            }
-          },
-          "bubble": {
-            "distance": 400,
-            "size": 40,
-            "duration": 2,
-            "opacity": 8,
-            "speed": 3
-          },
-          "repulse": {
-            "distance": 200,
-            "duration": 0.4
-          },
-          "push": {
-            "particles_nb": 4
-          },
-          "remove": {
-            "particles_nb": 2
-          }
-        }
-      },
-      "retina_detect": true
-    });
-  </script>
-
+  <!-- Initialize AOS -->
   <script>
     AOS.init({
       duration: 500, // Adjust animation duration
-    });
-  </script>
-
-  <script>
-    AOS.init({
-      duration: 1000,
     });
   </script>
 </body>
