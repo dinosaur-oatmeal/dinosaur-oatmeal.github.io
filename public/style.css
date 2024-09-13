@@ -3,7 +3,7 @@ body {
      margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
-    background-size: cover;
+    background-size: absolute;
     background-blend-mode: overlay;
     color: #f1f1f1;
     font-family: 'Arial', sans-serif;
@@ -11,7 +11,7 @@ body {
     flex-direction: column; /* Stack content vertically */
     justify-content: flex-start; /* Align content to the top */
     align-items: center;
-    height: 100vh;
+    height: 100%;
     position: relative;
 }
 
@@ -68,7 +68,7 @@ body::before {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    font-size: 1em;
+    font-size: 80%;
   }
   
   /* Button hover effect */
@@ -87,20 +87,15 @@ a.card {
     text-decoration: none;
     color: inherit; /* Keep the text color inherited from the parent */
 }
-
-/* Hover state for links (if needed) */
-a.card:hover {
-    text-decoration: none; /* Ensure no underline appears on hover */
-}
   
 /* Container for the 3 tiles */
 .container {
     display: flex;
     justify-content: center;
     gap: 30px;
-    padding-top: 240px; /* Aligns the tiles toward the top */
+    padding-top: 80px; /* Aligns the tiles toward the top */
     width: 100%;
-    max-width: 1600px;
+    max-width: 1200px;
 }
 
 /* Card styling */
@@ -111,8 +106,10 @@ a.card:hover {
     text-align: center;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-width: 500px;
-    max-width: 600px;
+    min-width: 25%;
+    max-width: 80%;
+    max-height: 60%;
+    font-size: 75%;
 }
 
 .card:hover {
@@ -135,7 +132,7 @@ a.card:hover {
     padding: 50px;
     text-align: center;
     color: #f1f1f1;
-    margin-top: 50px; /* Move the testimonials section down by 50px */
+    margin-top: .5%; /* Move the testimonials section down by 50px */
   }
   
   .testimonials h2 {
@@ -144,7 +141,7 @@ a.card:hover {
   }
   
   .testimonials blockquote {
-    font-size: 1.3em;
+    font-size: 100%;
     font-style: italic;
     color: #ffd700;
     margin: 0;
@@ -152,14 +149,14 @@ a.card:hover {
   }
   
   .testimonials footer {
-    font-size: 1em;
+    font-size: 120%;
     color: #f1f1f1;
     margin-top: 20px; /* Adds space above the footer */
   }
 
   .skills-section {
     margin-top: auto; /* Pushes the skills section down */
-    padding-bottom: 50px; /* Adds space between the skills and footer */
+    padding-bottom: 5px; /* Adds space between the skills and footer */
     text-align: center;
   }
   
@@ -167,16 +164,17 @@ a.card:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
-    color: #ffd700; /* Matches the color of the grid items */
-    margin-bottom: 20px;
+    font-size: 150%;
+    color: #ffd700;
+    margin-bottom: 0%;
   }  
   
   .grid {
     display: flex;
     justify-content: center; /* Ensure grid is centered */
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-wrap: nowrap;
+    gap: 35px;
+    border-radius: 5px;
   }
   
   .grid-item {
@@ -184,12 +182,13 @@ a.card:hover {
     padding: 20px;
     border-radius: 5px;
     color: #ffd700;
-    width: 150px;
+    width: 50%;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px; /* Space between icon and text */
+    font-size: 90%;
   }
   
   .grid-item i {
@@ -227,6 +226,7 @@ a.card:hover {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    font-size: 100%;
 }
   
 /* Make it responsive for smaller screens */
@@ -243,14 +243,14 @@ a.card:hover {
     opacity: 0;
     padding: 150px 20px;
     width: 100%;
-    max-width: 2100px;
+    max-width: 150%;
     text-align: center;
-    animation: fadeIn 0.5s forwards ease-in; /* Fade in with slight delay */
+    animation: fadeIn 0.75s forwards ease-in; /* Fade in with slight delay */
 }
 
 .portfolio h2 {
     color: #ffd700;
-    margin-bottom: 30px;
+    font-size: 200%;
 }
 
 .portfolio-grid {
@@ -265,8 +265,8 @@ a.card:hover {
     background-color: #2c2c2c;
     padding: 30px;
     border-radius: 10px;
-    width: 100%; /* Make each tile fill the column */
-    max-width: 450px; /* Set a max width to prevent tiles from being too wide */
+    width: 85%; /* Make each tile fill the column */
+    max-width: 100%; /* Set a max width to prevent tiles from being too wide */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
 }
