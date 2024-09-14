@@ -1,18 +1,20 @@
-/* General Body Styling */
+/* Ensure body takes up the entire viewport and prevent scroll on the homepage */
 body {
-     margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
-    background-size: absolute;
-    background-blend-mode: overlay;
-    color: #f1f1f1;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    justify-content: flex-start; /* Align content to the top */
-    align-items: center;
-    height: 100%;
-    position: relative;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
+  background-size: cover; /* Cover the entire viewport */
+  background-blend-mode: overlay;
+  color: #f1f1f1;
+  font-family: 'Arial', sans-serif;
+  height: 100vh; /* Use 100vh to cover the full screen height */
+  width: 100vw;  /* Full screen width */
+  overflow: hidden; /* Prevent scrolling */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
 }
 
 /* Add tiled GIF as background */
@@ -88,28 +90,31 @@ a.card {
     color: inherit; /* Keep the text color inherited from the parent */
 }
   
-/* Container for the 3 tiles */
+/* Container for the 3 main tiles (LinkedIn, Info, GitHub) */
 .container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding-top: 80px; /* Aligns the tiles toward the top */
-    width: 100%;
-    max-width: 1200px;
+  display: flex;
+  justify-content: space-around; /* Distribute space evenly */
+  align-items: center; /* Align items centrally */
+  gap: 2vw; /* Dynamic gap size */
+  padding-top: 10vh; /* Adjust top padding dynamically */
+  width: 90vw; /* Let container take up 90% of viewport width */
+  max-width: 100%; /* Ensure it doesn’t overflow */
+  box-sizing: border-box;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
-/* Card styling */
+/* Card styling (LinkedIn, Info, GitHub) */
 .card {
-    background-color: #2c2c2c;
-    border-radius: 20px;
-    padding: 60px;
-    text-align: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-width: 25%;
-    max-width: 80%;
-    max-height: 60%;
-    font-size: 75%;
+  background-color: #2c2c2c;
+  border-radius: 20px;
+  padding: 3vw; /* Adjust padding dynamically */
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(30% - 2vw); /* Dynamic width with gap consideration */
+  min-width: 20%; /* Prevent cards from shrinking too much */
+  max-width: 25%; /* Cap the card width */
+  margin-bottom: 5vh; /* Add some spacing at the bottom for better flow */
 }
 
 .card:hover {
@@ -129,34 +134,38 @@ a.card {
 }
 
 .testimonials {
-    padding: 50px;
-    text-align: center;
-    color: #f1f1f1;
-    margin-top: .5%; /* Move the testimonials section down by 50px */
-  }
+  padding: 4vh 3vw; /* Adjust the padding for a more balanced look */
+  margin-top: 5vh; /* Add space above */
+  text-align: center;
+  border-radius: 10px; /* Softens the edges */
+}
   
-  .testimonials h2 {
-    color: #ffd700;
-    margin-bottom: 20px;
-  }
+.testimonials h2 {
+  color: #ffd700;
+  font-size: calc(1.5rem + 0.5vw); /* Dynamically scale heading */
+  margin-bottom: 2vh; /* Space below heading */
+}
   
-  .testimonials blockquote {
-    font-size: 100%;
-    font-style: italic;
-    color: #ffd700;
-    margin: 0;
-    padding-bottom: 20px; /* Adds space below the quote */
-  }
-  
-  .testimonials footer {
-    font-size: 120%;
-    color: #f1f1f1;
-    margin-top: 20px; /* Adds space above the footer */
-  }
+.testimonials blockquote {
+  font-size: calc(1rem + 0.3vw); /* Responsive font sizing */
+  font-style: italic;
+  color: #f1f1f1; /* Lighter text color for the quote */
+  margin: 0 auto;
+  max-width: 80%; /* Constrain the width to make it more centered */
+  line-height: 1.6; /* Improved readability */
+  padding-bottom: 2vh; /* Space between quote and footer */
+}
+
+.testimonials footer {
+  font-size: calc(1rem + 0.3vw); /* Slightly smaller than the quote */
+  color: #ffd700; /* Use the accent color for the footer */
+  margin-top: 2vh;
+  font-weight: bold; /* Emphasize the footer */
+}
 
   .skills-section {
-    margin-top: auto; /* Pushes the skills section down */
-    padding-bottom: 5px; /* Adds space between the skills and footer */
+    margin-top: 5vh; /* Pushes the skills section down */
+    padding: 3vw; /* Adds space between the skills and footer */
     text-align: center;
   }
   
@@ -164,54 +173,58 @@ a.card {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 150%;
+    font-size: calc(1.2rem + 0.8vw);
     color: #ffd700;
-    margin-bottom: 0%;
-  }  
-  
-  .grid {
-    display: flex;
-    justify-content: center; /* Ensure grid is centered */
-    flex-wrap: nowrap;
-    gap: 35px;
-    border-radius: 5px;
-  }
-  
-  .grid-item {
-    background-color: #2c2c2c;
-    padding: 20px;
-    border-radius: 5px;
-    color: #ffd700;
-    width: 50%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px; /* Space between icon and text */
-    font-size: 90%;
-  }
-  
-  .grid-item i {
-    font-size: 1.5em; /* Adjust icon size */
-  }
-  
-  
-  .skills-grid {
-    padding: 50px;
-    text-align: center;
-  }
-  
-  /* Responsive adjustments for smaller screens */
-  @media (max-width: 768px) {
-    .grid {
-      flex-direction: column;
-    }
-  
-    .grid-item {
-      width: 100%; /* Full width on small screens */
-    }
+    margin-bottom: 3%;
   }
 
+  /* Grid for the skills icons */
+/* Grid for the skills icons */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr); /* Keep 10 items in a row */
+  gap: 2vw; /* Adjust spacing between items */
+  justify-items: center; /* Center the content inside each grid cell */
+  padding: 0; /* Remove extra padding to prevent uneven spacing */
+  width: 100%; /* Ensure grid takes the full width of the container */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+/* Grid item */
+.grid-item {
+  background-color: #2c2c2c;
+  padding: 1vw; /* Adjust padding to fit content */
+  color: #ffd700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Space between icon and text */
+  font-size: calc(0.9rem + 0.2vw); /* Adjust text size */
+  width: 80%; /* Ensure grid item takes full column space */
+  max-height: 30%;
+}
+
+/* Icon inside the grid item */
+.grid-item i {
+  font-size: calc(1.2rem + 0.5vw); /* Adjust icon size dynamically */
+}
+
+/* Skills grid container */
+.skills-grid {
+  padding: 20px 5vw; /* Adjust padding to center the grid */
+  text-align: center;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* Stack items into 2 columns on smaller screens */
+  }
+
+  .grid-item {
+    width: 100%; /* Full width on small screens */
+  }
+}
 
   /* New experience grid class for work and volunteer experiences */
 .experience-grid {
@@ -361,12 +374,17 @@ a.card {
     }
 }
 
-/* Ensure particles layer is higher than noise texture but below content */
 #particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;  /* Below content, above body background */
+    position: fixed; /* Stay fixed on the screen */
     top: 0;
     left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Ensure particles stay behind content */
+}
+
+/* For the scrolling sections (Experience, Portfolio), ensure scrolling is enabled */
+html, body.portfolio-page, body.experience-page {
+    overflow-y: auto;
+    height: 100%;
 }
