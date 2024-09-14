@@ -7,7 +7,7 @@ body {
   background-blend-mode: overlay;
   color: #f1f1f1;
   font-family: 'Arial', sans-serif;
-  height: 100vh; /* Use 100vh to cover the full screen height */
+  min-height: 100%;
   width: 100vw;  /* Full screen width */
   overflow: hidden; /* Prevent scrolling */
   display: flex;
@@ -20,7 +20,7 @@ body {
 /* Add tiled GIF as background */
 body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -30,6 +30,25 @@ body::before {
     opacity: 0.05;  /* Make it barely visible */
     z-index: -1;  /* Positioned behind content */
     pointer-events: none;  /* Make sure it doesn’t interfere with interactions */
+}
+
+/* Global styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Specific to the home page, prevent scrolling */
+body.home-page {
+  overflow: hidden; /* Disable scrolling on the homepage */
+}
+
+/* Allow scrolling for experience and portfolio pages */
+body.experience-page, body.portfolio-page {
+  overflow-y: auto; /* Enable vertical scrolling */
+  height: 100%; /* Ensure content can scroll when it exceeds viewport */
 }
 
 /* Keyframes for animating the gradient */
@@ -134,7 +153,7 @@ a.card {
 }
 
 .testimonials {
-  padding: 4vh 3vw; /* Adjust the padding for a more balanced look */
+  padding: 3vh 3vw; /* Adjust the padding for a more balanced look */
   margin-top: 5vh; /* Add space above */
   text-align: center;
   border-radius: 10px; /* Softens the edges */
@@ -147,7 +166,7 @@ a.card {
 }
   
 .testimonials blockquote {
-  font-size: calc(1rem + 0.3vw); /* Responsive font sizing */
+  font-size: calc(1rem + 0.75vw); /* Responsive font sizing */
   font-style: italic;
   color: #f1f1f1; /* Lighter text color for the quote */
   margin: 0 auto;
@@ -157,52 +176,50 @@ a.card {
 }
 
 .testimonials footer {
-  font-size: calc(1rem + 0.3vw); /* Slightly smaller than the quote */
+  font-size: calc(1rem + 0.5vw); /* Slightly smaller than the quote */
   color: #ffd700; /* Use the accent color for the footer */
   margin-top: 2vh;
   font-weight: bold; /* Emphasize the footer */
 }
 
-  .skills-section {
-    margin-top: 5vh; /* Pushes the skills section down */
-    padding: 3vw; /* Adds space between the skills and footer */
-    text-align: center;
-  }
-  
-  .skills-section h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: calc(1.2rem + 0.8vw);
-    color: #ffd700;
-    margin-bottom: 3%;
-  }
+/* Skills Section at the bottom */
+.skills-section {
+  margin-bottom: 0;
+  padding: 7vw;
+  text-align: center;
+}
 
-  /* Grid for the skills icons */
+/* Skills Section Title */
+.skills-section h1 {
+  font-size: calc(1.2rem + 0.8vw);
+  color: #ffd700;
+}
+
 /* Grid for the skills icons */
 .grid {
   display: grid;
-  grid-template-columns: repeat(9, 1fr); /* Keep 10 items in a row */
+  grid-template-columns: repeat(9, 1fr); /* 9 items in a row */
   gap: 2vw; /* Adjust spacing between items */
-  justify-items: center; /* Center the content inside each grid cell */
-  padding: 0; /* Remove extra padding to prevent uneven spacing */
-  width: 100%; /* Ensure grid takes the full width of the container */
-  box-sizing: border-box; /* Include padding and border in the width calculation */
+  justify-items: center;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Grid item */
 .grid-item {
   background-color: #2c2c2c;
-  padding: 1vw; /* Adjust padding to fit content */
+  padding: 1vw;
   color: #ffd700;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* Space between icon and text */
-  font-size: calc(0.9rem + 0.2vw); /* Adjust text size */
-  width: 80%; /* Ensure grid item takes full column space */
+  gap: 10px;
+  font-size: calc(0.9rem + 0.2vw);
+  width: 80%; /* Ensure grid item takes up most of the column */
   max-height: 30%;
 }
+
 
 /* Icon inside the grid item */
 .grid-item i {
