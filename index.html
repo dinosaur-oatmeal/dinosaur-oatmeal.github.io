@@ -6,7 +6,6 @@
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <!-- Include AOS JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <!-- Include the shared particles configuration file -->
@@ -29,54 +28,77 @@
   </div>  
 
   <!-- Flexbox container for LinkedIn, Info, GitHub cards -->
-  <div class="container fade-in">
-    <!-- LinkedIn Card -->
-    <a href="https://www.linkedin.com/in/will-maberry/" target="_blank" class="card social-card linkedin" data-aos="fade-up">
-      <img src="/images/LI-In-Bug.png" alt="LinkedIn Logo">
-      <p>Connect with me on LinkedIn</p>
-    </a>
+  <div class="main-container">
+    <div class="cards-container">
+      <!-- LinkedIn Card -->
+      <a href="https://www.linkedin.com/in/will-maberry/" class="card social-card">
+        <img src="/images/LI-In-Bug.png" alt="LinkedIn">
+        <p>Connect with me</p>
+      </a>
   
-    <!-- Main Information Card -->
-    <div class="card info-card" data-aos="zoom-in">
-      <h1>Hi, I'm Will Maberry</h1>
-      <p>I'm currently studying computer science at the The University of Texas-Arlington. <br> <br>
-      Outside of the classroom, I work at OpenAI as an engagement manager.</p>
+      <!-- Main Information Card -->
+      <div href="info.html" class="card">
+        <h1>Hi, I'm Will Maberry</h1>
+        <p>I'm currently studying computer science at the The University of Texas-Arlington. <br> <br>
+        Outside of the classroom, I work at OpenAI as an engagement manager.</p>
+      </div>
+    
+      <!-- GitHub Card -->
+      <a href="https://github.com/dinosaur-oatmeal" class="card social-card">
+        <img src="/images/github-mark-white.png" alt="GitHub">
+        <p>Check out my projects</p>
+      </a>
     </div>
-  
-    <!-- GitHub Card -->
-    <a href="https://github.com/dinosaur-oatmeal" target="_blank" class="card social-card github" data-aos="fade-up">
-      <img src="/images/github-mark-white.png" alt="GitHub Logo">
-      <p>Check out my projects on GitHub</p>
-    </a>
+
+    <section class="testimonials">
+      <blockquote>
+        "The meaning of life is to find your gift. The purpose of life is to give it away."
+      </blockquote>
+      <footer>— Pablo Picasso </footer>
+    </section>
+
   </div>
 
-  <section class="testimonials fade-in">
-    <blockquote>
-      "The meaning of life is to find your gift. The purpose of life is to give it away."
-      <footer>— Pablo Picasso </footer>
-    </blockquote>
-  </section>
-
-  <section class="skills-section fade-in">
+  <footer class="skills-section">
     <h1><i class="fas fa-tools" style="margin-right: 10px;"></i> Skills</h1>
     <!-- Skill Grid -->
     <div class="grid">
-      <div class="grid-item"><i class="fab fa-java"></i> Java</div>
-      <div class="grid-item"><i class="fas fa-file-code"></i> C Programming</div>
-      <div class="grid-item"><i class="fas fa-bars"></i> LaTeX</div>
-      <div class="grid-item"><i class="fab fa-windows"></i> Windows</div>
-      <div class="grid-item"><i class="fas fa-terminal"></i> UNIX</div>
-      <div class="grid-item"><i class="fas fa-code"></i> VS Code</div>
-      <div class="grid-item"><i class="fas fa-laptop-code"></i> JGrasp</div>
-      <div class="grid-item"><i class="fab fa-github"></i> GitHub</div>
-      <div class="grid-item"><i class="fas fa-bug"></i> GDB</div>
-      <!--Add LaTeX-->
+      <div class="grid-item">
+        <i class="fab fa-java"></i> Java
+      </div>
+      <div class="grid-item">
+        <i class="fas fa-file-code"></i> C Programming
+      </div>
+      <div class="grid-item">
+        <i class="fas fa-bars"></i> LaTeX
+      </div>
+      <div class="grid-item">
+        <i class="fab fa-windows"></i> Windows
+      </div>
+      <div class="grid-item">
+        <i class="fas fa-terminal"></i> UNIX
+      </div>
+      <div class="grid-item">
+        <i class="fas fa-code"></i> VS Code
+      </div>
+      <div class="grid-item">
+        <i class="fas fa-laptop-code"></i> JGrasp
+      </div>
+      <div class="grid-item">
+        <i class="fab fa-github"></i> GitHub
+      </div>
+      <div class="grid-item">
+        <i class="fas fa-bug"></i> GDB
+      </div>
     </div>
-</section>
+  </footer>
 
+  <!-- Optional: Include Particles.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
   <script>
-    AOS.init({
-      duration: 500, // Adjust animation duration
+    /* Initialize Particles.js if you're using it */
+    particlesJS.load('particles-js', 'particles-config.json', function() {
+      console.log('Particles.js loaded');
     });
   </script>
 </body>

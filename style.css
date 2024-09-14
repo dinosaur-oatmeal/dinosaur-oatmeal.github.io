@@ -1,212 +1,191 @@
-/* Ensure body takes up the entire viewport and prevent scroll on the homepage */
-body {
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
   background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
-  background-size: cover; /* Cover the entire viewport */
+  background-size: cover;
   background-blend-mode: overlay;
   color: #f1f1f1;
   font-family: 'Arial', sans-serif;
-  min-height: 100%;
-  width: 100vw;  /* Full screen width */
-  overflow: hidden; /* Prevent scrolling */
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden; /* Prevent scrolling on homepage */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between; /* Distribute space between main sections */
   align-items: center;
   position: relative;
+  animation: fadeInBody 1s ease-in-out forwards;
+  opacity: 0;
 }
 
-/* Add tiled GIF as background */
 body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('/images/noise-texture.gif') repeat;  /* Tiled background */
-    background-size: 150px 150px;  /* Adjust size of each tile */
-    opacity: 0.05;  /* Make it barely visible */
-    z-index: -1;  /* Positioned behind content */
-    pointer-events: none;  /* Make sure it doesn’t interfere with interactions */
-}
-
-/* Global styles */
-html, body {
-  margin: 0;
-  padding: 0;
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  overflow-y: auto; /* Allow vertical scrolling */
+  background: url('/images/noise-texture.gif') repeat;
+  background-size: 150px 150px;
+  opacity: 0.05;
+  z-index: -1;
+  pointer-events: none;
 }
 
-/* Specific to the home page, prevent scrolling */
+html, body {
+  height: 100%;
+}
+
 body.home-page {
-  overflow: hidden; /* Disable scrolling on the homepage */
+  justify-content: center; /* Center main content vertically */
 }
 
-/* Allow scrolling for experience and portfolio pages */
-body.experience-page, body.portfolio-page {
-  overflow-y: auto; /* Enable vertical scrolling */
-  height: 100%; /* Ensure content can scroll when it exceeds viewport */
-}
-
-/* Keyframes for animating the gradient */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;  /* Start at the left */
-    }
-    50% {
-        background-position: 100% 50%;  /* Move to the right */
-    }
-    100% {
-        background-position: 0% 50%;  /* Back to the left */
-    }
-}
-
-/* Keyframes for fading in the body */
-@keyframes fadeInBody {
-    to {
-        opacity: 1;
-    }
-}
-
-/* Style for the button container */
 .top-left-buttons {
-    position: absolute;
-    top: 20px;  /* Distance from the top */
-    left: 20px; /* Distance from the left */
-    display: flex;
-    gap: 15px;  /* Space between buttons */
-    z-index: 100;  /* Ensure it’s above other elements */
-  }
-  
-  /* Button styling */
-  .top-left-buttons .button {
-    background-color: #2c2c2c;  /* Matches your card styling */
-    color: #ffd700;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    font-size: 80%;
-  }
-  
-  /* Button hover effect */
-  .top-left-buttons .button:hover {
-    background-color: #ffd700;
-    color: #2c2c2c;
-  }
-  
-  /* Optional: Make buttons slightly larger on hover */
-  .top-left-buttons .button:hover {
-    transform: scale(1.05);
-  }
-
-/* Remove underline for the entire clickable card */
-a.card {
-    text-decoration: none;
-    color: inherit; /* Keep the text color inherited from the parent */
-}
-  
-/* Container for the 3 main tiles (LinkedIn, Info, GitHub) */
-.container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
   display: flex;
-  justify-content: space-around; /* Distribute space evenly */
-  align-items: center; /* Align items centrally */
-  gap: 2vw; /* Dynamic gap size */
-  padding-top: 10vh; /* Adjust top padding dynamically */
-  width: 90vw; /* Let container take up 90% of viewport width */
-  max-width: 100%; /* Ensure it doesn’t overflow */
-  box-sizing: border-box;
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  gap: 15px;
+  z-index: 100;
 }
 
-/* Card styling (LinkedIn, Info, GitHub) */
+.top-left-buttons .button {
+  background-color: #2c2c2c;
+  color: #ffd700;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.top-left-buttons .button:hover {
+  background-color: #ffd700;
+  color: #2c2c2c;
+  transform: scale(1.05);
+}
+
+/* Main Content Container */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90vw;
+  max-width: 1200px;
+  padding: 5vh 0;
+  flex: 1; /* Allow it to grow and take available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Three Large Boxes (Cards) */
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2vw;
+  width: 150%;
+  margin-bottom: 5vh;
+  flex-wrap: wrap;
+}
+
 .card {
   background-color: #2c2c2c;
   border-radius: 20px;
-  padding: 3vw; /* Adjust padding dynamically */
+  padding: 2vw 3vw;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: calc(30% - 2vw); /* Dynamic width with gap consideration */
-  min-width: 20%; /* Prevent cards from shrinking too much */
-  max-width: 25%; /* Cap the card width */
-  margin-bottom: 5vh; /* Add some spacing at the bottom for better flow */
+  text-decoration: none;
+  width: 30%;
+  min-width: 200px;
+  max-width: 500px;
+  margin-bottom: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
 }
 
-/* Image inside the card (LinkedIn, GitHub icons) */
 .social-card img {
-    width: 100px;
-    margin-bottom: 20px;
+  width: 100px;
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.card h1, .card p {
-    font-size: 1.3em;
-    color: #ffd700;
+.card h1,
+.card p {
+  font-size: 1.3em;
+  color: #ffd700;
 }
 
+/* Quote/Testimonial Section */
 .testimonials {
-  padding: 3vh 3vw; /* Adjust the padding for a more balanced look */
-  margin-top: 5vh; /* Add space above */
+  padding: 3vh 3vw;
   text-align: center;
-  border-radius: 10px; /* Softens the edges */
+  border-radius: 10px;
+  max-width: 800px;
 }
-  
+
 .testimonials h2 {
   color: #ffd700;
-  font-size: calc(1.5rem + 0.5vw); /* Dynamically scale heading */
-  margin-bottom: 2vh; /* Space below heading */
+  font-size: calc(1.5rem + 0.5vw);
+  margin-bottom: 2vh;
 }
-  
+
 .testimonials blockquote {
-  font-size: calc(1rem + 0.75vw); /* Responsive font sizing */
+  font-size: calc(1rem + 0.75vw);
   font-style: italic;
-  color: #f1f1f1; /* Lighter text color for the quote */
+  color: #f1f1f1;
   margin: 0 auto;
-  max-width: 80%; /* Constrain the width to make it more centered */
-  line-height: 1.6; /* Improved readability */
-  padding-bottom: 2vh; /* Space between quote and footer */
+  max-width: 80%;
+  line-height: 1.6;
+  padding-bottom: 2vh;
 }
 
 .testimonials footer {
-  font-size: calc(1rem + 0.5vw); /* Slightly smaller than the quote */
-  color: #ffd700; /* Use the accent color for the footer */
+  font-size: calc(1rem + 0.5vw);
+  color: #ffd700;
   margin-top: 2vh;
-  font-weight: bold; /* Emphasize the footer */
+  font-weight: bold;
 }
 
-/* Skills Section at the bottom */
+/* Skills/Grid Footer Section */
 .skills-section {
-  margin-bottom: 0;
-  padding: 7vw;
+  padding: 3vh 5vw;
   text-align: center;
+  width: 100%;
 }
 
-/* Skills Section Title */
 .skills-section h1 {
   font-size: calc(1.2rem + 0.8vw);
   color: #ffd700;
+  margin-bottom: 2vh;
 }
 
-/* Grid for the skills icons */
 .grid {
   display: grid;
-  grid-template-columns: repeat(9, 1fr); /* 9 items in a row */
-  gap: 2vw; /* Adjust spacing between items */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 2vw;
   justify-items: center;
-  padding: 0;
   width: 100%;
-  box-sizing: border-box;
+  padding: 0;
 }
 
-/* Grid item */
 .grid-item {
   background-color: #2c2c2c;
   padding: 1vw;
@@ -216,192 +195,236 @@ a.card {
   justify-content: center;
   gap: 10px;
   font-size: calc(0.9rem + 0.2vw);
-  width: 80%; /* Ensure grid item takes up most of the column */
+  width: 80%;
   max-height: 30%;
+  border-radius: 10px;
 }
 
-
-/* Icon inside the grid item */
 .grid-item i {
-  font-size: calc(1.2rem + 0.5vw); /* Adjust icon size dynamically */
+  font-size: calc(1.2rem + 0.5vw);
 }
 
-/* Skills grid container */
-.skills-grid {
-  padding: 20px 5vw; /* Adjust padding to center the grid */
-  text-align: center;
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .cards-container {
+    gap: 1.5vw;
+  }
+
+  .card {
+    width: 45%; /* Two cards per row */
+  }
 }
 
-/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr); /* Stack items into 2 columns on smaller screens */
+  .cards-container {
+    flex-direction: column;
+    gap: 2vh;
+  }
+
+  .card {
+    width: 80%;
+  }
+
+  .testimonials {
+    padding: 2vh 2vw;
+  }
+
+  .skills-section {
+    padding: 2vh 2vw;
   }
 
   .grid-item {
-    width: 100%; /* Full width on small screens */
+    width: 90%;
   }
 }
 
-  /* New experience grid class for work and volunteer experiences */
-.experience-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-    grid-gap: 20px; /* Space between the tiles */
-    padding: 20px;
-}
-  
-.experience-card {
-    background-color: #2c2c2c; /* Optional background for readability */
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 100%;
-}
-  
-/* Make it responsive for smaller screens */
-@media (max-width: 768px) {
-    .experience-grid {
-        grid-template-columns: 1fr; /* Switch to one column on smaller screens */
-    }
-}
-  
-  
+@media (max-width: 480px) {
+  .card {
+    width: 90%;
+  }
 
-/* Portfolio Section Styling */
+  .skills-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .testimonials h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInBody {
+  to {
+    opacity: 1;
+  }
+}
+
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 5vw;
+}
+
+.experience-card {
+  background-color: #2c2c2c;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1rem;
+}
+
 .portfolio {
-    opacity: 0;
-    padding: 150px 20px;
-    width: 100%;
-    max-width: 150%;
-    text-align: center;
-    animation: fadeIn 0.75s forwards ease-in; /* Fade in with slight delay */
+  opacity: 0;
+  padding: 10vh 5vw;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 0.75s forwards ease-in;
 }
 
 .portfolio h2 {
-    color: #ffd700;
-    font-size: 200%;
+  color: #ffd700;
+  font-size: 2rem;
+  margin-bottom: 2vh;
 }
 
 .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 tiles per row */
-    gap: 20px; /* Space between tiles */
-    justify-items: center; /* Center the items horizontally */
-    padding: 20px; /* Optional padding for spacing around the grid */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
 }
 
 .portfolio-item {
-    background-color: #2c2c2c;
-    padding: 30px;
-    border-radius: 10px;
-    width: 85%; /* Make each tile fill the column */
-    max-width: 100%; /* Set a max width to prevent tiles from being too wide */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-}
-
-@media (max-width: 1200px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 tiles per row on medium screens */
-    }
-}
-
-@media (max-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr; /* 1 tile per row on small screens */
-    }
+  background-color: #2c2c2c;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
 }
 
 .portfolio-item:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .portfolio-item h3 {
-    color: #ffd700;
-    font-size: 1.5em;
+  color: #ffd700;
+  font-size: 1.5em;
+  padding: 1rem;
 }
 
 .portfolio-item p {
-    color: #f1f1f1;
-    text-align: left;
-    margin-bottom: 10px;
+  color: #f1f1f1;
+  text-align: left;
+  margin-bottom: 10px;
 }
 
-/* Timeline Styling */
 .timeline {
-    position: relative;
-    padding-left: 40px;
-    margin-top: 20px;
-    border-left: 3px solid #ffd700;
-  }
-  
-  .timeline-item {
-    margin-bottom: 30px;
-    position: relative;
-  }
-  
-  .timeline-item h2 {
-    font-size: 1.5em;
-    color: #ffd700;
-    margin-bottom: 5px;
-  }
-  
-  .timeline-item p {
-    color: #f1f1f1;
-    margin-bottom: 10px;
-  }
-  
-  .timeline-item::before {
-    content: "";
-    position: absolute;
-    left: -9px;
-    top: 5px;
-    width: 18px;
-    height: 18px;
-    background-color: #ffd700;
-    border-radius: 50%;
-    border: 2px solid #fff;
-  }
-
-/* Keyframes for fading in */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+  position: relative;
+  padding-left: 40px;
+  margin-top: 20px;
+  border-left: 3px solid #ffd700;
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
+.timeline-item {
+  margin-bottom: 30px;
+  position: relative;
+}
 
-    .portfolio-grid {
-        flex-direction: column;
-    }
+.timeline-item h2 {
+  font-size: 1.5em;
+  color: #ffd700;
+  margin-bottom: 5px;
+}
 
-    .card {
-        max-width: 100%; /* Allow cards to take full width on mobile */
-    }
+.timeline-item p {
+  color: #f1f1f1;
+  margin-bottom: 10px;
+}
 
-    .portfolio-item {
-        width: 100%; /* Full width for portfolio items on mobile */
-    }
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 5px;
+  width: 18px;
+  height: 18px;
+  background-color: #ffd700;
+  border-radius: 50%;
+  border: 2px solid #fff;
 }
 
 #particles-js {
-    position: fixed; /* Stay fixed on the screen */
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1; /* Ensure particles stay behind content */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
 }
 
-/* For the scrolling sections (Experience, Portfolio), ensure scrolling is enabled */
-html, body.portfolio-page, body.experience-page {
-    overflow-y: auto;
-    height: 100%;
+/* Animations */
+@keyframes fadeInBody {
+  to {
+    opacity: 1;
+  }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .container {
+    padding: 8vh 4vw;
+  }
+
+  .card {
+    width: 45%;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 5vh 2vw;
+  }
+
+  .card {
+    width: 80%;
+  }
+
+  .portfolio-grid,
+  .experience-grid,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-item,
+  .experience-card {
+    width: 100%;
+  }
+
+  .skills-section {
+    padding: 5vw 2vw;
+  }
+
+  .timeline {
+    padding-left: 20px;
+  }
+}
+
