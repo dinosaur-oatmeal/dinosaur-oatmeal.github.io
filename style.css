@@ -45,6 +45,7 @@ html, body {
   height: 100%;
   overflow-y: auto; /* Enable vertical scrolling */
   overflow-x: hidden; /* Prevent horizontal scrolling */
+  font-size: 110%;
 }
 
 
@@ -237,11 +238,13 @@ body.home-page {
    
 .experience-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
   gap: 20px;
   padding: 20px 3vw;
   margin-top: 0;
   margin-bottom: 0;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .experience-card {
@@ -250,6 +253,7 @@ body.home-page {
   border-radius: 10px;
   text-align: center;
   font-size: 1rem;
+  min-width: 30%;
 }
 
 /* =========================================
@@ -379,6 +383,7 @@ body.home-page {
    RESPONSIVE MEDIA QUERIES
    ========================================= */
 
+/* Tablets and Below */
 @media (max-width: 1200px) {
   .cards-container {
     gap: 1.5vw;
@@ -393,6 +398,7 @@ body.home-page {
   }
 }
 
+/* Small Tablets and Phones */
 @media (max-width: 768px) {
   .cards-container {
     flex-direction: column;
@@ -419,23 +425,19 @@ body.home-page {
     padding-left: 20px;
   }
 
-  /* Adjust Portfolio Grid for Smaller Screens */
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Adjust Experience Grid */
-  .experience-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
+  .portfolio-grid,
+  .experience-grid,
   .grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 items per row on small devices */
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-item,
+  .experience-card {
+    width: 100%;
   }
 }
 
+/* Very Small Devices */
 @media (max-width: 480px) {
   .card {
     width: 90%;
@@ -447,5 +449,12 @@ body.home-page {
 
   .testimonials h2 {
     font-size: 1.3rem;
+  }
+}
+
+/* Additional Responsive Adjustments */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row on small devices */
   }
 }
