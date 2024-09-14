@@ -2,25 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfolio</title>
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- Your Custom CSS -->
   <link rel="stylesheet" href="/style.css">
 
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <!-- Include AOS JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <!-- Include the shared particles configuration file -->
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
   <script src="particles-config.js" defer></script>
-  <!-- Add AOS CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-  <!-- Include Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body class="portfolio-page">
 
   <!-- Particles.js Background -->
   <div id="particles-js"></div>
   
+  <!-- Top Left Buttons -->
   <div class="top-left-buttons">
     <a href="index.html" class="button">Home</a>
     <a href="experience.html" class="button">Experience</a>
@@ -28,52 +34,57 @@
   </div>  
 
   <!-- Portfolio Section -->
-  <section class="portfolio">
+  <section class="portfolio" data-aos="fade-up">
     <h2>My Projects</h2>
-    <div class="portfolio-grid" data-aos="fade-up">
+    <div class="portfolio-grid">
       <!-- Portfolio Items -->
-      <div class="portfolio-item" data-aos="fade-up">
+      <div class="portfolio-item">
         <h3>Real-time Multiplayer Word Game in Java</h3>
         <p> - Utilizing WebSocket connections and JSON strings, developed a realtime 2 - 4 player word search game. <br> <br>
             - Created automatic JUnit tests to ensure project requirements were met. <br> <br>
             - Managed project requirements through Excel and designed the system's architecture with UML diagrams. <br><br></p>
         <p><strong>Technologies Used:</strong> Maven, Unix VM, VS Code, Java WebSockets, HTML, CSS, JavaScript, JSON, & JUnit</p>
       </div>
-      <div class="portfolio-item" data-aos="fade-up">
+      <div class="portfolio-item">
         <h3>Malloc, Free, Split, and Coalesce in C</h3>
         <p> - Created my own implementation of malloc utilizing structures making up a linked list.<br> <br>
             - Added functionalities for splitting, coalescing, and reusing memory blocks in the heap.<br> <br>
             - Benchmarked my four different allocation algorithms of malloc against the default system malloc.</p>
         <p><strong>Technologies Used:</strong> GitHub Codespaces, GDB, & GCC</p>
       </div>
-      <div class="portfolio-item" data-aos="fade-up">
+      <div class="portfolio-item">
         <h3>Cipher Education in Java</h3>
         <p> - Educating users on monoalphabetic and transposition ciphers, my project incorporates an interactive GUI developed with Java's AWT and Swing libraries.<br> <br>
             - Utilized HashMap, ArrayList, and Array structures throughout the program to keep track of data.<br><br></p>
         <p><strong>Technologies Used:</strong> jGRASP, AWT, & Swing</p>
       </div>
-      <div class="portfolio-item" data-aos="fade-up">
+      <div class="portfolio-item">
         <h3>[Project Title]</h3>
         <p> - Description <br><br></p>
         <p><strong>Technologies Used:</strong> Temp</p>
       </div>
-      <div class="portfolio-item" data-aos="fade-up">
+      <div class="portfolio-item">
         <h3>[Project Title]</h3>
         <p> - Description <br><br></p>
         <p><strong>Technologies Used:</strong> Temp</p>
       </div>
-      <div class="portfolio-item" data-aos="fade-up">
+      <div class="portfolio-item">
         <h3>[Project Title]</h3>
         <p> - Description <br><br></p>
         <p><strong>Technologies Used:</strong> Temp</p>
       </div>
     </div>
   </section>
-  
+
   <!-- Initialize AOS -->
   <script>
-    AOS.init({
-      duration: 500, // Adjust animation duration
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false,
+      });
     });
   </script>
 </body>

@@ -1,64 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home</title>
 
-    <!-- Include AOS JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <!-- Include the shared particles configuration file -->
-    <script src="particles-config.js" defer></script>
-    <!-- Add AOS CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <!-- Include Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  </head>
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="particles-config.js" defer></script>
+</head>
 
 <body class="home-page">
 
-  <!-- Particles.js -->
+  <!-- Particles.js Background -->
   <div id="particles-js"></div>
 
+  <!-- Top Left Buttons -->
   <div class="top-left-buttons">
     <a href="index.html" class="button">Home</a>
     <a href="experience.html" class="button">Experience</a>
     <a href="portfolio.html" class="button">Portfolio</a>
   </div>  
 
-  <!-- Flexbox container for LinkedIn, Info, GitHub cards -->
+  <!-- Main Content Container -->
   <div class="main-container">
     <div class="cards-container">
       <!-- LinkedIn Card -->
-      <a href="https://www.linkedin.com/in/will-maberry/" class="card social-card">
+      <a href="https://www.linkedin.com/in/will-maberry/" class="card social-card" data-aos="fade-up">
         <img src="/images/LI-In-Bug.png" alt="LinkedIn">
         <p>Connect with me</p>
       </a>
-  
+
       <!-- Main Information Card -->
-      <div href="info.html" class="card">
-        <h1>Hi, I'm Will Maberry</h1>
-        <p>I'm currently studying computer science at the The University of Texas-Arlington. <br> <br>
-        Outside of the classroom, I work at OpenAI as an engagement manager.</p>
+      <div class="card" data-aos="fade-up">
+        <h1>Hi, I'm [Name]</h1>
+        <p>I'm currently studying computer science at The University of Texas-Arlington.<br><br>
+           Outside of the classroom, I work at OpenAI as an engagement manager.</p>
       </div>
     
       <!-- GitHub Card -->
-      <a href="https://github.com/dinosaur-oatmeal" class="card social-card">
+      <a href="https://github.com/dinosaur-oatmeal" class="card social-card" data-aos="fade-up">
         <img src="/images/github-mark-white.png" alt="GitHub">
         <p>Check out my projects</p>
       </a>
     </div>
 
+    <!-- Testimonials Section -->
     <section class="testimonials">
       <blockquote>
         "The meaning of life is to find your gift. The purpose of life is to give it away."
       </blockquote>
       <footer>— Pablo Picasso </footer>
     </section>
-
   </div>
 
+  <!-- Skills/Grid Footer -->
   <footer class="skills-section">
     <h1><i class="fas fa-tools" style="margin-right: 10px;"></i> Skills</h1>
     <!-- Skill Grid -->
@@ -93,12 +101,15 @@
     </div>
   </footer>
 
-  <!-- Optional: Include Particles.js Library -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <!-- Initialize AOS -->
   <script>
-    /* Initialize Particles.js if you're using it */
-    particlesJS.load('particles-js', 'particles-config.json', function() {
-      console.log('Particles.js loaded');
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false,
+      });
     });
   </script>
 </body>
