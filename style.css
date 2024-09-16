@@ -16,7 +16,6 @@ body {
   font-family: 'Arial', sans-serif;
   min-height: 100vh;
   width: 100%;
-  overflow: hidden; /* Prevent scrolling on homepage */
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Distribute space between main sections */
@@ -47,7 +46,6 @@ html, body {
   overflow-x: hidden; /* Prevent horizontal scrolling */
   font-size: 110%;
 }
-
 
 body.home-page {
   justify-content: center; /* Center main content vertically */
@@ -92,12 +90,12 @@ body.home-page {
   align-items: center;
   min-width: 75%;
   max-width: 1200px;
-  padding: 5vh 0;
+  padding: 100px 0 5vh 0;
   flex: 1; /* Allow it to grow and take available space */
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 10%;
 }
 
 /* Three Large Boxes (Cards) */
@@ -215,7 +213,6 @@ body.home-page {
 }
 
 .grid-item {
-  background-color: #2c2c2c;
   padding: 1vw;
   color: #ffd700;
   display: flex;
@@ -252,10 +249,37 @@ body.home-page {
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-  font-size: 1rem;
+  font-size: calc(0.5rem + 0.5vw);
   min-width: 30%;
 }
 
+/* =========================================
+   TIMELINE STYLES
+   ========================================= */
+
+   .timeline {
+    position: relative;
+    padding-left: 40px;
+    margin-top: 20px;
+    border-left: 3px solid #ffd700;
+  }
+  
+  .timeline-item {
+    margin-bottom: 30px;
+    position: relative;
+  }
+  
+  .timeline-item h2 {
+    font-size: calc(0.5rem + 0.8vw);
+    color: #ffd700;
+    margin-bottom: 5px;
+  }
+  
+  .timeline-item p {
+    color: #f1f1f1;
+    margin-bottom: 10px;
+  }
+  
 /* =========================================
    PORTFOLIO SECTION
    ========================================= */
@@ -309,45 +333,6 @@ body.home-page {
 }
 
 /* =========================================
-   TIMELINE STYLES
-   ========================================= */
-
-.timeline {
-  position: relative;
-  padding-left: 40px;
-  margin-top: 20px;
-  border-left: 3px solid #ffd700;
-}
-
-.timeline-item {
-  margin-bottom: 30px;
-  position: relative;
-}
-
-.timeline-item h2 {
-  font-size: 1.5em;
-  color: #ffd700;
-  margin-bottom: 5px;
-}
-
-.timeline-item p {
-  color: #f1f1f1;
-  margin-bottom: 10px;
-}
-
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  left: -9px;
-  top: 5px;
-  width: 18px;
-  height: 18px;
-  background-color: #ffd700;
-  border-radius: 50%;
-  border: 2px solid #fff;
-}
-
-/* =========================================
    PARTICLES JS
    ========================================= */
 
@@ -383,6 +368,24 @@ body.home-page {
    RESPONSIVE MEDIA QUERIES
    ========================================= */
 
+@media (max-width: 1600px) {
+  .cards-container {
+    flex-direction: row;
+    gap: 2vh;
+    align-items: center; /* Center the cards */
+    margin-top: 30%;
+  }
+
+  .card {
+    width: 80%;
+    margin: 2vh auto; /* Center the cards */
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row on small devices */
+  }
+}
+
 /* Tablets and Below */
 @media (max-width: 1200px) {
   .cards-container {
@@ -393,20 +396,44 @@ body.home-page {
     width: 45%; /* Two cards per row */
   }
 
-  .portfolio-grid {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row on small devices */
+  }
+
+  .portfolio-grid,
+  .experience-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
 
 /* Small Tablets and Phones */
 @media (max-width: 768px) {
+  .top-left-buttons {
+    flex-direction: column;
+    gap: 10px;
+    top: 10px;
+    left: 10px;
+  }
+
   .cards-container {
     flex-direction: column;
     gap: 2vh;
+    align-items: center; /* Center the cards */
+    margin-top: 120%;
   }
 
   .card {
     width: 80%;
+    margin: 2vh auto; /* Center the cards */
+  }
+
+  /* Reorder Cards: Main Card First */
+  .card.main-card {
+    order: 1; /* First */
+  }
+
+  .card.social-card {
+    order: 2; /* Second and Third */
   }
 
   .testimonials {
@@ -415,6 +442,10 @@ body.home-page {
 
   .skills-section {
     padding: 2vh 2vw;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row on small devices */
   }
 
   .grid-item {
@@ -426,21 +457,32 @@ body.home-page {
   }
 
   .portfolio-grid,
-  .experience-grid,
-  .grid {
+  .experience-grid{
     grid-template-columns: 1fr;
+    margin-top: 15%;
   }
 
   .portfolio-item,
-  .experience-card {
+  .experience-card{
     width: 100%;
   }
 }
 
 /* Very Small Devices */
 @media (max-width: 480px) {
+  .top-left-buttons {
+    flex-direction: column;
+    gap: 8px;
+    top: 5px;
+    left: 5px;
+  }
+
   .card {
     width: 90%;
+  }
+
+  .card.main-card {
+    order: 1; /* First */
   }
 
   .skills-section h1 {
@@ -458,3 +500,4 @@ body.home-page {
     grid-template-columns: repeat(3, 1fr); /* 3 items per row on small devices */
   }
 }
+
