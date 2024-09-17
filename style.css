@@ -95,7 +95,7 @@ body.home-page {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10%;
+  margin-top: 8%;
 }
 
 /* Three Large Boxes (Cards) */
@@ -238,10 +238,9 @@ body.home-page {
   grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
   gap: 20px;
   padding: 20px 3vw;
-  margin-top: 0;
-  margin-bottom: 0;
   margin-left: 5%;
   margin-right: 5%;
+  margin-top: -7vw;
 }
 
 .experience-card {
@@ -408,18 +407,12 @@ body.home-page {
 
 /* Small Tablets and Phones */
 @media (max-width: 768px) {
-  .top-left-buttons {
-    flex-direction: column;
-    gap: 10px;
-    top: 10px;
-    left: 10px;
-  }
-
   .cards-container {
     flex-direction: column;
     gap: 2vh;
     align-items: center; /* Center the cards */
-    margin-top: 120%;
+    margin-top: 110%;
+    width: 150%;
   }
 
   .card {
@@ -456,10 +449,18 @@ body.home-page {
     padding-left: 20px;
   }
 
-  .portfolio-grid,
-  .experience-grid{
+  .experience-grid {
     grid-template-columns: 1fr;
-    margin-top: 15%;
+    margin-top: -8vw;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    margin-top: 0vw;
+  }
+
+  .portfolio h2 {
+    margin-top: 10%;
   }
 
   .portfolio-item,
