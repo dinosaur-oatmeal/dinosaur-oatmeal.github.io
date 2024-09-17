@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery</title>
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="particles-config.js" defer></script>
+</head>
+
+<body class="gallery-page">
+
+  <!-- Particles.js Background -->
+  <div id="particles-js"></div>
+
+  <!-- Top Left Buttons -->
+  <div class="top-left-buttons">
+    <a href="index.html" class="button">Home</a>
+    <a href="experience.html" class="button">Experience</a>
+    <a href="portfolio.html" class="button">Portfolio</a>
+    <a href="gallery.html" class="button active">Gallery</a>
+  </div>  
+
+  <!-- Main Content Container -->
+  <div class="main-container" data-aos="fade-up">
+    <h1>My Photo Gallery</h1>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <a href="images/7.jpg" target="_blank">
+                <img src="images/7.jpg">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/12.jpg" target="_blank">
+                <img src="images/12.jpg">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/5.jpg" target="_blank">
+                <img src="images/5.jpg">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/14.jpg" target="_blank">
+                <img src="images/14.jpg">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/2.jpg" target="_blank">
+                <img src="images/2.jpg">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/16.jpg" target="_blank">
+                <img src="images/16.jpg">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/9.jpg" target="_blank">
+                <img src="images/9.jpg">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/10.jpg" target="_blank">
+                <img src="images/10.jpg">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/3.jpg" target="_blank">
+                <img src="images/3.jpg">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/18.jpg" target="_blank">
+                <img src="images/18.jpg">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/8.jpg" target="_blank">
+                <img src="images/8.jpg">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/11.jpg" target="_blank">
+                <img src="images/11.jpg">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/4.jpg" target="_blank">
+                <img src="images/4.jpg">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/6.jpg" target="_blank">
+                <img src="images/6.jpg">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/13.jpg" target="_blank">
+                <img src="images/13.jpg">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/17.jpg" target="_blank">
+                <img src="images/17.jpg">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/15.jpg" target="_blank">
+                <img src="images/15.jpg">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/1.jpg" target="_blank">
+                <img src="images/1.jpg">
+            </a>
+        </div>
+    </div>
+  </div>
+
+  <!-- Initialize AOS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false,
+      });
+    });
+  </script>
+</body>
+</html>
