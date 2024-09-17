@@ -433,7 +433,7 @@ body.home-page {
     flex-direction: row;
     gap: 2vh;
     align-items: center; /* Center the cards */
-    margin-top: 30%;
+    margin-top: -15vh;
   }
 
   .card {
@@ -442,7 +442,11 @@ body.home-page {
   }
 
   .grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 items per row on small devices */
+    grid-template-columns: repeat(9, 1fr); /* 3 items per row on small devices */
+  }
+
+  .grid-item {
+    width: 80%;
   }
 }
 
@@ -450,6 +454,7 @@ body.home-page {
 @media (max-width: 1200px) {
   .cards-container {
     gap: 1.5vw;
+    margin-top: 3vh;
   }
 
   .card {
@@ -472,11 +477,12 @@ body.home-page {
 
 /* Small Tablets and Phones */
 @media (max-width: 768px) {
+
   .cards-container {
     flex-direction: column;
     gap: 2vh;
     align-items: center; /* Center the cards */
-    margin-top: 110%;
+    margin-top: 50vh;
     width: 150%;
   }
 
@@ -541,12 +547,6 @@ body.home-page {
 
 /* Very Small Devices */
 @media (max-width: 480px) {
-  .top-left-buttons {
-    flex-direction: column;
-    gap: 8px;
-    top: 5px;
-    left: 5px;
-  }
 
   .card {
     width: 90%;
@@ -568,11 +568,3 @@ body.home-page {
     grid-template-columns: 1fr;
   }
 }
-
-/* Additional Responsive Adjustments */
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 items per row on small devices */
-  }
-}
-
