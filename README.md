@@ -1,50 +1,18 @@
-# My Personal Website
+# Personal Portfolio Website
 
-This is my personal website built using HTML, CSS, and JavaScript.
----
+## Overview
+This is a **multi-page personal portfolio website** built using HTML, CSS, and JavaScript to showcase my professional experience, projects, and personal interests. The website features a dynamic landing page, an experience section, a portfolio of projects, and a gallery displaying personal photography, providing a complete picture of my skills and personality.
 
-## Getting Started
+## Features
+- **Dynamic Landing Page:** A visually engaging homepage with animated elements and intuitive navigation.
+- **Experience Page:** Highlights my professional and volunteer experiences using a clean, responsive layout.
+- **Portfolio Page:** Showcases detailed information about my programming projects, using JavaScript to create interactive elements.
+- **Photography Gallery:** A curated gallery page displaying photographs I've taken, formatted consistently to maintain a professional look regardless of photo size.
+- **Responsive Design:** Utilizes CSS grid and flexbox for a fluid layout, ensuring a seamless experience across different devices and screen sizes.
+- **Background Simulation:** Incorporates JavaScript to simulate dynamic background effects, adding a layer of modern design.
 
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
-
-## Prerequisites
-
-You will need to have [Node.js](https://nodejs.org/) installed on your machine.
-
-To check if Node.js is installed, run:
-
-```bash
-node -v
-```
-
-## Installation
-
-1. Clone the Repository
-
-```bash
-git clone https://github.com/YOUR_USERNAME/my-website.git
-```
-
-2. Navigate to the Project Directory
-
-```bash
-cd my-website
-```
-
-3. Install Dependencies
-
-```bash
-npm install
-```
-
-## Running the Project Locally
-
-1. Start theServer
-
-```bash
-node app.js
-```
-
-2. Access the Website
-
-Open [http://localhost:3000](http://localhost:3000) on your browser to see the result.
+## Technologies Used
+- **HTML:** Structures the content of the website across multiple pages.
+- **CSS:** Styles the website, using CSS Grid and Flexbox for a responsive and flexible layout.
+- **JavaScript:** Adds animations and dynamic background effects.
+- **Development Environment:** VS Code.
