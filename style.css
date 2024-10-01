@@ -191,43 +191,50 @@ body.home-page {
    SKILLS SECTION
    ========================================= */
 
-.skills-section {
-  padding: 3vh 5vw;
-  text-align: center;
-  width: 100%;
-}
-
-.skills-section h1 {
-  font-size: calc(1.2rem + 0.8vw);
-  color: #ffd700;
-  margin-bottom: 2vh;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  gap: 2vw;
-  justify-items: center;
-  width: 100%;
-  padding: 0;
-}
-
-.grid-item {
-  padding: 1vw;
-  color: #ffd700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-size: calc(0.9rem + 0.2vw);
-  width: 80%;
-  max-height: 30%;
-  border-radius: 10px;
-}
-
-.grid-item i {
-  font-size: calc(1.2rem + 0.5vw);
-}
+   .skills-section {
+    padding: 2vh 5vw;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .skills-section h1 {
+    font-size: calc(1rem + 0.5vw);
+    color: #ffd700;
+    margin-bottom: 1vh;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1vw;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+  }
+  
+  .grid.dev-environments {
+    display: flex;
+    gap: 1vw;
+    justify-content: center;
+    margin: 2vh auto;
+    max-width: 100%;
+  }
+  
+  
+  
+  .grid-item {
+    padding: 0.5vw;
+    color: #ffd700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: calc(0.8rem + 0.2vw);
+    width: 70%;
+    max-height: 20%;
+    border-radius: 5px;
+  }
+    
 
 /* =========================================
    EXPERIENCE SECTION
@@ -446,8 +453,12 @@ body.home-page {
     margin: 2vh auto; /* Center the cards */
   }
 
+  .skills-section h1 {
+    margin-bottom: 2vh;
+  }
+
   .grid {
-    grid-template-columns: repeat(9, 1fr); /* 3 items per row on small devices */
+    grid-template-columns: repeat(10, 1fr);
   }
 
   .grid-item {
@@ -474,7 +485,7 @@ body.home-page {
   }
 
   .grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 items per row on small devices */
+    grid-template-columns: repeat(4, 1fr); /* 3 items per row on small devices */
   }
 
   .portfolio-grid,
@@ -505,7 +516,7 @@ body.home-page {
     flex-direction: column;
     gap: 2vh;
     align-items: center; /* Center the cards */
-    margin-top: 25rem;
+    margin-top: 30rem;
     width: 150%;
   }
 
@@ -532,11 +543,12 @@ body.home-page {
   }
 
   .grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 items per row on small devices */
+    grid-template-columns: repeat(2, 1fr); /* 3 items per row on small devices */
   }
 
   .grid-item {
     width: 90%;
+    padding-top: 1vh;
   }
 
   .timeline {
@@ -580,6 +592,10 @@ body.home-page {
   .top-left-buttons .button {
     padding: 0.4rem 0.8rem;
     font-size: 0.7rem;
+  }
+
+  .cards-container {
+    margin-top: 40rem;
   }
 
   .card {
