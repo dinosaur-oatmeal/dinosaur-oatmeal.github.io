@@ -118,7 +118,7 @@ body.home-page {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 30%;
   min-width: 20%;
-  max-width: 30%;
+  max-width: 25%;
   margin-bottom: 2vh;
   display: flex;
   flex-direction: column;
@@ -321,6 +321,7 @@ body.home-page {
   max-width: 600px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
+  font-size: calc(0.5rem + 0.5vw);
 }
 
 .portfolio-item:hover {
