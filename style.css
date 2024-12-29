@@ -329,17 +329,15 @@ body.home-page {
   margin-bottom: 10px;
 }
 
-/* Container for Technology Badges */
 .tech-badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px; /* Space between badges */
-  margin-top: 10px; /* Space above badges */
+  gap: 8px;
+  margin-top: 10px;
 }
 
-/* Adjust Badge Size */
 .tech-badges img {
-  height: 25px; /* Uniform height for all badges */
+  height: 35px;
 }
 
 /* =========================================
