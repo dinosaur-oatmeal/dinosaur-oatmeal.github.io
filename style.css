@@ -238,7 +238,7 @@ body.home-page {
   padding: 20px 3vw;
   margin-left: 5%;
   margin-right: 5%;
-  margin-top: -7vw;
+  margin-top: 8%;
 }
 
 .experience-card {
@@ -471,14 +471,13 @@ body.home-page {
 /* Tablets and Below */
 @media (min-width: 768px) and (max-width: 1200px) {
 
+  .main-container {
+    margin-top: -20%;
+  }
+
   .top-left-buttons .button {
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
-  }
-
-  .cards-container {
-    gap: 1.5rem;
-    margin-top: 3rem;
   }
 
   .card {
@@ -487,11 +486,13 @@ body.home-page {
   }
 
   .grid {
-    grid-template-columns: repeat(4, 1fr); /* 3 items per row on small devices */
+    grid-template-columns: repeat(4, 1fr);
   }
 
+  .cards-container,
   .portfolio-grid,
   .experience-grid {
+    margin-top: 15%;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 
@@ -503,23 +504,24 @@ body.home-page {
 /* Small Tablets and Phones */
 @media (max-width: 768px) {
 
+  .main-container{
+    margin-top: -50%;
+  }
+
   .top-left-buttons {
     left: 50%;
     transform: translateX(-50%);
-    gap: 10px;
   }
   
   .top-left-buttons .button {
-    padding: 0.5rem 1rem; /* Further reduce padding */
-    font-size: 0.8rem;     /* Further reduce font size */
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
   }
 
   .cards-container {
     flex-direction: column;
-    gap: 2vh;
-    align-items: center; /* Center the cards */
-    margin-top: 30rem;
-    width: 150%;
+    width: 200%;
+    grid-template-columns: 1fr;
   }
 
   .card {
@@ -559,7 +561,7 @@ body.home-page {
 
   .experience-grid {
     grid-template-columns: 1fr;
-    margin-top: -8vw;
+    margin-top: 20%;
   }
 
   .portfolio-grid {
@@ -618,5 +620,9 @@ body.home-page {
 
   .gallery-container {
     grid-template-columns: 1fr;
+  }
+  
+  .tech-badges img {
+    height: 25px;
   }
 }
