@@ -329,6 +329,25 @@ body.home-page {
   margin-bottom: 10px;
 }
 
+.website-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #2c2c2c;
+  background-color: #ffd700;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.website-button:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05); /* Slightly increase size */
+}
+
 .tech-badges {
   display: flex;
   flex-wrap: wrap;
@@ -525,7 +544,7 @@ body.home-page {
   }
 
   .card {
-    width: 80%;
+    width: 200%;
     margin: 2vh auto; /* Center the cards */
   }
 
