@@ -523,10 +523,6 @@ body.home-page {
 /* Small Tablets and Phones */
 @media (max-width: 768px) {
 
-  .main-container{
-    margin-top: -50%;
-  }
-
   .top-left-buttons {
     left: 50%;
     transform: translateX(-50%);
@@ -538,6 +534,7 @@ body.home-page {
   }
 
   .cards-container {
+    margin-top: 200px;
     flex-direction: column;
     width: 200%;
     grid-template-columns: 1fr;
@@ -618,7 +615,7 @@ body.home-page {
   }
 
   .cards-container {
-    margin-top: 40rem;
+    margin-top: 20rem;
   }
 
   .card {
