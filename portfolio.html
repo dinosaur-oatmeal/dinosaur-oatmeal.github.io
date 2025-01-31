@@ -153,9 +153,10 @@
           <h3>Facial PCA Reconstruction in Python</h3>
         </a>
         <p>
-          - Implemented Principal Component Analysis (PCA) to reduce a dataset containing 400 face images, achieving <b>61% reduction in storage</b><br><br>
-          - Reconstructed facial images with <b>150 principal components</b>, retaining <b>98% visual similarity</b> to the original data despite compression<br><br>
-          - Designed visualizations for mean face, eigenfaces, and reconstructed images, effectively communicating primary steps in PCA<br><br>
+          - Achieved a <b>61% reduction in storage</b> by reducing the origianl 10,304-dimensional image vectors to 150 principal components<br><br>
+          - Implemented PCA by computing the <b>covariance matrix</b> of the dataset, followed by <b>eigenvalue decomposition</b> to identify the top principal components<br><br>
+          - Reconstructed facial images retained <b>98% visual similarity</b> to the original data despite compression, as measured by the Structural Similarity Index (SSIM)<br><br>
+          - Designed visualizations for the mean face, top eigenfaces, and reconstructed images, effectively communicating the primary steps in PCA<br><br>
         </p>
         <div class="tech-badges">
           <img src="https://img.shields.io/badge/Python-%233776AB.svg?style=flat&logo=python&logoColor=ffdd54" alt="Python" title="Python"/>
