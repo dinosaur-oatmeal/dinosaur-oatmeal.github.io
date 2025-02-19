@@ -101,7 +101,6 @@ body.home-page {
   align-items: center;
   gap: 2vw;
   width: 100%;
-  margin-top: -5vh;
   box-sizing: border-box;
 }
 
@@ -138,7 +137,7 @@ body.home-page {
 }
 
 .card h1{
-  font-size: calc(1rem + 0.5vw);
+  font-size: calc(1rem + 0.75vw);
   padding-bottom: 5%;
   color: #ffd700;
 }
@@ -161,71 +160,22 @@ body.home-page {
 }
 
 .testimonials blockquote {
-  font-size: calc(0.75rem + 0.75vw);
+  font-size: calc(0.70rem + 0.70vw);
   font-style: italic;
   color: #f1f1f1;
   margin: 0 auto;
   max-width: 80%;
   line-height: 1.6;
   padding-bottom: 2vh;
+  margin-top: 20%;
 }
 
 .testimonials footer {
   font-size: calc(1rem + 0.5vw);
   color: #ffd700;
-  margin-top: 2vh;
+  margin-top: 1.5vh;
   font-weight: bold;
-}
-
-/* =========================================
-   SKILLS SECTION
-   ========================================= */
-
-   .skills-section {
-    padding: 2vh 5vw;
-    text-align: center;
-    width: 100%;
-  }
-  
-  .skills-section h1 {
-    font-size: calc(1rem + 0.5vw);
-    color: #ffd700;
-    margin-bottom: 1vh;
-  }
-  
-  .grid {
-    display: grid;
-    display: flex;
-    gap: 1vw;
-    justify-content: center;
-    margin: 2vh auto;
-    max-width: 40%;
-    padding: 0;
-  }
-  
-  .grid.dev-environments {
-    display: flex;
-    gap: 1vw;
-    justify-content: center;
-    margin: 2vh auto;
-    padding-left: 2vh;
-    padding-right: 2vh;
-    max-width: 50%;
-  }
-  
-  .grid-item {
-    padding: 0.5vw;
-    color: #ffd700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    font-size: calc(0.8rem + 0.2vw);
-    width: 70%;
-    max-height: 20%;
-    border-radius: 5px;
-  }
-    
+}   
 
 /* =========================================
    EXPERIENCE SECTION
@@ -375,6 +325,7 @@ body.home-page {
 
 .gallery-page .main-container h1 {
   color: #ffd700;
+  align-items: center;
 }
 
 /* Gallery Container */
@@ -597,6 +548,10 @@ body.home-page {
   .gallery-container {
     grid-template-columns: 1fr;
     margin-top: 70px;
+  }
+
+  .gallery-page .main-container h1 {
+    font-size: 1.5rem;
   }
 }
 
