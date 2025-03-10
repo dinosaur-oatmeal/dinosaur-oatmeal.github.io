@@ -442,7 +442,7 @@ body.home-page {
 @media (min-width: 768px) and (max-width: 1200px) {
 
   .main-container {
-    margin-top: -20%;
+    margin-top: 0%;
   }
 
   .top-left-buttons .button {
@@ -473,6 +473,9 @@ body.home-page {
 
 /* Small Tablets and Phones */
 @media (max-width: 768px) {
+  .main-container {
+    margin-top: 30%;
+  }
 
   .top-left-buttons {
     left: 50%;
