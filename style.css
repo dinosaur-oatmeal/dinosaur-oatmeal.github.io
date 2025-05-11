@@ -331,10 +331,10 @@ body.home-page {
 /* Gallery Container */
 .gallery-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1800px;
   margin-top: 50px;
 }
 
@@ -435,6 +435,11 @@ body.home-page {
 
   .grid-item {
     width: 80%;
+  }
+
+  .gallery-container {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
   }
 }
 
