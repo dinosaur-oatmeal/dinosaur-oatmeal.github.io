@@ -44,10 +44,11 @@
           <h3>ASL Hand Sign Detection in Python</h3>
         </a>
         <p>
-          - Created a dataset using OpenCV and MediaPipe containing <b>over 2000 ASL samples</b> and stored with Pandas<br><br>
-          - Trained a neural network model with TensorFlow and Scikit-learn to classify ASL letters, achieving <b>90+% accuracy</b> in detecting ASL letters from live video<br><br>
-          - Incorporated multithreading capabilities to handle ASL predictions, text-to-speech, and continuous video simultaneously<br><br>
-          - Enabled interactive features allowing users to adjust confidence thresholds and utilize text-to-speech to audibly relay accumulated signs upon request<br><br> 
+          - Created a custom dataset of <b>2,000+ labeled ASL hand signs</b> using OpenCV and MediaPipe, captured via webcam and stored with Pandas for model training and analysis.<br><br>
+          - Trained a neural network model using TensorFlow and Scikit-learn to classify ASL letters from live video, reaching <b>90%+ accuracy</b> across multiple sessions and lighting conditions.<br><br>
+          - Implemented a <b>real-time recognition pipeline</b> with multithreading to manage live video, prediction, and text-to-speech playback concurrently.<br><br>
+          - Built an interactive interface that lets users adjust prediction thresholds, toggle feedback modes, and audibly relay accumulated signs using TTS libraries.<br><br>
+          - Designed the system with <b>extensibility in mind</b>, enabling future support for additional gestures, dynamic phrase construction, or camera hardware input.<br><br>
         </p>
         <div class="tech-badges">
           <img src="https://img.shields.io/badge/Python-%233776AB.svg?style=flat&logo=python&logoColor=ffdd54" alt="Python" title="Python"/>
@@ -64,34 +65,17 @@
       </div>
 
       <div class="portfolio-item">
-        <a href="https://github.com/dinosaur-oatmeal/MNIST-Walkthrough" target="_blank" class="portfolio-link">
-          <h3>MNIST Neural Network Walkthrough in Python</h3>
-        </a>
-        <p>
-          - Developed a step-by-step guide to building a feedforward neural network from scratch using Python and NumPy<br><br>
-          - Achieved <b>90+% accuracy</b> on the MNIST dataset, demonstrating effective classification of handwritten digits<br><br>
-          - Demonstrated neural network principles, including <b>forward propagation, gradient descent, and parameter optimization</b><br><br>
-          - Visualized key concepts like weight updates, loss reduction, and performance metrics using Matplotlib<br><br>
-          - Empowered learners with a foundational understanding of neural networks and how to implement them independently<br><br>
-        </p>
-        <div class="tech-badges">
-          <img src="https://img.shields.io/badge/Python-%233776AB.svg?style=flat&logo=python&logoColor=ffdd54" alt="Python" title="Python"/>
-          <img src="https://img.shields.io/badge/NumPy-%23013243.svg?style=flat&logo=numpy&logoColor=white" alt="NumPy" title="NumPy"/>
-          <img src="https://img.shields.io/badge/Matplotlib-%230089F5.svg?style=flat&logo=matplotlib&logoColor=white" alt="Matplotlib" title="Matplotlib"/>
-          <img src="https://img.shields.io/badge/Jupyter-%23F37626.svg?style=flat&logo=jupyter&logoColor=white" alt="Jupyter" title="Jupyter"/>
-        </div>
-      </div>
-
-      <div class="portfolio-item">
         <a href="https://github.com/dinosaur-oatmeal/Sorting-Algorithm-Website" target="_blank" class="portfolio-link">
           <h3>Algorithm Learning Platform in Elm</h3>
         </a>
         <p>
           - <a href="https://dinosaur-oatmeal.github.io/Sorting-Algorithm-Website/" target="_blank" class="website-button">Visit the website here!</a><br><br>
-          - Built a <b>user-friendly educational platform</b> in Elm to visualize algorithms and data structures, aiding students and faculty<br><br>
-          - <b>Actively used by UT-Arlington</b> faculty during and outside lectures to enhance teaching and improve student comprehension<br><br>
-          - Visualized <b>16 different sorting, searching, tree, heap, and graph algorithms</b> using HTML, CSS, and SVG for dynamic, step-by-step rendering<br><br>
-          - Applied functional programming principles like <b>immutability and purity</b> for a clean and modular project structure<br><br>
+          - Built an interactive educational tool in Elm to visualize <b>23 algorithms</b> including sorting, searching, tree traversals, graph search, and heap operations.<br><br>
+          - Platform is <b>actively used by UT-Arlington faculty</b> in CS instruction, both in live lecture demos and self-paced study material.<br><br>
+          - Followed <b>functional programming principles</b> (immutability, pure functions, modularity) to create a maintainable and testable codebase.<br><br>
+          - Designed the UI for clarity and accessibility, with controls to pause, reset, and inspect each stage of algorithm execution.<br><br>
+          - Used <b>SVG rendering and custom animations</b> to present each algorithm step-by-step.<br><br>
+          - Built entirely with HTML, CSS, Elm, and SVG—no JavaScript—demonstrating Elm's power in pure functional web development.<br><br>
         </p>
         <div class="tech-badges">
           <img src="https://img.shields.io/badge/Elm-%23060F8F.svg?style=flat&logo=elm&logoColor=white" alt="Elm" title="Elm"/>
@@ -101,6 +85,52 @@
           <img src="https://img.shields.io/badge/CSS-%231572B6.svg?style=flat&logo=css3&logoColor=white" alt="CSS" title="CSS"/>
           <img src="https://img.shields.io/badge/GitHub%20Pages-%23121011.svg?style=flat&logo=github&logoColor=white" alt="GitHub Pages" title="GitHub Pages"/>
           <img src="https://img.shields.io/badge/VS%20Code-%23007ACC.svg?style=flat&logo=visual-studio-code&logoColor=white" alt="VSCode"/>
+        </div>
+      </div>
+
+      <div class="portfolio-item">
+        <a href="https://github.com/dinosaur-oatmeal/Queens-Game" target="_blank" class="portfolio-link">
+          <h3>Queen's Puzzle Game</h3>
+        </a>
+        <p>
+          - <a href="https://games.willmaberry.com/" target="_blank" class="website-button">Visit the website here!</a><br><br>
+          - Designed and implemented a <b>web-based puzzle game</b> where players must place queens on a colored, region-based board so that no two queens attack one other<br><br>
+          - Created a <b>unique board generation algorithm</b> with a flood-fill technique, ensuring exactly one solution per puzzle<br><br>
+          - Developed an interactive <b>SVG-based UI</b> using JavaScript to support queen placement, note-taking, save states, difficulty leveling, and more<br><br>
+          - Built with <b>FastAPI and Pydantic</b> to serve dynamic puzzle data and validate all user inputs, leading to robust and secure API handling<br><br>
+          - Utilized <b>Postman</b> to test and document API functionality; implemented <b>rate limiting</b> to protect endpoints from abuse and ensure consistent performance under load<br><br>
+          - Fully containerized for deployment with a self-contained <b>Docker setup</b> that runs both the front-end and back-end locally or remotely
+        </p>
+        <div class="tech-badges">
+          <img src="https://img.shields.io/badge/Python-%233776AB.svg?style=flat&logo=python&logoColor=ffdd54" alt="Python" title="Python"/>
+          <img src="https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=flat&logo=javascript&logoColor=black" alt="JavaScript" title="JavaScript"/>
+          <img src="https://img.shields.io/badge/FastAPI-%23009688.svg?style=flat&logo=fastapi&logoColor=white" alt="FastAPI" title="FastAPI"/>
+          <img src="https://img.shields.io/badge/Pydantic-%23007EC6.svg?style=flat&logo=pydantic&logoColor=white" alt="Pydantic" title="Pydantic"/>
+          <img src="https://img.shields.io/badge/HTML5-%23E34F26.svg?style=flat&logo=html5&logoColor=white" alt="HTML" title="HTML"/>
+          <img src="https://img.shields.io/badge/CSS3-%231572B6.svg?style=flat&logo=css3&logoColor=white" alt="CSS" title="CSS"/>
+          <img src="https://img.shields.io/badge/SVG-%23FFB13B.svg?style=flat&logo=svg&logoColor=white" alt="SVG"/>
+          <img src="https://img.shields.io/badge/Postman-%23FF6C37.svg?style=flat&logo=postman&logoColor=white" alt="Postman" title="Postman"/>
+          <img src="https://img.shields.io/badge/Docker-%232496ED.svg?style=flat&logo=docker&logoColor=white" alt="Docker" title="Docker"/>
+          <img src="https://img.shields.io/badge/VS%20Code-%23007ACC.svg?style=flat&logo=visual-studio-code&logoColor=white" alt="VSCode" title="VSCode"/>
+        </div>
+      </div>
+
+      <div class="portfolio-item">
+        <a href="https://github.com/dinosaur-oatmeal/MNIST-Walkthrough" target="_blank" class="portfolio-link">
+          <h3>MNIST Neural Network Walkthrough in Python</h3>
+        </a>
+        <p>
+          - Built a detailed walkthrough for creating a <b>feedforward neural network from scratch</b> using only Python and NumPy, with no external ML libraries.<br><br>
+          - Trained the network on the <b>MNIST handwritten digits dataset</b>, achieving <b>95%+ classification accuracy</b> through careful tuning and optimization.<br><br>
+          - Explained core concepts like <b>forward propagation, backpropagation, gradient descent, loss minimization</b>, and activation functions in an accessible, code-first format.<br><br>
+          - Included <b>visualizations with Matplotlib</b> to illustrate learning progress, including weight evolution, loss curves, and accuracy over epochs.<br><br>
+          - Designed as a beginner-friendly resource to demystify neural networks and help others understand and implement them without high-level frameworks.<br><br>
+        </p>
+        <div class="tech-badges">
+          <img src="https://img.shields.io/badge/Python-%233776AB.svg?style=flat&logo=python&logoColor=ffdd54" alt="Python" title="Python"/>
+          <img src="https://img.shields.io/badge/NumPy-%23013243.svg?style=flat&logo=numpy&logoColor=white" alt="NumPy" title="NumPy"/>
+          <img src="https://img.shields.io/badge/Matplotlib-%230089F5.svg?style=flat&logo=matplotlib&logoColor=white" alt="Matplotlib" title="Matplotlib"/>
+          <img src="https://img.shields.io/badge/Jupyter-%23F37626.svg?style=flat&logo=jupyter&logoColor=white" alt="Jupyter" title="Jupyter"/>
         </div>
       </div>
 
@@ -127,33 +157,6 @@
           <img src="https://img.shields.io/badge/Docker-%232496ED.svg?style=flat&logo=docker&logoColor=white" alt="Docker" title="Docker"/>
           <img src="https://img.shields.io/badge/Postman-%23FF6C37.svg?style=flat&logo=postman&logoColor=white" alt="Postman" title="Postman"/>
           <img src="https://img.shields.io/badge/LaTeX-%23008080.svg?style=flat&logo=latex&logoColor=white" style="height: 30px;" alt="LaTeX"/>
-          <img src="https://img.shields.io/badge/VS%20Code-%23007ACC.svg?style=flat&logo=visual-studio-code&logoColor=white" alt="VSCode" title="VSCode"/>
-        </div>
-      </div>
-      
-      <div class="portfolio-item">
-        <a href="https://github.com/dinosaur-oatmeal/Queens-Game" target="_blank" class="portfolio-link">
-          <h3>Queen's Puzzle Game</h3>
-        </a>
-        <p>
-          - <a href="https://games.willmaberry.com/" target="_blank" class="website-button">Visit the website here!</a><br><br>
-          - Designed and implemented a <b>web-based puzzle game</b> where players must place queens on a colored, region-based board so that no two queens attack one other<br><br>
-          - Created a <b>unique board generation algorithm</b> with a flood-fill technique, ensuring exactly one solution per puzzle<br><br>
-          - Developed an interactive <b>SVG-based UI</b> using JavaScript to support queen placement, note-taking, save states, difficulty leveling, and more<br><br>
-          - Built with <b>FastAPI and Pydantic</b> to serve dynamic puzzle data and validate all user inputs, leading to robust and secure API handling<br><br>
-          - Utilized <b>Postman</b> to test and document API functionality; implemented <b>rate limiting</b> to protect endpoints from abuse and ensure consistent performance under load<br><br>
-          - Fully containerized for deployment with a self-contained <b>Docker setup</b> that runs both the front-end and back-end locally or remotely
-        </p>
-        <div class="tech-badges">
-          <img src="https://img.shields.io/badge/Python-%233776AB.svg?style=flat&logo=python&logoColor=ffdd54" alt="Python" title="Python"/>
-          <img src="https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=flat&logo=javascript&logoColor=black" alt="JavaScript" title="JavaScript"/>
-          <img src="https://img.shields.io/badge/FastAPI-%23009688.svg?style=flat&logo=fastapi&logoColor=white" alt="FastAPI" title="FastAPI"/>
-          <img src="https://img.shields.io/badge/Pydantic-%23007EC6.svg?style=flat&logo=pydantic&logoColor=white" alt="Pydantic" title="Pydantic"/>
-          <img src="https://img.shields.io/badge/HTML5-%23E34F26.svg?style=flat&logo=html5&logoColor=white" alt="HTML" title="HTML"/>
-          <img src="https://img.shields.io/badge/CSS3-%231572B6.svg?style=flat&logo=css3&logoColor=white" alt="CSS" title="CSS"/>
-          <img src="https://img.shields.io/badge/SVG-%23FFB13B.svg?style=flat&logo=svg&logoColor=white" alt="SVG"/>
-          <img src="https://img.shields.io/badge/Postman-%23FF6C37.svg?style=flat&logo=postman&logoColor=white" alt="Postman" title="Postman"/>
-          <img src="https://img.shields.io/badge/Docker-%232496ED.svg?style=flat&logo=docker&logoColor=white" alt="Docker" title="Docker"/>
           <img src="https://img.shields.io/badge/VS%20Code-%23007ACC.svg?style=flat&logo=visual-studio-code&logoColor=white" alt="VSCode" title="VSCode"/>
         </div>
       </div>
