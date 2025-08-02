@@ -44,11 +44,11 @@
           <h3>ASL Hand Sign Detection in Python</h3>
         </a>
         <p>
-          - Created a custom dataset of <b>2,000+ labeled ASL hand signs</b> using OpenCV and MediaPipe, captured via webcam and stored with Pandas for model training and analysis.<br><br>
-          - Trained a neural network model using TensorFlow and Scikit-learn to classify ASL letters from live video, reaching <b>90%+ accuracy</b> across multiple sessions and lighting conditions.<br><br>
-          - Implemented a <b>real-time recognition pipeline</b> with multithreading to manage live video, prediction, and text-to-speech playback concurrently.<br><br>
-          - Built an interactive interface that lets users adjust prediction thresholds, toggle feedback modes, and audibly relay accumulated signs using TTS libraries.<br><br>
-          - Designed the system with <b>extensibility in mind</b>, enabling future support for additional gestures, dynamic phrase construction, or camera hardware input.<br><br>
+          - Created a custom dataset of <b>2,000+ labeled ASL hand signs</b> using OpenCV and MediaPipe, capturing 100-frame batches via webcam with real-time hand tracking and automatic CSV logging for training.<br><br>
+          - Trained a neural network on MediaPipe keypoints using TensorFlow and Scikit-learn, achieving <b>90%+ accuracy</b> across test sets and real-world validation under varied lighting and pose conditions.<br><br>
+          - Developed a <b>real-time recognition pipeline</b> that loads the saved model and predicts live hand signs only when the hand's motion stabilizes, reducing noisy predictions and boosting reliability.<br><br>
+          - Integrated a user-facing buffer system: <b>recognized signs accumulate in memory</b> and can be spoken aloud using text-to-speech via spacebar input on a separate thread.<br><br>
+          - Built a dynamic interface for users to <b>adjust model confidence thresholds in real-time</b>, enabling usability even with lower-certainty gestures or partial signing.<br><br>
         </p>
         <div class="tech-badges">
           <img src="https://img.shields.io/badge/Python-%233776AB.svg?style=flat&logo=python&logoColor=ffdd54" alt="Python" title="Python"/>
@@ -70,12 +70,12 @@
         </a>
         <p>
           - <a href="https://www.willmaberry.com/Algorithms-And-Data-Structures/" target="_blank" class="website-button">Visit the website here!</a><br><br>
-          - Built an interactive educational tool in Elm to visualize <b>23 algorithms</b> including sorting, searching, tree traversals, graph search, and heap operations.<br><br>
+          - Developed an interactive educational tool in Elm to visualize <b>23 algorithms</b> including sorting, searching, tree traversals, graph search, and heap operations.<br><br>
           - Platform is <b>actively used by UT-Arlington faculty</b> in CS instruction, both in live lecture demos and self-paced study material.<br><br>
-          - Followed <b>functional programming principles</b> (immutability, pure functions, modularity) to create a maintainable and testable codebase.<br><br>
-          - Designed the UI for clarity and accessibility, with controls to pause, reset, and inspect each stage of algorithm execution.<br><br>
+          - Leveraged <b>functional programming principles</b> (immutability, pure functions, modularity, etc.) to create a maintainable and testable codebase.<br><br>
+          - Designed the UI for clarity and accessibility, with intuitive controls to pause, reset, and inspect each stage of algorithm execution.<br><br>
           - Used <b>SVG rendering and custom animations</b> to present each algorithm step-by-step.<br><br>
-          - Built entirely with HTML, CSS, Elm, and SVG—no JavaScript—demonstrating Elm's power in pure functional web development.<br><br>
+          - Built entirely with Elm, HTML, CSS, and SVG (no JavaScript), demonstrating Elm's power in functional web development.<br><br>
         </p>
         <div class="tech-badges">
           <img src="https://img.shields.io/badge/Elm-%23060F8F.svg?style=flat&logo=elm&logoColor=white" alt="Elm" title="Elm"/>
@@ -94,12 +94,12 @@
         </a>
         <p>
           - <a href="https://games.willmaberry.com/" target="_blank" class="website-button">Visit the website here!</a><br><br>
-          - Designed and implemented a <b>web-based puzzle game</b> where players must place queens on a colored, region-based board so that no two queens attack one other<br><br>
-          - Created a <b>unique board generation algorithm</b> with a flood-fill technique, ensuring exactly one solution per puzzle<br><br>
-          - Developed an interactive <b>SVG-based UI</b> using JavaScript to support queen placement, note-taking, save states, difficulty leveling, and more<br><br>
-          - Built with <b>FastAPI and Pydantic</b> to serve dynamic puzzle data and validate all user inputs, leading to robust and secure API handling<br><br>
-          - Utilized <b>Postman</b> to test and document API functionality; implemented <b>rate limiting</b> to protect endpoints from abuse and ensure consistent performance under load<br><br>
-          - Fully containerized for deployment with a self-contained <b>Docker setup</b> that runs both the front-end and back-end locally or remotely
+          - Designed and implemented a <b>web-based puzzle game</b> where players must place queens on a colored, region-based board so that no two queens attack one other.<br><br>
+          - Created a <b>bespoke board generation algorithm</b> with a custon flood-fill technique, ensuring exactly one solution per puzzle.<br><br>
+          - Developed an interactive <b>SVG-based UI</b> using JavaScript to support queen placement, note-taking, save states, difficulty leveling, and more.<br><br>
+          - Built with <b>FastAPI and Pydantic</b> to serve dynamic puzzle data and validate all user inputs, leading to robust and secure API handling.<br><br>
+          - Employed <b>Postman</b> to test and document API functionality; implemented <b>rate limiting</b> to protect endpoints from abuse and ensure consistent performance under load.<br><br>
+          - Runs as a <b>Dockerized full-stack web service on Koyeb</b>, with automatic redeployment triggered on every GitHub push through CI/CD integration.<br><br>
         </p>
         <div class="tech-badges">
           <img src="https://img.shields.io/badge/Python-%233776AB.svg?style=flat&logo=python&logoColor=ffdd54" alt="Python" title="Python"/>
@@ -110,6 +110,7 @@
           <img src="https://img.shields.io/badge/CSS3-%231572B6.svg?style=flat&logo=css3&logoColor=white" alt="CSS" title="CSS"/>
           <img src="https://img.shields.io/badge/SVG-%23FFB13B.svg?style=flat&logo=svg&logoColor=white" alt="SVG"/>
           <img src="https://img.shields.io/badge/Postman-%23FF6C37.svg?style=flat&logo=postman&logoColor=white" alt="Postman" title="Postman"/>
+          <img src="https://img.shields.io/badge/Koyeb-%230050a4.svg?style=flat&logo=koyeb&logoColor=white" alt="Koyeb" title="Koyeb"/>
           <img src="https://img.shields.io/badge/Docker-%232496ED.svg?style=flat&logo=docker&logoColor=white" alt="Docker" title="Docker"/>
           <img src="https://img.shields.io/badge/VS%20Code-%23007ACC.svg?style=flat&logo=visual-studio-code&logoColor=white" alt="VSCode" title="VSCode"/>
         </div>
@@ -120,11 +121,11 @@
           <h3>MNIST Neural Network Walkthrough in Python</h3>
         </a>
         <p>
-          - Built a detailed walkthrough for creating a <b>feedforward neural network from scratch</b> using only Python and NumPy, with no external ML libraries.<br><br>
-          - Trained the network on the <b>MNIST handwritten digits dataset</b>, achieving <b>95%+ classification accuracy</b> through careful tuning and optimization.<br><br>
-          - Explained core concepts like <b>forward propagation, backpropagation, gradient descent, loss minimization</b>, and activation functions in an accessible, code-first format.<br><br>
-          - Included <b>visualizations with Matplotlib</b> to illustrate learning progress, including weight evolution, loss curves, and accuracy over epochs.<br><br>
-          - Designed as a beginner-friendly resource to demystify neural networks and help others understand and implement them without high-level frameworks.<br><br>
+          - Built a step-by-step walkthrough for implementing a <b>feedforward neural network from scratch</b> using Python and NumPy, without relying on high-level ML libraries or frameworks.<br><br>
+          - Trained the network on the <b>MNIST handwritten digits dataset</b>, achieving <b>95%+ classification accuracy</b> through custom architecture design, careful weight initialization, and manual hyperparameter tuning.<br><br>
+          - Explained the full learning pipeline in a <b>code-first, math-supported format</b> that covers <b>forward propagation, backpropagation, gradient descent</b>, activation functions, and loss minimization in detail.<br><br>
+          - Included <b>Matplotlib visualizations</b> of the training process, showing loss curves, weight evolution, and accuracy improvements across epochs to provide insight into model behavior.<br><br>
+          - Designed the project as a <b>beginner-friendly learning resource</b> for students and developers interested in demystifying how neural networks work beneath the surface.
         </p>
         <div class="tech-badges">
           <img src="https://img.shields.io/badge/Python-%233776AB.svg?style=flat&logo=python&logoColor=ffdd54" alt="Python" title="Python"/>
@@ -139,12 +140,12 @@
           <h3>Secure Phonebook REST API</h3>
         </a>
         <p>
-          - Developed a <b>security-focused REST API</b> to manage a phonebook database, featuring rigorous input validation for names and international phone numbers using regular expressions<br><br>
-          - Built with <b>FastAPI, SQLite, and SQLAlchemy</b>, utilizing parameterized queries to protect against SQL injection attacks<br><br>
-          - Implemented <b>JWT-based authentication and role-based authorization</b> (read vs. read/write) with token expiration control<br><br>
-          - Created a persistent <b>audit log system</b> that timestamps and tracks every user action in rolling `.csv` files for scalability and compliance<br><br>
-          - Deployed in a self-contained Docker container with mounted volumes for data and logs; fully testable via an <b>automated Postman collection</b><br><br>
-          - GitHub repository kept private to maintain the integrity of the class project
+          - Developed a <b>security-focused REST API</b> to manage a phonebook database, featuring rigorous input validation for names and international phone numbers using regular expressions.<br><br>
+          - Built with <b>FastAPI, SQLite, and SQLAlchemy</b>, utilizing parameterized queries to protect against SQL injection attacks.<br><br>
+          - Implemented <b>JWT-based authentication and role-based authorization</b> (read vs. read/write) with token expiration control.<br><br>
+          - Created a persistent <b>audit log system</b> that timestamps and tracks every user action in rolling `.csv` files for scalability and compliance.<br><br>
+          - Deployed in a self-contained Docker container with mounted volumes for data and logs; fully testable via an <b>automated Postman collection.</b><br><br>
+          - GitHub repository kept private to maintain the integrity of the class project.
         </p>
         <div class="tech-badges">
           <img src="https://img.shields.io/badge/Python-%233776AB.svg?style=flat&logo=python&logoColor=ffdd54" alt="Python" title="Python"/>
@@ -166,12 +167,12 @@
           <h3>Simple Programming Lanuage (SPL) Compiler</h3>
         </a>
         <p>
-          - Built a compiler for the <b>SPL (Simple Programming Language)</b> using Scala, CUP (parser generator), and JFlex (lexer)<br><br>
-          - Implemented a full pipeline: <b>lexical analysis, recursive-descent parsing, type checking, and intermediate code generation</b><br><br>
-          - Developed robust input validation rules from a formal grammar and integrated detailed error diagnostics<br><br>
-          - Included a full <b>symbol table with scope tracking and function call semantics</b> for nested procedures and recursion<br><br>
-          - Generated <b>IR code (intermediate representation)</b> with frame pointer management, memory allocation, static links, and control flow translation<br><br>
-          - GitHub repository kept private to maintain the integrity of the class project
+          - Built a compiler for the <b>SPL (Simple Programming Language)</b> using Scala, CUP (parser generator), and JFlex (lexer).<br><br>
+          - Implemented a full pipeline: <b>lexical analysis, recursive-descent parsing, type checking, and intermediate code generation.</b><br><br>
+          - Developed robust input validation rules from a formal grammar and integrated detailed error diagnostics.<br><br>
+          - Included a full <b>symbol table with scope tracking and function call semantics</b> for nested procedures and recursion.<br><br>
+          - Generated <b>IR code (intermediate representation)</b> with frame pointer management, memory allocation, static links, and control flow translation.<br><br>
+          - GitHub repository kept private to maintain the integrity of the class project.
         </p>
         <div class="tech-badges">
           <img src="https://img.shields.io/badge/Scala-%23DC322F.svg?style=flat&logo=scala&logoColor=white" alt="Scala" title="Scala"/>
@@ -190,11 +191,11 @@
           <h3>Real-time Multiplayer Word Game in Java</h3>
         </a>
         <p>
-          - Managed Java WebSocket connections and JSON strings to <b>facilitate real-time, 2-4 player</b> word search games<br><br>
-          - Authored comprehensive JUnit test suties to automate verification of game logic via JUnit and Github Actions<br><br>
-          - Mapped out detailed project requirements using Excel and designed system architecture with UML diagrams<br><br>
-          - Developed responsive front-end interfaces in HTML & CSS, seamlessly integrated with a WebSocket-powered back end<br><br>
-          - Utilized Maven for project management, developed the codebase using VS Code, and deployed the game on an online server<br><br>
+          - Managed Java WebSocket connections and JSON strings to <b>facilitate real-time, 2-4 player</b> word search games.<br><br>
+          - Authored comprehensive JUnit test suties to automate verification of game logic via <b>JUnit and Github Actions</b>.<br><br>
+          - Mapped out detailed project requirements using Excel and designed system architecture with UML diagrams.<br><br>
+          - Developed responsive front-end interfaces in HTML & CSS, seamlessly integrated with a <b>WebSocket-powered back-end</b>.<br><br>
+          - Utilized <b>Maven for project management</b>, developed the codebase using VS Code, and deployed the game on an online server.<br><br>
         </p>
         <div class="tech-badges">
           <img src="https://img.shields.io/badge/Java-%23ED8B00.svg?style=flat&logo=openjdk&logoColor=white" alt="Java"/>
@@ -211,14 +212,35 @@
       </div>
 
       <div class="portfolio-item">
+        <a href="https://github.com/dinosaur-oatmeal/DinoGPT" target="_blank" class="portfolio-link">
+          <h3>DinoGPT - Discord Bot</h3>
+        </a>
+        <p>
+          - Built a multipurpose Discord bot tailored for <b>ACM @ UT Arlington</b> (1400+ member server) using OpenAI's GPT-4.1, GPT-01-mini, DALL·E 2, and the Discord API.<br><br>
+          - Offers real-time Q&A, AI image generation, and <b>campus-specific academic resource navigation.</b><br><br>
+          - Integrates slash-commands (<code>/resources</code>, <code>/ask</code>, <code>/draw</code>, etc.) with persistent context support to streamline user interactions.<br><br>
+          - Deployed via <b>Heroku using worker dynos and a GitHub-powered CI/CD pipeline</b>; managed all secrets through encrypted config vars.<br><br>
+          - Added security by restricting bot responses to authorized servers only and blocking all direct-message interactions to prevent unauthorized usage.<br><br>
+        </p>
+        <div class="tech-badges">
+          <img src="https://img.shields.io/badge/Python-%233776AB.svg?style=flat&logo=python&logoColor=ffdd54" alt="Python" title="Python"/>
+          <img src="https://img.shields.io/badge/Discord.py-%237289DA.svg?style=flat&logo=discord&logoColor=white" alt="Discord.py" title="Discord.py"/>
+          <img src="https://img.shields.io/badge/OpenAI-API-%231A1A1A.svg?style=flat&logo=openai&logoColor=white" alt="OpenAI" title="OpenAI"/>
+          <img src="https://img.shields.io/badge/Dotenv-%2300C7B7.svg?style=flat&logo=dotenv&logoColor=white" alt="Dotenv" title="Dotenv"/>
+          <img src="https://img.shields.io/badge/Heroku-%23430098.svg?style=flat&logo=heroku&logoColor=white" alt="Heroku" title="Heroku"/>
+          <img src="https://img.shields.io/badge/VS%20Code-%23007ACC.svg?style=flat&logo=visual-studio-code&logoColor=white" alt="VSCode" title="VSCode"/>
+        </div>
+      </div> 
+
+      <div class="portfolio-item">
         <a href="https://github.com/dinosaur-oatmeal/Facial-Recognition-and-Reconstruction" target="_blank" class="portfolio-link">
           <h3>Facial PCA Reconstruction in Python</h3>
         </a>
         <p>
-          - Achieved a <b>61% reduction in storage</b> by reducing the origianl 10,304-dimensional image vectors to 150 principal components<br><br>
-          - Implemented PCA by computing the <b>covariance matrix</b> of the dataset, followed by <b>eigenvalue decomposition</b> to identify the top principal components<br><br>
-          - Reconstructed facial images retained <b>98% visual similarity</b> to the original data despite compression, as measured by the Structural Similarity Index (SSIM)<br><br>
-          - Designed visualizations for the mean face, top eigenfaces, and reconstructed images, effectively communicating the primary steps in PCA<br><br>
+          - Achieved a <b>61% reduction in storage</b> by reducing the original 10,304-dimensional image vectors to 150 principal components.<br><br>
+          - Implemented PCA by computing the <b>covariance matrix</b> of the dataset, followed by <b>eigenvalue decomposition</b> to identify top principal components.<br><br>
+          - Reconstructed facial images retained <b>98% visual similarity</b> to the original data despite compression, as measured by the Structural Similarity Index (SSIM).<br><br>
+          - Designed visualizations for the mean face, top eigenfaces, and reconstructed images, effectively communicating the primary steps in PCA.<br><br>
         </p>
         <div class="tech-badges">
           <img src="https://img.shields.io/badge/Python-%233776AB.svg?style=flat&logo=python&logoColor=ffdd54" alt="Python" title="Python"/>
@@ -229,35 +251,14 @@
       </div> 
 
       <div class="portfolio-item">
-        <a href="https://github.com/dinosaur-oatmeal/DinoGPT" target="_blank" class="portfolio-link">
-          <h3>DinoGPT - Discord Bot</h3>
-        </a>
-        <p>
-          - Built a multipurpose Discord bot tailored for <b>ACM @ UT Arlington</b> (1400+ member server) using OpenAI's GPT-4.1 and the Discord API<br><br>
-          - Offers real-time Q&A, AI image generation, and <b>campus-specific academic resource navigation</b><br><br>
-          - Integrates slash-commands (<code>/resources</code>, <code>/ask</code>, <code>/draw</code>, etc.) with persistent context support to streamline user interactions<br><br>
-          - Deployed via Heroku using worker dynos and a GitHub-powered CI/CD pipeline; managed all secrets through encrypted config vars<br><br>
-          - Added security by restricting bot responses to authorized servers only and blocking all direct-message interactions to prevent unauthorized usage<br><br>
-        </p>
-        <div class="tech-badges">
-          <img src="https://img.shields.io/badge/Python-%233776AB.svg?style=flat&logo=python&logoColor=ffdd54" alt="Python" title="Python"/>
-          <img src="https://img.shields.io/badge/Discord.py-%237289DA.svg?style=flat&logo=discord&logoColor=white" alt="Discord.py" title="Discord.py"/>
-          <img src="https://img.shields.io/badge/OpenAI-API-%231A1A1A.svg?style=flat&logo=openai&logoColor=white" alt="OpenAI" title="OpenAI"/>
-          <img src="https://img.shields.io/badge/Heroku-%23430098.svg?style=flat&logo=heroku&logoColor=white" alt="Heroku" title="Heroku"/>
-          <img src="https://img.shields.io/badge/Dotenv-%2300C7B7.svg?style=flat&logo=dotenv&logoColor=white" alt="Dotenv" title="Dotenv"/>
-          <img src="https://img.shields.io/badge/VS%20Code-%23007ACC.svg?style=flat&logo=visual-studio-code&logoColor=white" alt="VSCode" title="VSCode"/>
-        </div>
-      </div> 
-
-      <div class="portfolio-item">
         <a href="https://github.com/dinosaur-oatmeal/To-do-List-Calendar" target="_blank" class="portfolio-link">
           <h3>To-Do List Application with Calendar Integration</h3>
         </a>
         <p>
-          - Designed a user-friendly to-do list application with a built-in calendar view for task organization and scheduling<br><br>
-          - Developed a FastAPI backend for managing tasks with a MongoDB database, supporting <b>CRUD operations</b><br><br>
-          - Integrated dynamic calendar rendering with automatic month navigation and date-specific task filtering<br><br>
-          - Containerized the entire application using Docker for <b>seamless deployment across multiple environments</b><br><br>
+          - Designed a user-friendly to-do list application with a built-in calendar view for task organization and scheduling.<br><br>
+          - Developed a FastAPI backend for managing tasks with a MongoDB database, supporting <b>CRUD operations.</b><br><br>
+          - Integrated dynamic calendar rendering with automatic month navigation and date-specific task filtering.<br><br>
+          - Containerized the entire application using Docker for <b>seamless deployment across multiple environments.</b><br><br>
         </p>
         <div class="tech-badges">
           <img src="https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=flat&logo=javascript&logoColor=black" alt="JavaScript" title="JavaScript"/>
@@ -276,10 +277,10 @@
           <h3>Custom Malloc Implementation in C</h3>
         </a>
         <p>
-          - Engineered custom malloc and free implementations using <b>four different allocation algorithms</b><br><br>
-          - Integrated advanced memory management techniques, including splitting and coalescing blocks, to efficiently handle variable-sized memory requests and minimize fragmentation<br><br>
-          - Benchmarked allocation algorithms, comparing performance against the standard system malloc to evaluate efficiency and <b>charted results</b><br><br>
-          - Employed debugging tools like GDB to troubleshoot memory leaks and ensure stability during extensive use cases<br><br>
+          - Engineered custom malloc and free implementations using <b>four different allocation algorithms</b>.<br><br>
+          - Integrated advanced memory management techniques, including splitting and coalescing blocks, efficiently handling variable-sized memory requests and minimize fragmentation.<br><br>
+          - Benchmarked allocation algorithms, comparing performance against the standard system malloc to evaluate efficiency and <b>charted results</b>.<br><br>
+          - Employed debugging tools like GDB to troubleshoot memory leaks and ensure stability during extensive use cases.<br><br>
         </p>
         <div class="tech-badges">
           <img src="https://img.shields.io/badge/C-%2300599C.svg?style=flat&logo=c&logoColor=white" alt="C" title="C"/>
@@ -297,11 +298,11 @@
           <h3>File Compression and Encryption in C</h3>
         </a>
         <p>
-          - Developed a file compression tool using <b>Huffman coding</b>, achieving efficient, lossless reduction in file sizes<br><br>
-          - Programmed an XOR-based encryption system with user-defined keys for securing files<br><br>
-          - Assembled algorithms and data structures, including <b>min heaps, binary trees, and dynamic arrays</b><br><br>
-          - Automated file naming with suffixes for clarity and ease of use<br><br>
-          - Ensured robust memory management to maintain program stability and prevent memory leaks<br><br>
+          - Developed a file compression tool using <b>Huffman coding</b>, achieving efficient, lossless reduction in file sizes.<br><br>
+          - Programmed an XOR-based encryption system with user-defined keys for securing files.<br><br>
+          - Assembled algorithms and data structures, including <b>min heaps, binary trees, and dynamic arrays.</b><br><br>
+          - Automated file naming with suffixes for clarity and ease of use.<br><br>
+          - Ensured robust memory management to maintain program stability and prevent memory leaks.<br><br>
         </p>
         <div class="tech-badges">
           <img src="https://img.shields.io/badge/C-%2300599C.svg?style=flat&logo=c&logoColor=white" alt="C" title="C"/>
@@ -317,10 +318,10 @@
           <h3>Family Tree Tracker in Python</h3>
         </a>
         <p>
-          - Created an interactive family tree visualization with a scalable and pannable canvas, intuitively allowing users to explore large family trees<br><br>
-          - Integrated an SQLite database for efficient data storage, ensuring seamless retrieval and persistence of family member details and their relationships<br><br>
-          - Designed a comprehensive graphical user interface (GUI) using Tkinter to manage and visualize familial relationships<br><br>
-          - Leveraged data structures like <b>dictionaries and lists</b> to efficiently manage the hierarchy of family members and their interconnections<br><br>
+          - Created an interactive family tree visualization with a scalable and pannable canvas, intuitively allowing users to explore large family trees.<br><br>
+          - Integrated an SQLite database for efficient data storage, ensuring seamless retrieval and persistence of family member details and their relationships.<br><br>
+          - Designed a comprehensive graphical user interface (GUI) using Tkinter to manage and visualize familial relationships.<br><br>
+          - Leveraged data structures like <b>dictionaries and lists</b> to efficiently manage the hierarchy of family members and their interconnections.<br><br>
         </p>
         <div class="tech-badges">
           <img src="https://img.shields.io/badge/Python-%233776AB.svg?style=flat&logo=python&logoColor=ffdd54" alt="Python"/>
@@ -335,9 +336,9 @@
           <h3>Custom Shell Implementation in C</h3>
         </a>
         <p>
-          - Deployed a custom Ubuntu shell, enabling <b>command-line interface operations</b>, including command execution and redirection<br><br>
-          - Designed a built-in command interpreter to handle essential shell commands such as `cd` and `exit`, improving usability and system control<br><br>
-          - Utilized low-level system calls like `fork()`, `exec()`, and `wait()` to create a functional, multi-process environment within the shell<br><br>
+          - Deployed a custom Ubuntu shell, enabling <b>command-line interface operations</b>, including command execution and redirection.<br><br>
+          - Designed a built-in command interpreter to handle essential shell commands such as <code>cd</code> and <code>exit</code>, improving usability and system control.<br><br>
+          - Utilized low-level system calls like <code>fork()</code>, <code>exec()</code>, and <code>wait()</code> to create a functional, multi-process environment within the shell.<br><br>
         </p>
         <div class="tech-badges">
           <img src="https://img.shields.io/badge/C-%2300599C.svg?style=flat&logo=c&logoColor=white" alt="C" title="C"/>
@@ -355,10 +356,10 @@
           <h3>Personal Website in HTML and CSS</h3>
         </a>
         <p>
-          - Created a multi-page website using HTML, CSS to showcase my professional experience and projects<br><br>
-          - Designed a dynamic landing page featuring highlights and easy navigation<br><br>
-          - Created experience and portfolio pages showcasing my work/volunteer experience and programming projects, respectively<br><br>
-          - Curated a gallery page displaying photographs I have personally taken, enhanced with consistent formatting regardless of photo size<br><br>
+          - Created a multi-page website using HTML, CSS to showcase my professional experience and projects.<br><br>
+          - Designed a dynamic landing page featuring highlights and easy navigation.<br><br>
+          - Created experience and portfolio pages showcasing my work/volunteer experience and programming projects, respectively.<br><br>
+          - Curated a gallery page displaying photographs I have personally taken, enhanced with consistent formatting regardless of photo size.<br><br>
         </p>
         <div class="tech-badges">
           <img src="https://img.shields.io/badge/HTML-%23E34F26.svg?style=flat&logo=html5&logoColor=white" alt="HTML" title="HTML"/>
@@ -374,10 +375,10 @@
           <h3>Cipher Education in Java</h3>
         </a>
         <p>
-          - Built an interactive educational tool to demonstrate <b>monoalphabetic and transposition ciphers</b>b using Java's AWT and Swing libraries<br><br>
-          - Implemented a dynamic, user-friendly GUI that allows users to input text and visualize how different ciphers encrypt and decrypt messages in real-time<br><br>
-          - IIncorporated data structures such as <b>HashMap, ArrayList, and matrices</b> to efficiently map cipher keys, manage dynamic text data, and perform complex transposition ciphers<br><br>
-          - Included detailed explanations and step-by-step visuals within the interface to enhance user understanding of encryption concepts<br><br>
+          - Built an interactive educational tool to demonstrate <b>monoalphabetic and transposition ciphers</b>b using Java's AWT and Swing libraries.<br><br>
+          - Implemented a dynamic, user-friendly GUI that allows users to input text and visualize how different ciphers encrypt and decrypt messages in real-time.<br><br>
+          - Incorporated data structures such as <b>HashMap, ArrayList, and matrices</b> to efficiently map cipher keys, manage dynamic text data, and perform complex transposition ciphers.<br><br>
+          - Included detailed explanations and step-by-step visuals within the interface to enhance user understanding of encryption concepts.<br><br>
         </p>
         <div class="tech-badges">
           <img src="https://img.shields.io/badge/Java-%23ED8B00.svg?style=flat&logo=java&logoColor=white" alt="Java"/>
