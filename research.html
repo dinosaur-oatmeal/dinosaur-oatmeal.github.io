@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research | Will Maberry</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="name">Will Maberry</div>
+        <div class="role">Computational Epidemiology • ML for Infectious Disease</div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="kicker">Research</div>
+      <h1 class="headline">Disease forecasting systems.</h1>
+      <p class="lede">
+        I build end-to-end outbreak forecasting systems that run monthly and produce decision-ready outputs:
+        county-level risk scores, calibrated alert tiers, and diagnostics that explain model behavior.
+      </p>
+
+      <div class="pills">
+        <div class="pill"><strong>Domain:</strong> biosurveillance (HPAI H5N1)</div>
+        <div class="pill"><strong>Scale:</strong> U.S. county × month</div>
+        <div class="pill"><strong>Horizon:</strong> one month ahead</div>
+      </div>
+    </section>
+
+    <!-- AT A GLANCE (TOP FOR SKIMMERS) -->
+    <section class="section tight">
+      <div class="card pad">
+        <div class="split">
+          <div>
+            <div class="kicker">At-a-glance</div>
+            <h2>Highly Pathogenic Avian Influenza (HPAI) H5N1 early-warning forecasting system</h2>
+            <p class="small" style="margin-top:10px;">
+              A leakage-safe monthly pipeline that integrates agricultural, climate/environmental, ecological, and temporal signals
+              to produce county-level risk predictions and alert tiers for operational biosurveillance.
+            </p>
+
+            <div class="meta-row" style="margin-top:12px;">
+              <span class="tag">walk-forward validation</span>
+              <span class="tag">rare-event modeling (~1%)</span>
+              <span class="tag">synthetic-month covariates</span>
+              <span class="tag">cost-sensitive thresholds</span>
+              <span class="tag">calibration diagnostics</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="kv">
+              <div class="row"><div class="k">Artifact</div><div class="v">Monthly forecasting pipeline + dashboard-ready outputs</div></div>
+              <div class="row"><div class="k">Outputs</div><div class="v">Risk table • alert tiers • diagnostics • map layer</div></div>
+              <div class="row"><div class="k">Validation</div><div class="v">Walk-forward validation; leakage-checked; imbalance-aware</div></div>
+              <div class="row"><div class="k">Core challenges</div><div class="v">Rare events, drift, feature uncertainty, interpretability</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SYSTEM + ARTIFACTS -->
+    <section class="section">
+      <div class="card pad">
+        <div class="split">
+
+          <!-- LEFT: SYSTEM -->
+          <div>
+            <h2>What the system does</h2>
+            <p class="small" style="margin-top:10px;">
+              The system runs on a monthly cadence. Its core purpose is to produce outputs that are actionable and
+              interpretable under rare-event reality, rather than just a probability score.
+            </p>
+
+            <hr class="sep" />
+
+            <h3>System overview</h3>
+            <div class="list">
+              <div class="bullet"><div class="dot"></div>
+                <div><b>Forecast orchestration:</b> a monthly job generates forecasts end-to-end (or reuses cached outputs),
+                  producing artifacts used by a public-facing dashboard and downstream evaluation.</div>
+              </div>
+
+              <div class="bullet"><div class="dot"></div>
+                <div><b>Future covariate assumptions:</b> forecast-month covariates are generated explicitly via ridge regression,
+                  rather than assuming access to future ground truth.</div>
+              </div>
+
+              <div class="bullet"><div class="dot"></div>
+                <div><b>Feature engineering:</b> lagged and rolling features, anomalies, cyclical time components, and context priors
+                  are constructed with strict temporal ordering to prevent leakage.</div>
+              </div>
+
+              <div class="bullet"><div class="dot"></div>
+                <div><b>Modeling & blending:</b> ensemble models are trained and combined across multiple time windows and geographic regions,
+                  with optimized blending accounting for temporal drift.</div>
+              </div>
+
+              <div class="bullet"><div class="dot"></div>
+                <div><b>Decision policy:</b> raw probability scores are stratified into risk levels using calibrated thresholds optimized under cost-sensitive objectives.</div>
+              </div>
+
+              <div class="bullet"><div class="dot"></div>
+                <div><b>Diagnostics & reporting:</b> each test month generates calibration and error-profile summaries (including prevalence effects and stability checks)
+                  designed to make model behavior legible to non-technical audiences.</div>
+              </div>
+            </div>
+
+            <hr class="sep" />
+
+            <h3>Primary research questions</h3>
+            <div class="list">
+              <div class="bullet"><div class="dot"></div>
+                <div><b>Future covariates:</b> How sensitive are forecasts to synthetic-month assumptions, and where do they break?</div>
+              </div>
+              <div class="bullet"><div class="dot"></div>
+                <div><b>Decision thresholds:</b> How do alert tiers change under varying intervention costs with ~1% prevalence?</div>
+              </div>
+              <div class="bullet"><div class="dot"></div>
+                <div><b>Generalization:</b> How does performance vary across region/season/prevalence regimes, and what systematic biases emerge?</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: ARTIFACTS + CONSTRAINTS -->
+          <div>
+
+            <div class="callout">
+              <h3>Manuscripts (in progress)</h3>
+              <p class="small" style="margin-top:8px;">
+                Methods and decision-support evaluation are in development. Availability depends on internal review and project timelines.
+              </p>
+            </div>
+
+            <div class="callout" style="margin-top:12px;">
+              <h3>Artifacts produced each month</h3>
+              <div class="list">
+                <div class="bullet"><div class="dot"></div>
+                  <div><b>Risk table:</b> county-level probabilities and alert tiers for the forecast month.</div>
+                </div>
+                <div class="bullet"><div class="dot"></div>
+                  <div><b>Diagnostics:</b> calibration + error profiles + prevalence-stratified performance summaries.</div>
+                </div>
+                <div class="bullet"><div class="dot"></div>
+                  <div><b>Map layer:</b> visualization-ready outputs for a public-facing dashboard.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="callout" style="margin-top:12px;">
+              <h3>Evaluation constraints</h3>
+              <p class="small" style="margin-top:8px;">
+                Walk-forward validation only, with explicit synthetic-month assumptions for unknown covariates.
+                Performance is reported using imbalance-aware metrics and cost-sensitive thresholds,
+                not random splits, default 0.5 thresholds, or accuracy-only summaries.
+              </p>
+            </div>
+
+            <div class="callout" style="margin-top:12px;">
+              <h3>Future Plans</h3>
+              <p class="small" style="margin-top:8px;">
+                 I’m building a reusable evaluation harness: standardized leakage checks, walk-forward validation,
+                  and sensitivity analyses for future-feature assumptions.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH INTERESTS -->
+    <section class="section">
+      <div class="card pad">
+        <div class="kicker">Research interests</div>
+        <h2 style="margin-top:8px;">Themes I’m focused on</h2>
+
+        <hr class="sep" />
+
+        <div class="grid four">
+          <div class="feature">
+            <h3>Spatiotemporal forecasting</h3>
+            <p class="small">Time-aware validation, drift sensitivity, and spatiotemporal stratification.</p>
+          </div>
+
+          <div class="feature">
+            <h3>Rare-event detection</h3>
+            <p class="small">Prevalence-aware evaluation and decision thresholds aligned to intervention costs.</p>
+          </div>
+
+          <div class="feature">
+            <h3>Interpretability & diagnostics</h3>
+            <p class="small">Calibration, error profiling, and stability checks that translate to decisions.</p>
+          </div>
+
+          <div class="feature">
+            <h3>Climate–disease signals</h3>
+            <p class="small">Environmental proxies, lag structure, and sensitivity to future-feature assumptions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container foot-inner">
+        <div>© <span id="y"></span> Will Maberry</div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

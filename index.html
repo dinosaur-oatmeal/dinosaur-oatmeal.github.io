@@ -1,97 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home</title>
-
-  <!-- AOS CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-
-  <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- AOS JS -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
-
-  <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-  <script src="particles-config.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Will Maberry | Computational Epidemiology</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body>
 
-<body class="home-page">
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="name">Will Maberry</div>
+        <div class="role">Computational Epidemiology • ML for Infectious Disease</div>
+  </header>
 
-  <!-- Particles.js Background -->
-  <div id="particles-js"></div>
+  <main class="container">
 
-  <!-- Top Left Buttons -->
-  <div class="top-left-buttons">
-    <a href="index.html" class="button active">Home</a>
-    <a href="experience.html" class="button">Experience</a>
-    <a href="portfolio.html" class="button">Portfolio</a>
-    <a href="gallery.html" class="button">Gallery</a>
-  </div>
+    <!-- HERO (HOME) -->
+    <section class="section">
+      <div class="card pad">
+        <div class="split">
 
-  <!-- Main Content Container -->
-  <div class="main-container">
-    <div class="cards-container" data-aos="fade-up">
-      <!-- LinkedIn Card -->
-      <a href="https://www.linkedin.com/in/will-maberry/" class="card social-card">
-        <img src="/images/LI-In-Bug.png" alt="LinkedIn">
-        <h1>Connect With Me</h1>
-      </a>
+          <!-- Left: identity + narrative -->
+          <div>
+            <div class="kicker">Hi, I’m Will.</div>
+            <h1 class="headline">I build applied ML systems for disease forecasting.</h1>
 
-      <!-- Main Information Card -->
-      <div class="card main-card" data-aos="fade-up">
-        <div class="hero-intro">
-          <h1>Will Maberry</h1>
-          <p class="tagline">CS @ UTA</p>
+            <p class="lede">
+              I work at the intersection of machine learning and infectious disease epidemiology:
+              leakage-safe evaluation, rare-event modeling, calibration, and interpretable diagnostics.
+              My current focus is county-scale early warning for Highly Pathogenic Avian Influenza (HPAI) H5N1.
+            </p>
+
+            <div class="pills">
+              <div class="pill"><strong>Current:</strong> USDA ARS Research Assistant (HPAI forecasting)</div>
+              <div class="pill"><strong>Focus:</strong> spatiotemporal ML • biosurveillance • interpretability</div>
+              <div class="pill"><strong>Background:</strong> CS @ UTA • fundamentals of AI certificate</div>
+            </div>
+
+            <div class="cta-row">
+              <a class="btn" href="files/Will_Maberry_Resume.pdf" target="_blank" rel="noreferrer">CV / Resume (PDF)</a>
+              <a class="btn" href="https://www.linkedin.com/in/will-maberry/" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+          </div>
+
+          <!-- Right: primary routes (routing hub) -->
+          <div>
+            <div class="kicker">Explore</div>
+
+            <div class="list" style="margin-top:10px;">
+              <div class="bullet">
+                <div class="dot"></div>
+                <div>
+                  <strong>Research</strong><br/>
+                  Forecasting methods, evaluation design, and current USDA ARS work.
+                  <div class="cta-row" style="margin-top:6px;">
+                    <a class="btn primary" href="research.html">Go to Research</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bullet">
+                <div class="dot"></div>
+                <div>
+                  <strong>Projects</strong><br/>
+                  Pipelines, dashboards, and experiments that shaped my approach to ML systems.
+                  <div class="cta-row" style="margin-top:6px;">
+                    <a class="btn primary" href="projects.html">Go to Projects</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bullet">
+                <div class="dot"></div>
+                <div>
+                  <strong>Experience</strong><br/>
+                  Research roles, leadership, and collaboration across academic and public-sector settings.
+                  <div class="cta-row" style="margin-top:6px;">
+                    <a class="btn primary" href="experience.html">Go to Experience</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
-
-        <div class="chips">
-          <span class="chip"><i class="fas fa-viruses"></i> USDA ARS Research Assistant</span>
-          <span class="chip"><i class="fas fa-users"></i> OpenAI: Community Lead (800k+)</span>
-          <span class="chip"><i class="fas fa-graduation-cap"></i> GPA 3.8+ • 5× Honor Roll</span>
-        </div>
-
-        <p class="bio">
-          I combine ML and epidemiology to classify and forecast viral disease outbreaks.
       </div>
-    
-      <!-- GitHub Card -->
-      <a href="https://github.com/dinosaur-oatmeal" class="card social-card">
-        <img src="/images/github-mark-white.png" alt="GitHub">
-        <h1>View My Projects</h1>
-      </a>
-
-      <!-- Resume Button -->
-      <div class="center-button">
-        <a href="/files/Will_Maberry_Resume.pdf" class="button" target="_blank">View My Resume</a>
-      </div>
-    </div>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-      <blockquote>
-        “For the secret of human existence lies not only in living but in knowing what to live for”
-      </blockquote>
-      <footer>— Fyodor Dostoevsky</footer>
     </section>
-  </div>
 
-  <!-- Initialize AOS -->
+    <section class="section tight">
+  <p class="small" style="text-align:center;">
+    Outside of research, I also shoot photography<br>
+    <a href="gallery.html">view my gallery here</a>
+  </p>
+</section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container foot-inner">
+        <div>© <span id="y"></span> Will Maberry</div>
+        <div class="faint">Updated Jan 2026</div>
+      </div>
+    </footer>
+
+  </main>
+
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-        mirror: false,
-      });
-    });
+    document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

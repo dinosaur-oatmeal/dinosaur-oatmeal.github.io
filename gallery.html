@@ -1,201 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gallery</title>
-
-  <!-- AOS CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-
-  <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-  <!-- Your Custom CSS -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- AOS JS -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
-
-  <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-  <script src="particles-config.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Photography | Will Maberry</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body>
 
-<body class="gallery-page">
-
-  <!-- Particles.js Background -->
-  <div id="particles-js"></div>
-
-  <!-- Top Left Buttons -->
-  <div class="top-left-buttons">
-    <a href="index.html" class="button">Home</a>
-    <a href="experience.html" class="button">Experience</a>
-    <a href="portfolio.html" class="button">Portfolio</a>
-    <a href="gallery.html" class="button active">Gallery</a>
-  </div>  
-
-  <!-- Main Content Container -->
-  <div class="main-container" data-aos="fade-up">
-    <h1>Favorite Photos I've Taken</h1>
-    <div class="gallery-container">
-        <div class="gallery-item">
-            <a href="images/Eagle-In-Tree.webp" target="_blank">
-                <img src="images/Eagle-In-Tree.webp" alt="Bald Eagle in Snowy Tree"
-                loading="lazy" srcset=images/Eagle-In-Tree.webp 480w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Moon.webp" target="_blank">
-                <img src="images/Moon.webp" alt="Moon Close Up"
-                loading="lazy" srcset=images/Moon.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Mountain-Lions.webp" target="_blank">
-                <img src="images/Mountain-Lions.webp" alt="Two Mountain Lions"
-                loading="lazy" srcset=images/Mountain-Lions.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Boat-On-Lake.webp" target="_blank">
-                <img src="images/Boat-On-Lake.webp" alt="Canoe by Mountain Lake"
-                loading="lazy" srcset=images/Boat-On-Lake.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Wildflower-Field.webp" target="_blank">
-                <img src="images/Wildflower-Field.webp" alt="Field of Wildflowers"
-                loading="lazy" srcset=images/Wildflower-Field.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Snowmen.webp" target="_blank">
-                <img src="images/Snowmen.webp" alt="Miniature Snowmen"
-                loading="lazy" srcset=images/Snowmen.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Eastern-Bluebird.webp" target="_blank">
-                <img src="images/Eastern-Bluebird.webp" alt="Eastern Bluebird on Fence"
-                loading="lazy" srcset=images/Eastern-Bluebird.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Double-Waterfall.webp" target="_blank">
-                <img src="images/Double-Waterfall.webp" alt="Double Waterfall in Colorado"
-                loading="lazy" srcset=images/Double-Waterfall.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Silver-Mine.webp" target="_blank">
-                <img src="images/Silver-Mine.webp" alt="Old Silver Mine by River"
-                loading="lazy" srcset=images/Silver-Mine.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Coyote.webp" target="_blank">
-                <img src="images/Coyote.webp" alt="Coyote in the Snow"
-                loading="lazy" srcset=images/Coyote.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Greek-Boats.webp" target="_blank">
-                <img src="images/Greek-Boats.webp" alt="Boats on Mediterranean Dock"
-                loading="lazy" srcset=images/Greek-Boats.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Butterfly-On-Flower.webp" target="_blank">
-                <img src="images/Butterfly-On-Flower.webp" alt="Butterfly on Flower"
-                loading="lazy" srcset=images/Butterfly-On-Flower.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Cat-In-Box.webp" target="_blank">
-                <img src="images/Cat-In-Box.webp" alt="Cat in a Box"
-                loading="lazy" srcset=images/Cat-In-Box.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Elk-Street-CB.webp" target="_blank">
-                <img src="images/Elk-Street-CB.webp" alt="Crested Butte Main Street in Winter"
-                loading="lazy" srcset=images/Elk-Street-CB.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Bighorn-Sheep.webp" target="_blank">
-                <img src="images/Bighorn-Sheep.webp" alt="Bighorn Sheep Close Up"
-                loading="lazy" srcset=images/Bighorn-Sheep.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Hills-In-Distance.webp" target="_blank">
-                <img src="images/Hills-In-Distance.webp" alt="Hills Fading into the Distance"
-                loading="lazy" srcset=images/Hills-In-Distance.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Mourning-Dove.webp" target="_blank">
-                <img src="images/Mourning-Dove.webp" alt="Mourning Dove Close Up"
-                loading="lazy" srcset=images/Mourning-Dove.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Northern-Lights.webp" target="_blank">
-                <img src="images/Northern-Lights.webp" alt="Northern Lights in Colorado"
-                loading="lazy" srcset=images/Northern-Lights.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/River-And-Trees.webp" target="_blank">
-                <img src="images/River-And-Trees.webp" alt="River and Trees in Colorado"
-                loading="lazy" srcset=images/River-And-Trees.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Mountain-Bluebird.webp" target="_blank">
-                <img src="images/Mountain-Bluebird.webp" alt="Mountain Bluebird on Branch"
-                loading="lazy" srcset=images/Mountain-Bluebird.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Wispy-Waterfall.webp" target="_blank">
-                <img src="images/Wispy-Waterfall.webp" alt="Wispy Waterfall in Colorado"
-                loading="lazy" srcset=images/Wispy-Waterfall.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Eagle-Staring.webp" target="_blank">
-                <img src="images/Eagle-Staring.webp" alt="Eagle Staring at Camera"
-                loading="lazy" srcset=images/Eagle-Staring.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Northern-Mockingbird.webp" target="_blank">
-                <img src="images/Northern-Mockingbird.webp" alt="Northern Mockingbird Close Up"
-                loading="lazy" srcset=images/Northern-Mockingbird.webp 100w>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Lone-Hiker.webp" target="_blank">
-                <img src="images/Lone-Hiker.webp" alt="Lone Hiker in the Snow"
-                loading="lazy" srcset=images/Lone-Hiker.webp 100w>
-            </a>
-        </div>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="name">Will Maberry</div>
+        <div class="role">Computational Epidemiology • ML for Infectious Disease</div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <!-- Initialize AOS -->
+  <main class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="kicker">Photography</div>
+      <h1 class="headline">The gallery.</h1>
+
+      <figure style="margin-top:16px;">
+        <blockquote class="lede">
+          “To me, photography is an art of observation. It’s about finding something interesting
+          in an ordinary place… I’ve found it has little to do with the things you see and
+          everything to do with the way you see them.”
+        </blockquote>
+        <figcaption class="faint" style="margin-top:8px;">
+          — Elliott Erwitt
+        </figcaption>
+      </figure>
+    </section>
+
+    <p class="small faint" style="margin-top:-6px; margin-bottom:18px;">
+      Click any photo to view full size.
+    </p>
+
+    <!-- GALLERY GRID -->
+    <section class="section">
+      <div class="grid gallery">
+        <!-- Each image is a card -->
+        <a class="photo-card" href="images/Eagle-In-Tree.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Eagle-In-Tree.webp" alt="Bald Eagle in Snowy Tree" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Moon.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Moon.webp" alt="Moon Close Up" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Mountain-Lions.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Mountain-Lions.webp" alt="Two Mountain Lions" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Boat-On-Lake.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Boat-On-Lake.webp" alt="Canoe by Mountain Lake" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Wildflower-Field.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Wildflower-Field.webp" alt="Field of Wildflowers" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Snowmen.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Snowmen.webp" alt="Miniature Snowmen" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Eastern-Bluebird.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Eastern-Bluebird.webp" alt="Eastern Bluebird on Fence" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Double-Waterfall.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Double-Waterfall.webp" alt="Double Waterfall in Colorado" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Silver-Mine.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Silver-Mine.webp" alt="Old Silver Mine by River" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Coyote.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Coyote.webp" alt="Coyote in the Snow" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Greek-Boats.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Greek-Boats.webp" alt="Boats on Mediterranean Dock" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Butterfly-On-Flower.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Butterfly-On-Flower.webp" alt="Butterfly on Flower" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Cat-In-Box.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Cat-In-Box.webp" alt="Cat in a Box" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Elk-Street-CB.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Elk-Street-CB.webp" alt="Crested Butte Main Street in Winter" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Bighorn-Sheep.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Bighorn-Sheep.webp" alt="Bighorn Sheep Close Up" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Hills-In-Distance.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Hills-In-Distance.webp" alt="Hills Fading into the Distance" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Mourning-Dove.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Mourning-Dove.webp" alt="Mourning Dove Close Up" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Northern-Lights.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Northern-Lights.webp" alt="Northern Lights in Colorado" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/River-And-Trees.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/River-And-Trees.webp" alt="River and Trees in Colorado" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Mountain-Bluebird.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Mountain-Bluebird.webp" alt="Mountain Bluebird on Branch" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Wispy-Waterfall.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Wispy-Waterfall.webp" alt="Wispy Waterfall in Colorado" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Eagle-Staring.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Eagle-Staring.webp" alt="Eagle Staring at Camera" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Northern-Mockingbird.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Northern-Mockingbird.webp" alt="Northern Mockingbird Close Up" loading="lazy">
+        </a>
+
+        <a class="photo-card" href="images/Lone-Hiker.webp" target="_blank" rel="noreferrer" title="View full-size image">
+          <img src="images/Lone-Hiker.webp" alt="Lone Hiker in the Snow" loading="lazy">
+        </a>
+      </div>
+    </section>
+
+    <div class="callout" style="margin-top:24px;">
+      <p class="small">
+        Selected work has been published; the mountain lion photograph was featured in
+        <strong>
+          <a href="https://issuu.com/alanwartesmedia/docs/gtt-2023-03-23"
+            target="_blank" rel="noreferrer">
+            Gunnison Country Times
+          </a>
+        </strong>
+        (Mar. 23, 2023, p. 11).<br>
+        <span class="faint">
+          Camera Bag: Nikon CoolPix P950 · Canon AE-1 Program · Samsung Galaxy S23 Ultra
+        </span>
+      </p>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container foot-inner">
+        <div>© <span id="y"></span> Will Maberry</div>
+      </div>
+    </footer>
+  </main>
+
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-        mirror: false,
-      });
-    });
+    document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

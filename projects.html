@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Will Maberry</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="name">Will Maberry</div>
+        <div class="role">Computational Epidemiology • ML for Infectious Disease</div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a class="active" href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="kicker">Selected projects</div>
+      <h1 class="headline">Technical work that supports my research ambitions.</h1>
+      <p class="lede">
+        These projects reflect how I approach technical work outside formal research:
+        building systems focused on evaluation, interpretability, and real-world usability.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="grid two">
+
+        <!-- ASL -->
+        <div class="card pad">
+          <h2>American Sign Language (ASL) Recognition</h2>
+          <p class="small" style="margin-top:10px;">
+            A real-time computer vision and machine learning system built to explore data collection
+            and robust inference in real-world conditions.
+          </p>
+          <hr class="sep" />
+          <h3>What I Learned</h3>
+
+          <div class="list">
+            <div class="bullet"><div class="dot"></div><div><b>Dataset construction under constraints:</b>
+              built a custom dataset of 2,000+ labeled ASL samples, highlighting real data collection difficulty.</div></div>
+
+            <div class="bullet"><div class="dot"></div><div><b>Evaluation beyond static accuracy:</b>
+              validated a TensorFlow model (90%+ accuracy) under varying lighting, pose, and motion conditions, focusing on the gap between test-set metrics and live inference.</div></div>
+
+            <div class="bullet"><div class="dot"></div><div><b>Noise-aware inference design:</b>
+              implemented motion-stabilization gating for stable gesture recognition, reducing spurious classifications.</div></div>
+
+            <div class="bullet"><div class="dot"></div><div><b>Human-centric ML:</b>
+              designed real-time confidence threshold controls and asynchronous text-to-speech output, focusing on real-world use-cases.</div></div>
+          </div>
+        </div>
+
+        <!-- NN FROM SCRATCH -->
+        <div class="card pad">
+          <h2>Neural Network from Scratch (Foundational Modeling)</h2>
+          <p class="small" style="margin-top:10px;">
+            A ground-up implementation of a feedforward neural network designed to make
+            model behavior explicit, inspectable, and explainable.
+          </p>
+          <hr class="sep" />
+          <h3>What I Learned</h3>
+          <div class="list">
+            <div class="bullet"><div class="dot"></div><div><b>Mechanistic understanding of learning:</b>
+              implemented forward propagation, backpropagation, and gradient descent directly in NumPy, making parameter updates explicit.</div></div>
+
+            <div class="bullet"><div class="dot"></div><div><b>Evaluation without abstractions:</b>
+              trained on the MNIST dataset (95%+ accuracy) using custom architecture design, weight initialization, and manual hyperparameter tuning.</div></div>
+
+            <div class="bullet"><div class="dot"></div><div><b>Model analysis:</b>
+              visualized loss curves, weight evolution, and accuracy trajectories across epochs using Matplotlib to observe learning dynamics.</div></div>
+
+            <div class="bullet"><div class="dot"></div><div><b>Explanation-first design:</b>
+              structured the project as a code-first, math-supported walkthrough, emphasizing clarity over concision and interpretability over convenience.</div></div>
+          </div>
+        </div>
+
+        <!-- ALGO PLATFORM -->
+        <div class="card pad">
+          <h2>Algorithm Learning Platform (Pedagogical Visualization)</h2>
+          <p class="small" style="margin-top:10px;">
+            An interactive educational platform designed to make algorithmic processes inspectable,
+            understandable, and reproducible.
+          </p>
+          <hr class="sep" />
+          <h3>What I Learned</h3>
+          <div class="list">
+            <div class="bullet"><div class="dot"></div><div><b>Interpretability as a design problem:</b>
+              visualized 20+ algorithms and data structures step-by-step, emphasizing clarity and system behavior.</div></div>
+
+            <div class="bullet"><div class="dot"></div><div><b>Communication-first controls:</b>
+              designed pause, reset, and inspection tools to support different learning styles and paces.</div></div>
+
+            <div class="bullet"><div class="dot"></div><div><b>Correctness-first engineering:</b>
+              built entirely in Elm using functional programming principles, enforcing immutability and explicit state transitions.</div></div>
+
+            <div class="bullet"><div class="dot"></div><div><b>Proven instructional use:</b>
+              adopted by UTA faculty and used by 50+ students per semester in live lectures and self-paced study.</div></div>
+          </div>
+          <div class="cta-row" style="margin-top:14px;">
+            <a class="btn" href="https://www.willmaberry.com/Algorithms-And-Data-Structures/" target="_blank" rel="noreferrer">Live Demo</a>
+          </div>
+        </div>
+
+        <!-- QUEENS -->
+        <div class="card pad">
+          <h2>Queen's Logic Puzzle Generator & Game</h2>
+          <p class="small" style="margin-top:10px;">
+            A full-stack puzzle system focused on constraint satisfaction, generation, and verification.
+          </p>
+          <hr class="sep" />
+          <h3>What I Learned</h3>
+          <div class="list">
+            <div class="bullet"><div class="dot"></div><div><b>Constraint satisfaction & verification:</b>
+              designed a bespoke flood-fill–based board generator that guarantees exactly one valid solution per puzzle.</div></div>
+
+            <div class="bullet"><div class="dot"></div><div><b>System modularity:</b>
+              implemented a FastAPI + Pydantic backend for puzzle generation and validation, decoupled from the SVG-based client.</div></div>
+
+            <div class="bullet"><div class="dot"></div><div><b>Operational robustness:</b>
+              deployed as a Docker container with rate limiting, CI/CD, and automated redeployments on GitHub push.</div></div>
+          </div>
+          <div class="cta-row" style="margin-top:14px;">
+            <a class="btn" href="https://games.willmaberry.com/" target="_blank" rel="noreferrer">Live Demo</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container foot-inner">
+        <div>© <span id="y"></span> Will Maberry</div>
+        <div class="faint">
+          GitHub:
+          <a href="https://github.com/dinosaur-oatmeal" target="_blank" rel="noreferrer">dinosaur-oatmeal</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
