@@ -13,7 +13,7 @@
     <div class="container nav-inner">
       <div class="brand">
         <div class="name">Will Maberry</div>
-        <div class="role">Computational Epidemiology • ML for Infectious Disease</div>
+        <div class="role">Computational Epidemiology • ML for Infectious Disease Transmission</div>
       </div>
       <nav class="nav-links">
         <a href="index.html">Home</a>
@@ -29,10 +29,11 @@
     <!-- HERO -->
     <section class="hero">
       <div class="kicker">Research</div>
-      <h1 class="headline">Disease forecasting systems.</h1>
+      <h1 class="headline">Viral disease forecasting systems.</h1>
       <p class="lede">
-        I build end-to-end outbreak forecasting systems that run monthly and produce decision-ready outputs:
-        county-level risk scores, calibrated alert tiers, and diagnostics that explain model behavior.
+        I build end-to-end outbreak forecasting systems that
+        support biosurveillance and public health interventions:
+        county-level risk scores, calibrated alert tiers, and modeling diagnostics.
       </p>
 
       <div class="pills">
@@ -48,27 +49,26 @@
         <div class="split">
           <div>
             <div class="kicker">At-a-glance</div>
-            <h2>Highly Pathogenic Avian Influenza (HPAI) H5N1 early-warning forecasting system</h2>
+            <h2>H5N1 Early Notice CASTing (HENCAST)</h2>
             <p class="small" style="margin-top:10px;">
-              A leakage-safe monthly pipeline that integrates agricultural, climate/environmental, ecological, and temporal signals
+              A leakage-safe monthly forecast for the H5N1 strain on Highly Pathogenic Avian Influenza (HPAI).
+              This pipeline integrates agricultural, climate/environmental, ecological, and temporal attributes
               to produce county-level risk predictions and alert tiers for operational biosurveillance.
             </p>
 
             <div class="meta-row" style="margin-top:12px;">
               <span class="tag">walk-forward validation</span>
               <span class="tag">rare-event modeling (~1%)</span>
-              <span class="tag">synthetic-month covariates</span>
-              <span class="tag">cost-sensitive thresholds</span>
+              <span class="tag">future-month synthetic covariates</span>
               <span class="tag">calibration diagnostics</span>
             </div>
           </div>
 
           <div>
             <div class="kv">
-              <div class="row"><div class="k">Artifact</div><div class="v">Monthly forecasting pipeline + dashboard-ready outputs</div></div>
-              <div class="row"><div class="k">Outputs</div><div class="v">Risk table • alert tiers • diagnostics • map layer</div></div>
-              <div class="row"><div class="k">Validation</div><div class="v">Walk-forward validation; leakage-checked; imbalance-aware</div></div>
-              <div class="row"><div class="k">Core challenges</div><div class="v">Rare events, drift, feature uncertainty, interpretability</div></div>
+              <div class="row"><div class="k">Outputs</div><div class="v">Risk alert tiers • diagnostics • interactive map</div></div>
+              <div class="row"><div class="k">Validation</div><div class="v">Walk-forward validation • leakage-checks • imbalance-awareness</div></div>
+              <div class="row"><div class="k">Core challenges</div><div class="v">Rare events • drift • feature uncertainty • interpretability</div></div>
             </div>
           </div>
         </div>
@@ -84,8 +84,8 @@
           <div>
             <h2>What the system does</h2>
             <p class="small" style="margin-top:10px;">
-              The system runs on a monthly cadence. Its core purpose is to produce outputs that are actionable and
-              interpretable under rare-event reality, rather than just a probability score.
+              This system runs on a monthly cadence, producing actionable and interpretable outputs
+              that are viable under rare-event reality.
             </p>
 
             <hr class="sep" />
@@ -98,7 +98,7 @@
               </div>
 
               <div class="bullet"><div class="dot"></div>
-                <div><b>Future covariate assumptions:</b> forecast-month covariates are generated explicitly via ridge regression,
+                <div><b>Future covariate assumptions:</b> forecast-month covariates are generated via ridge regression,
                   rather than assuming access to future ground truth.</div>
               </div>
 
@@ -109,15 +109,15 @@
 
               <div class="bullet"><div class="dot"></div>
                 <div><b>Modeling & blending:</b> ensemble models are trained and combined across multiple time windows and geographic regions,
-                  with optimized blending accounting for temporal drift.</div>
+                  with optimized blending.</div>
               </div>
 
               <div class="bullet"><div class="dot"></div>
-                <div><b>Decision policy:</b> raw probability scores are stratified into risk levels using calibrated thresholds optimized under cost-sensitive objectives.</div>
+                <div><b>Decision policy:</b> raw probability scores are stratified into risk bins using calibrated thresholds optimized for imbalanced learning.</div>
               </div>
 
               <div class="bullet"><div class="dot"></div>
-                <div><b>Diagnostics & reporting:</b> each test month generates calibration and error-profile summaries (including prevalence effects and stability checks)
+                <div><b>Diagnostics & reporting:</b> each test month generates calibration and error-profile summaries that are
                   designed to make model behavior legible to non-technical audiences.</div>
               </div>
             </div>
@@ -144,7 +144,7 @@
             <div class="callout">
               <h3>Manuscripts (in progress)</h3>
               <p class="small" style="margin-top:8px;">
-                Methods and decision-support evaluation are in development. Availability depends on internal review and project timelines.
+                Peer-reviewed papers are currently in development. Availability depends on internal review and project timelines.
               </p>
             </div>
 
@@ -167,7 +167,7 @@
               <h3>Evaluation constraints</h3>
               <p class="small" style="margin-top:8px;">
                 Walk-forward validation only, with explicit synthetic-month assumptions for unknown covariates.
-                Performance is reported using imbalance-aware metrics and cost-sensitive thresholds,
+                Performance is reported using imbalance-aware metrics,
                 not random splits, default 0.5 thresholds, or accuracy-only summaries.
               </p>
             </div>
@@ -175,8 +175,8 @@
             <div class="callout" style="margin-top:12px;">
               <h3>Future Plans</h3>
               <p class="small" style="margin-top:8px;">
-                 I’m building a reusable evaluation harness: standardized leakage checks, walk-forward validation,
-                  and sensitivity analyses for future-feature assumptions.
+                 I’m incorporating economic grounding to the forecast pipeline, accounting for outbreak severity
+                 and cost-sensitive intervention.
               </p>
             </div>
 

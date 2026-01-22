@@ -13,7 +13,7 @@
     <div class="container nav-inner">
       <div class="brand">
         <div class="name">Will Maberry</div>
-        <div class="role">Computational Epidemiology • ML for Infectious Disease</div>
+        <div class="role">Computational Epidemiology • ML for Infectious Disease Transmission</div>
       </div>
       <nav class="nav-links">
         <a href="index.html">Home</a>
@@ -30,8 +30,8 @@
       <div class="kicker">Selected projects</div>
       <h1 class="headline">Technical work that supports my research ambitions.</h1>
       <p class="lede">
-        These projects reflect how I approach technical work outside formal research:
-        building systems focused on evaluation, interpretability, and real-world usability.
+        These projects reflect how I approach computation outside of research:<br>
+        projects focused on learning, interpretability, and usability.
       </p>
     </section>
 
@@ -42,17 +42,17 @@
         <div class="card pad">
           <h2>American Sign Language (ASL) Recognition</h2>
           <p class="small" style="margin-top:10px;">
-            A real-time computer vision and machine learning system built to explore data collection
-            and robust inference in real-world conditions.
+            A real-time computer vision and machine learning pipeline built to explore data collection
+            and live inference in real-world conditions.
           </p>
           <hr class="sep" />
           <h3>What I Learned</h3>
 
           <div class="list">
             <div class="bullet"><div class="dot"></div><div><b>Dataset construction under constraints:</b>
-              built a custom dataset of 2,000+ labeled ASL samples, highlighting real data collection difficulty.</div></div>
+              built a custom dataset of 2,000+ labeled ASL samples, highlighting real data collection difficulties.</div></div>
 
-            <div class="bullet"><div class="dot"></div><div><b>Evaluation beyond static accuracy:</b>
+            <div class="bullet"><div class="dot"></div><div><b>Evaluation beyond static testing:</b>
               validated a TensorFlow model (90%+ accuracy) under varying lighting, pose, and motion conditions, focusing on the gap between test-set metrics and live inference.</div></div>
 
             <div class="bullet"><div class="dot"></div><div><b>Noise-aware inference design:</b>
@@ -74,7 +74,7 @@
           <h3>What I Learned</h3>
           <div class="list">
             <div class="bullet"><div class="dot"></div><div><b>Mechanistic understanding of learning:</b>
-              implemented forward propagation, backpropagation, and gradient descent directly in NumPy, making parameter updates explicit.</div></div>
+              implemented forward propagation, backpropagation, and gradient descent directly in NumPy, making parameter updates traceable.</div></div>
 
             <div class="bullet"><div class="dot"></div><div><b>Evaluation without abstractions:</b>
               trained on the MNIST dataset (95%+ accuracy) using custom architecture design, weight initialization, and manual hyperparameter tuning.</div></div>
@@ -83,7 +83,7 @@
               visualized loss curves, weight evolution, and accuracy trajectories across epochs using Matplotlib to observe learning dynamics.</div></div>
 
             <div class="bullet"><div class="dot"></div><div><b>Explanation-first design:</b>
-              structured the project as a code-first, math-supported walkthrough, emphasizing clarity over concision and interpretability over convenience.</div></div>
+              structured the project as a code-first, math-supported walkthrough, with an emphasis on modeling interpretability.</div></div>
           </div>
         </div>
 
@@ -91,23 +91,23 @@
         <div class="card pad">
           <h2>Algorithm Learning Platform (Pedagogical Visualization)</h2>
           <p class="small" style="margin-top:10px;">
-            An interactive educational platform designed to make algorithmic processes inspectable,
-            understandable, and reproducible.
+            An interactive educational platform designed to make algorithmic processes inspectable and understandable.
           </p>
           <hr class="sep" />
           <h3>What I Learned</h3>
           <div class="list">
             <div class="bullet"><div class="dot"></div><div><b>Interpretability as a design problem:</b>
-              visualized 20+ algorithms and data structures step-by-step, emphasizing clarity and system behavior.</div></div>
+              visualized 20+ algorithms and data structures step-by-step,
+              emphasizing the inner-workings of common functions.</div></div>
 
             <div class="bullet"><div class="dot"></div><div><b>Communication-first controls:</b>
-              designed pause, reset, and inspection tools to support different learning styles and paces.</div></div>
+              implemented buttons such as pause, reset, and play to support different learning styles and paces.</div></div>
 
-            <div class="bullet"><div class="dot"></div><div><b>Correctness-first engineering:</b>
-              built entirely in Elm using functional programming principles, enforcing immutability and explicit state transitions.</div></div>
+            <div class="bullet"><div class="dot"></div><div><b>Functional paradigm programming:</b>
+              built entirely in Elm using core functional programming principles, enforcing immutability and explicit state transitions.</div></div>
 
             <div class="bullet"><div class="dot"></div><div><b>Proven instructional use:</b>
-              adopted by UTA faculty and used by 50+ students per semester in live lectures and self-paced study.</div></div>
+              adopted by UTA faculty and used by 50+ students per semester in live lectures and self-paced studying.</div></div>
           </div>
           <div class="cta-row" style="margin-top:14px;">
             <a class="btn" href="https://www.willmaberry.com/Algorithms-And-Data-Structures/" target="_blank" rel="noreferrer">Live Demo</a>
@@ -118,7 +118,7 @@
         <div class="card pad">
           <h2>Queen's Logic Puzzle Generator & Game</h2>
           <p class="small" style="margin-top:10px;">
-            A full-stack puzzle system focused on constraint satisfaction, generation, and verification.
+            A full-stack puzzle system focused on constraint satisfaction problems and unique board generation.
           </p>
           <hr class="sep" />
           <h3>What I Learned</h3>
@@ -129,7 +129,7 @@
             <div class="bullet"><div class="dot"></div><div><b>System modularity:</b>
               implemented a FastAPI + Pydantic backend for puzzle generation and validation, decoupled from the SVG-based client.</div></div>
 
-            <div class="bullet"><div class="dot"></div><div><b>Operational robustness:</b>
+            <div class="bullet"><div class="dot"></div><div><b>Production deployment:</b>
               deployed as a Docker container with rate limiting, CI/CD, and automated redeployments on GitHub push.</div></div>
           </div>
           <div class="cta-row" style="margin-top:14px;">
