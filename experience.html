@@ -1,182 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Experience | Will Maberry</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Will Maberry // Field Log 03</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=JetBrains+Mono:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- NAV -->
-  <header class="nav">
-    <div class="container nav-inner">
-      <div class="brand">
-        <div class="name">Will Maberry</div>
-        <div class="role">Computational Epidemiology • ML for Infectious Disease Transmission</div>
-      </div>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="projects.html">Projects</a>
-        <a class="active" href="experience.html">Experience</a>
-      </nav>
+<div class="container">
+  <header style="display: flex; justify-content: space-between; align-items: flex-end; height: 60px; margin-bottom: 12vh; font-family: var(--font-mono); font-size: 0.7rem;">
+    <div>
+    </div>
+    <div style="text-align: right;">
+      <span id="sys-status" style="color: var(--risk-green);">SYSTEM_READY</span> <br>
+      <span style="color: var(--ink-dim);">ENTRY_DATE: <span id="current-date">0000.00.00</span></span>
     </div>
   </header>
 
-  <main class="container">
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="kicker">Work/Volunteer Experience</div>
-      <h1 class="headline">Research, teaching, and communication.</h1>
-      <p class="lede">
-        I’ve worked across public research, academia, and industry, translating complex modeling systems
-        into decision-support tooling and clear communication for non-technical audiences.
-      </p>
-
-      <div class="pills">
-        <div class="pill"><strong>Research:</strong> USDA ARS</div>
-        <div class="pill"><strong>Teaching:</strong> UTA Operating Systems TA</div>
-        <div class="pill"><strong>Communication:</strong> OpenAI Engagement Manager</div>
+  <main>
+    
+    <article style="position: relative;">
+      <div class="stamp-container">
+        <div class="stamp">RESEARCH: USDA_ARS</div>
+        <div class="stamp">SECTOR: OPENAI</div>
+        <div class="stamp">STATION: UTA_CS</div>
       </div>
-    </section>
 
-    <!-- WORK -->
-    <section class="section">
-      <div class="card pad">
-        <h2>Work & Research</h2>
-        <p class="small" style="margin-top:8px;">
-          Full role descriptions and timelines are available in the PDF CV.
-        </p>
+      <span class="observation-label">OBSERVATION_04 // FIELD_EXPERIENCE</span>
+      <h1>Research, teaching, <br><i><span style="color: var(--accent);">and</span></i> comms.</h1>
 
-        <hr class="sep" />
-
-        <div class="grid two">
-
-          <div class="feature">
-
-            <div class="kicker">USDA ARS</div>
-            <h3>Research Assistant (part-time)</h3>
-            <p class="small">July 2025 – Present</p>
-
-            <div class="list">
-              <div class="bullet"><div class="dot"></div><div>Developing a national-scale HPAI early-warning system with county-level, one-month-ahead forecasts.</div></div>
-              <div class="bullet"><div class="dot"></div><div>Engineering leakage-safe forecasting infrastructure: rolling retraining, forward-only ingestion, time-aware evaluation.</div></div>
-              <div class="bullet"><div class="dot"></div><div>Rare-event modeling (~1% positives): calibrated thresholds, prevalence-aware ensembling, and imbalance-aware strategies.</div></div>
-              <div class="bullet"><div class="dot"></div><div>Building decision-support tooling and diagnostic analyses, including calibration curves and prevalence-bias assessment.</div></div>
-            </div>
-
+      <div style="display: grid; gap: 45px;">
+        
+        <section style="border-left: 1px solid var(--accent); padding-left: 24px;">
+          <span class="label">USDA_ARS // RESEARCH_ASSISTANT (PART-TIME)</span>
+          <p>Developing a national-scale H5N1 early-warning system. Engineering leakage-safe infrastructure: rolling retraining, forward-only ingestion, and time-aware evaluation.</p>
+          <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--ink-dim); margin-top: 10px;">
+            PERIOD: JULY 2025 – PRESENT // TX_STATION
           </div>
+        </section>
 
-          <div class="feature">
-
-            <div class="kicker">USDA ARS</div>
-            <h3>Research Assistant (internship)</h3>
-            <p class="small">May 2025 – July 2025</p>
-
-            <div class="list">
-              <div class="bullet"><div class="dot"></div><div>Built geospatial ML pipelines, classifying county-month HPAI presence across the U.S.</div></div>
-              <div class="bullet"><div class="dot"></div><div>Developed imbalanced-learning + gradient-boosting ensembles and performed feature-importance and explanatory analyses to support modeling interpretability.</div></div>
-              <div class="bullet"><div class="dot"></div><div>Presented outputs and diagnostics to national-level USDA scientists and program leadership to support biosurveillance.</div></div>
-            </div>
-
+        <section style="border-left: 1px solid var(--accent); padding-left: 24px;">
+          <span class="label">USDA_ARS // RESEARCH_ASSISTANT (INTERNSHIP)</span>
+          <p>Built geospatial ML pipelines classifying county-month HPAI presence. Presented diagnostic outputs and feature-importance analyses to national-level USDA scientists and program leadership.</p>
+          <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--ink-dim); margin-top: 10px;">
+            PERIOD: MAY 2025 – JULY 2025 // TX_STATION
           </div>
+        </section>
 
-          <div class="feature">
-
-            <div class="kicker">OpenAI</div>
-            <h3>Engagement Manager (contract)</h3>
-            <p class="small">July 2024 – Present</p>
-
-            <div class="list">
-              <div class="bullet"><div class="dot"></div><div>Designing public-facing programs for OpenAI's largest online public community (850k+ users), supporting responsible AI usage.</div></div>
-              <div class="bullet"><div class="dot"></div><div>Synthesizing user feedback to improve clarity around new product launches, reporting findings to upper management.</div></div>
-              <div class="bullet"><div class="dot"></div><div>Emphasizing communication quality, translating technical concepts for worldwide audiences.</div></div>
-            </div>
-
+        <section style="border-left: 1px solid var(--accent); padding-left: 24px;">
+          <span class="label">OPENAI // ENGAGEMENT_MANAGER (CONTRACT)</span>
+          <p>Designing public-facing programs for OpenAI's largest online community of 850k+ users.
+            Synthesizing feedback for technical product launches and reporting KPIs to upper management.
+          </p>
+          <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--ink-dim); margin-top: 10px;">
+            PERIOD: JULY 2024 – PRESENT // REMOTE
           </div>
+        </section>
 
-          <div class="feature">
-
-            <div class="kicker">University of Texas at Arlington</div>
-            <h3>Operating Systems Teaching Assistant</h3>
-            <p class="small">Jan 2025 – May 2025</p>
-
-            <div class="list">
-              <div class="bullet"><div class="dot"></div><div>Mentored ~120 students on OS fundamentals: multi-threading, scheduling, deadlocks, memory management.</div></div>
-              <div class="bullet"><div class="dot"></div><div>Held multiple weekly office hours, supporting students through debugging class assignments.</div></div>
-              <div class="bullet"><div class="dot"></div><div>Emphasized proper debugging techniques (GDB) and system-level approaches.</div></div>
-            </div>
-
+        <section style="border-left: 1px solid var(--accent); padding-left: 24px;">
+          <span class="label">UTA_CS // OPERATING_SYSTEMS_TA (PART-TIME)</span>
+          <p>Mentoring ~120 students on multi-threading, scheduling, and memory management.
+            Held multiple weekly office hours, emphasizing low-level debugging techniques via GDB.
+          </p>
+          <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--ink-dim); margin-top: 10px;">
+            PERIOD: JAN 2025 – MAY 2025 // UT_ARLINGTON
           </div>
+        </section>
 
-        </div>
+      </div>
+    </article>
 
-        <div class="cta-row" style="margin-top:18px;">
-          <a class="btn primary" href="files/Will_Maberry_Resume.pdf" target="_blank" rel="noreferrer">View CV / Resume (PDF)</a>
+    <aside class="marginalia">
+      <div class="taped-data" style="background: rgba(99, 102, 241, 0.08); border: 1px solid var(--accent); margin-bottom: 50px; padding: 1.5rem;">
+        <span class="observation-label" style="color: var(--risk-green);">LEADERSHIP_LOG</span>
+        
+        <div style="margin-top: 15px; font-size: 0.72rem; line-height: 1.6; font-family: var(--font-mono);">       
+          <strong>ACM_EDUCATION</strong> <br>
+          > Role: ACM Educate Director <br>
+          > Scale: 1400+ Students <br>
+          > Focus: Coding Literacy <br><br>
+
+          <strong>CSE_ADVISORY</strong> <br>
+          > Context: Deptartment Leadership <br>
+          > Outcome: Enhance Student Experience <br><br>
+
+          <strong>HACK_UTA</strong> <br>
+          > Role: Experience Officer <br>
+          > Impact: 450+ Participants <br>
+          > Tech: Onsite Database Troubleshooting <br><br>
+          
+          <strong>PERPLEXITY_PARTNER</strong> <br>
+          > Target: 40,000+ Student Body <br>
+          > Intent: Ethical AI Usage <br><br>
+
+          <strong>THE_WESLEY_BOARD</strong> <br>
+          > Status: Sole Student Rep <br>
+          > Budget: $100K+ Oversight <br>
+          > Action: Led Director Interviews
         </div>
       </div>
-    </section>
 
-    <!-- SERVICE / LEADERSHIP -->
-    <section class="section">
-      <div class="card pad">
-        <h2>Service & Leadership</h2>
-        <p class="small" style="margin-top:8px;">
-          Community-oriented roles at UT-Arlington
-        </p>
+      <span class="observation-label" style="font-size: 1.0rem;">DIRECTORY</span>
+      <hr class="sep-line">
+      <nav style="display: grid; gap: 18px;">
+        <a href="index.html">1. <span style="color: var(--accent)">IDENTITY</span></a>
+        <a href="research.html">2. <span style="color: var(--accent);">RESEARCH_INTEREST</span></a>
+        <a href="projects.html">3. <span style="color: var(--accent);">TECH_APPENDIX</span></a>
+        <a href="experience.html">4. <span style="color: var(--ink);">FIELD_EXPERIENCE</span></a>
+        <a href="gallery.html">5. <span style="color: var(--accent);">GALLERY_ENTRIES</span></a>
+        <a href="files/Will_Maberry_Resume.pdf">6.
+          <span style="font-weight: 700; color: var(--accent);">
+            VIEW_CV.PDF
+          </span>
+        </a>
+      </nav>
 
-        <hr class="sep" />
-
-        <div class="grid two">
-          <div class="feature">
-            <h3>ACM @ UTA — Education Director</h3>
-            <p class="small">May 2025 – Present</p>
-            <div class="list">
-              <div class="bullet"><div class="dot"></div><div>Leads programming for workshops, mentoring, and career prep across all undergraduate levels.</div></div>
-              <div class="bullet"><div class="dot"></div><div>Support learning outside the classroom through collaborative coding and mentorship programs.</div></div>
-            </div>
-          </div>
-
-          <div class="feature">
-            <h3>The Wesley @ UTA — Board Representative</h3>
-            <p class="small">July 2024 – Present</p>
-            <div class="list">
-              <div class="bullet"><div class="dot"></div><div>Represents students' priorities in organizational decisions and planning.</div></div>
-              <div class="bullet"><div class="dot"></div><div>Experience with deliberation, communication, and responsibility in a real governance setting.</div></div>
-            </div>
-          </div>
-
-          <div class="feature">
-            <h3>Perplexity — Campus Partner</h3>
-            <p class="small">May 2025 – Dec 2025</p>
-            <div class="list">
-              <div class="bullet"><div class="dot"></div><div>Connects students with tools supporting learning, research, and creativity through outreach initiatives.</div></div>
-            </div>
-          </div>
-
-          <div class="feature">
-            <h3>HackUTA — Experience Officer</h3>
-            <p class="small">Feb 2025 – Oct 2025</p>
-            <div class="list">
-              <div class="bullet"><div class="dot"></div><div>Organized workshops and participant programming for a large regional hackathon.</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="container foot-inner">
-        <div>© <span id="y"></span> Will Maberry</div>
-      </div>
-    </footer>
+    </aside>
   </main>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  <footer style="margin-top: 15vh; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); font-family: var(--font-mono); font-size: 0.65rem; color: var(--ink-dim); display: flex; justify-content: space-between;">
+    <div>© 2026 WILL_MABERRY</div>
+  </footer>
+</div>
+
+<script src="app.js"></script>
+
 </body>
 </html>
