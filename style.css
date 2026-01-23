@@ -160,66 +160,89 @@ nav a:hover::before {
 
 @media (max-width: 992px) {
   body {
-    padding: 4vh 0; /* Reduced padding for smaller screens */
+    padding: 2vh 0; /* Tightened for mobile */
   }
 
   .container {
-    padding-left: 20px; /* Adjusting for the border-left in your current CSS */
+    padding: 0 20px; /* Symmetrical padding */
+    width: auto;     /* Let the browser handle width naturally */
+    margin: 0;       /* Reset desktop centering */
+    border-left: none; 
+    overflow-x: hidden;
   }
 
-  /* 1. Reset the Grid to a Single Column */
-  main {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-
-  /* 2. Reposition Institutional Stamps */
+  /* Ensure the "Journal Stamps" stay within bounds */
   .stamp-container {
-    position: relative;
-    left: 0;
-    flex-direction: row; /* Horizontal stack on mobile */
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
+    position: relative; /* Removes them from the absolute gutter */
+    left: 0;            /* Aligns them with your text */
+    flex-direction: row; /* Switches from vertical column to horizontal row */
+    flex-wrap: wrap;     /* Allows them to wrap on very small screens */
     gap: 8px;
-    opacity: 0.6;
+    margin-bottom: 2rem;
+    opacity: 0.8;        /* Slightly more visible for mobile readability */
   }
 
   .stamp {
-    writing-mode: horizontal-tb; /* Normal horizontal text */
-    transform: none;
+    writing-mode: horizontal-tb; /* Resets text to read left-to-right */
+    transform: none;             /* Removes the 180deg rotation */
     font-size: 0.55rem;
-    padding: 2px 6px;
+    padding: 4px 10px;           /* Comfortable tap/read area */
+    border: 1px solid var(--accent); /* Uses your blue for better mobile definition */
+    background: rgba(121, 192, 255, 0.05); /* Subtle tint to match the aesthetic */
   }
 
-  /* 3. Typography Adjustments */
-  h1 {
-    font-size: 2.8rem; /* Scaled down for mobile view */
-    margin-bottom: 1rem;
+  main {
+    grid-template-columns: 100%; /* Explicit single column */
+    gap: 40px;
   }
 
-  p {
-    font-size: 1.2rem !important; /* Slightly smaller for narrative flow */
-  }
-
-  /* 4. Fix Marginalia Padding */
-  .marginalia {
-    padding-left: 0;
-    border-left: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 40px;
-  }
-
-  /* 5. Header Realignment */
   header {
     flex-direction: column;
     align-items: flex-start;
     height: auto;
-    gap: 15px;
-    margin-bottom: 8vh;
+    gap: 12px;
+    margin-bottom: 4vh;
   }
 
   .status-box {
     text-align: left;
-    min-width: unset;
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* Prevent long IDs or Statuses from stretching the header */
+  #sys-status, .header-loc {
+    word-break: break-all;
+    font-size: 0.65rem;
+  }
+
+  /* Lock images to the container width */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Force 2-column grid for images */
+  .gallery-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  /* Reduce polaroid padding for mobile to save space */
+  .polaroid-artifact {
+    padding: 8px 8px 16px 8px;
+    margin-top: 0; /* Reset desktop margin */
+  }
+}
+
+/* 2. Narrow Mobile Breakpoint (Phones) */
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr !important; /* Single column for phones */
+  }
+  
+  h1 {
+    font-size: 2.2rem; /* Further scale down title for small phones */
   }
 }
