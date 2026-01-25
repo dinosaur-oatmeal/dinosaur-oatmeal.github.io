@@ -1,6 +1,14 @@
-/* style.css — The High-Fidelity Epi Logbook */
+/* Ensure everything stays inside the box */
+* {
+  box-sizing: border-box;
+}
 
-/* style.css — The High-Contrast Research Station */
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents ghost-scrolling to the right */
+}
 
 :root {
   /* Lifted background for better visibility */
