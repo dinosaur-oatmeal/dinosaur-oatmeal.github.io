@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // System Status Pulse
   const status = document.getElementById('sys-status');
-  const logs = ["INGESTING_DATA", "BUILDING FORECAST", "CALIBRATING_THRESHOLDS",
+  const logs = ["INGESTING_DATA", "BUILDING_FORECAST", "CALIBRATING_THRESHOLDS",
   "PIPELINE_ACTIVE", "SYSTEM_READY",
   ];
   let i = 0;
