@@ -33,4 +33,38 @@ document.addEventListener("DOMContentLoaded", () => {
     status.innerText = logs[i];
     i = (i + 1) % logs.length;
   }, 4000);
+
+  // Theme toggle (default = system preference)
+  const themeToggle = document.getElementById('theme-toggle');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+  const getSystemTheme = () => (prefersDark.matches ? 'dark' : 'light');
+  const updateToggleLabel = () => {
+    if (!themeToggle) return;
+    const current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+    themeToggle.textContent = current.toUpperCase();
+  };
+
+  const storedTheme = localStorage.getItem('theme');
+  if (storedTheme === 'light' || storedTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', storedTheme);
+  }
+  updateToggleLabel();
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateToggleLabel();
+    });
+  }
+
+  prefersDark.addEventListener('change', () => {
+    if (!localStorage.getItem('theme')) {
+      updateToggleLabel();
+    }
+  });
+
 });

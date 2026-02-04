@@ -1,101 +1,151 @@
-/* Ensure everything stays inside the box */
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Prevents ghost-scrolling to the right */
-}
+/* ===== Base Reset ===== */
+* { box-sizing: border-box; }
+html, body { width: 100%; margin: 0; padding: 0; overflow-x: hidden; }
 
 :root {
-  --bg: #0d1117; 
-  --ink: #ffffff;
-  --ink-dim: #8b949e; 
-  /* "Laboratory Slate" - Professional, scientific, and soft */
-  --accent: #92b9bd; 
-  --risk-red: #f92672;
-  --risk-green: #a6e22e; 
   --font-serif: 'Newsreader', 'Crimson Pro', serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Light theme (Field Journal) */
+  --bg: #e4ded3;
+  --paper: #efe7db;
+  --ink: #1a1713;
+  --ink-dim: #4e4a44;
+  --accent: #2b6f68;
+  --risk-red: #b93434;
+  --risk-green: #247a57;
+  --shadow: rgba(0, 0, 0, 0.12);
+  --grid: rgba(0, 0, 0, 0.05);
+  --line: rgba(26, 23, 19, 0.22);
+  --tape: rgba(43, 111, 104, 0.10);
+  --tape-border: rgba(26, 23, 19, 0.20);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0f12;
+    --paper: #0f1417;
+    --ink: #f5f2eb;
+    --ink-dim: #b9b2a9;
+    --accent: #6bc2b6;
+    --risk-red: #ff6b6b;
+    --risk-green: #7ee08a;
+    --shadow: rgba(0, 0, 0, 0.4);
+    --grid: rgba(255, 255, 255, 0.04);
+    --line: rgba(245, 242, 235, 0.18);
+    --tape: rgba(107, 194, 182, 0.10);
+    --tape-border: rgba(245, 242, 235, 0.20);
+  }
+}
+
+/* Manual overrides via data-theme */
+html[data-theme="light"] {
+  --bg: #e4ded3;
+  --paper: #efe7db;
+  --ink: #1a1713;
+  --ink-dim: #4e4a44;
+  --accent: #2b6f68;
+  --risk-red: #b93434;
+  --risk-green: #247a57;
+  --shadow: rgba(0, 0, 0, 0.12);
+  --grid: rgba(0, 0, 0, 0.05);
+  --line: rgba(26, 23, 19, 0.22);
+  --tape: rgba(43, 111, 104, 0.10);
+  --tape-border: rgba(26, 23, 19, 0.20);
+}
+
+html[data-theme="dark"] {
+  --bg: #0b0f12;
+  --paper: #0f1417;
+  --ink: #f5f2eb;
+  --ink-dim: #b9b2a9;
+  --accent: #6bc2b6;
+  --risk-red: #ff6b6b;
+  --risk-green: #7ee08a;
+  --shadow: rgba(0, 0, 0, 0.4);
+  --grid: rgba(255, 255, 255, 0.04);
+  --line: rgba(245, 242, 235, 0.18);
+  --tape: rgba(107, 194, 182, 0.10);
+  --tape-border: rgba(245, 242, 235, 0.20);
 }
 
 body {
-  background-color: var(--bg);
-  /* Brighter dots: increased opacity from 0.03 to 0.1 */
-  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 45px 45px;
+  background:
+    radial-gradient(1200px 600px at 10% 0%, rgba(255,255,255,0.06), transparent 60%),
+    linear-gradient(0deg, var(--grid) 1px, transparent 1px),
+    var(--bg);
+  background-size: auto, 100% 34px, auto;
   color: var(--ink);
   font-family: var(--font-serif);
   line-height: 1.8;
   padding: 8vh 0;
   overflow-x: hidden;
+  position: relative;
+  perspective: 1400px;
 }
 
-/* Subtle Vertical Divider — Optional for that "Journal Gutter" look */
 .container {
   width: min(92%, 1100px);
   margin: 0 auto;
   position: relative;
-  border-left: 1px solid rgba(121, 192, 255, 0.05); /* Very faint accent line */
-  padding-left: 40px;
+  padding-left: 48px;
+  border-left: 2px solid var(--line);
+  box-shadow: inset 12px 0 24px var(--shadow);
+  background: var(--paper);
+  transform-origin: left center;
+  backface-visibility: hidden;
+  padding-bottom: 20px;
 }
 
-/* --- Fixed Institutional Gutter --- */
+/* ===== Journal Stamps ===== */
 .stamp-container {
-  display: flex; 
-  flex-direction: column; 
+  display: flex;
+  flex-direction: column;
   gap: 12px;
-  position: absolute; 
-  left: -100px; 
+  position: absolute;
+  left: -110px;
   top: 0;
-  opacity: 0.4;
+  opacity: 0.55;
   pointer-events: none;
 }
 
 .stamp {
   font-family: var(--font-mono);
   font-size: 0.6rem;
-  color: var(--accent);
-  border: 1px solid rgba(146, 185, 189, 0.3);
+  color: var(--bg);
+  border: 2px solid var(--accent);
   padding: 4px 8px;
   text-transform: uppercase;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  background: rgba(146, 185, 189, 0.05); /* Very subtle fill */
+  background: var(--accent);
+  letter-spacing: 0.08em;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 25%, transparent);
 }
 
-/* Unique "Sequencing Lane" effect - mimics genomic data visualization */
 .stamp-container::after {
   content: "";
   position: absolute;
-  left: -20px;
+  left: -18px;
   top: 0;
   width: 6px;
   height: 100%;
-  /* Creates a 'barcode' look that resembles gel electrophoresis bars */
-  border-left: 1px solid var(--accent);
-  opacity: 0.3; /* Subtle and professional */
-  filter: blur(0.2px);
+  border-left: 1px dashed var(--line);
+  opacity: 0.5;
 }
 
-/* --- Layout Arbiter --- */
+/* ===== Layout ===== */
 header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  height: 60px; /* Locked height prevents cross-page jitter */
+  height: 60px;
   margin-bottom: 12vh;
   font-family: var(--font-mono);
   font-size: 0.7rem;
 }
 
-.status-box {
-  text-align: right;
-  min-width: 220px; /* Locked width prevents horizontal shift */
-}
+.status-box { text-align: right; min-width: 220px; }
 
 main {
   display: grid;
@@ -104,43 +154,89 @@ main {
   align-items: start;
 }
 
-/* --- Typography --- */
-h1 { font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.04em; color: #fff; margin-bottom: 1.5rem; }
-h2 { font-size: 1.8rem; font-weight: 300; margin: 2rem 0 1rem; color: #fff; }
+/* ===== Typography ===== */
+h1 {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 350;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin: 2rem 0 1rem;
+  color: var(--ink);
+}
+
 p { margin-bottom: 1.5rem; }
-.observation-label { font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent); margin-bottom: 0.5rem; display: block; text-transform: uppercase; }
-.label { font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); display: block; margin-bottom: 0.5rem; }
 
-/* --- Artifacts --- */
-.marginalia { font-family: var(--font-mono); font-size: 0.75rem; color: var(--ink-dim); text-transform: uppercase; letter-spacing: 0.12em; padding-left: 24px; border-left: 1px solid rgba(255, 255, 255, 0.05); }
-.taped-data { 
-  background: rgba(146, 185, 189, 0.03); /* Matching your Laboratory Slate */
-  padding: 1.5rem; 
-  position: relative; 
-  border: 1px solid rgba(146, 185, 189, 0.1); 
-  margin-top: 2rem; 
+.observation-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
-/* Refined "Laboratory Tape" effect */
-.taped-data::before { 
-  content: ""; 
-  position: absolute; 
-  top: -10px; 
-  left: 20px; 
-  width: 60px; 
-  height: 20px; 
-  background: rgba(255, 255, 255, 0.1); /* Frosted tape look */
-  backdrop-filter: blur(3px); 
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transform: rotate(-1deg); 
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.5rem;
 }
-.data-box { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 20px; margin: 2rem 0; font-family: var(--font-mono); }
+
+/* ===== Marginalia ===== */
+.marginalia {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-left: 1px solid var(--line);
+}
+
+.taped-data {
+  background: var(--tape);
+  padding: 1.5rem;
+  position: relative;
+  border: 1px solid var(--tape-border);
+  margin-top: 2rem;
+}
+
+.taped-data::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  width: 70px;
+  height: 22px;
+  background: var(--tape);
+  border: 1px solid var(--tape-border);
+  transform: rotate(-2deg);
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.data-box {
+  background: var(--tape);
+  border: 1px solid var(--tape-border);
+  padding: 20px;
+  margin: 2rem 0;
+  font-family: var(--font-mono);
+}
+
 .data-row { display: flex; gap: 12px; margin-bottom: 8px; font-size: 0.85rem; }
-.data-key { color: var(--accent); min-width: 100px; font-weight: 500; }
+.data-key { color: var(--accent); min-width: 100px; font-weight: 600; }
 
 nav a {
-  color: var(--ink); 
+  color: var(--ink);
   text-decoration: none;
   font-family: var(--font-mono);
   font-size: 0.85rem;
@@ -149,32 +245,21 @@ nav a {
   position: relative;
 }
 
-nav a span {
-  color: var(--accent);
-  transition: all 0.2s ease;
-}
+nav a span { color: var(--accent); transition: all 0.2s ease; }
+nav a:hover span { filter: brightness(1.1); padding-left: 4px; }
 
-nav a:hover span {
-  filter: brightness(1.2);
-  padding-left: 4px;
-}
-
-/* The Arrow → Bar Pivot */
 nav a::before {
-  content: ""; /* Removed the character */
+  content: "";
   position: absolute;
-  left: -15px; /* Tighter gutter alignment */
+  left: -15px;
   width: 2px;
-  height: 0.8rem; /* Matches font height */
+  height: 0.8rem;
   background: var(--accent);
   opacity: 0;
   transition: all 0.2s ease;
 }
 
-nav a:hover::before {
-  opacity: 1;
-  left: -10px; /* Subtle slide-in */
-}
+nav a:hover::before { opacity: 1; left: -10px; }
 
 .btn {
   display: inline-block;
@@ -190,94 +275,86 @@ nav a:hover::before {
   background: transparent;
 }
 
-.polaroid-artifact { background: #f8f8f8; padding: 10px 10px 20px 10px; box-shadow: 8px 8px 20px rgba(0,0,0,0.5); transform: rotate(3deg); transition: 0.3s; display: block; margin-top: 2rem; }
+.polaroid-artifact {
+  background: #f8f8f8;
+  padding: 10px 10px 20px 10px;
+  box-shadow: 8px 8px 20px var(--shadow);
+  transform: rotate(3deg);
+  transition: 0.3s;
+  display: block;
+  margin-top: 2rem;
+}
+
 .polaroid-artifact img { width: 100%; filter: sepia(0.2) contrast(1.1); }
 
-@media (max-width: 992px) {
-  h1 {
-    font-size: clamp(3.5rem, 10vw, .5rem);
-  }
+/* ===== Theme Toggle ===== */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
 
-  body {
-    padding: 2vh 0; /* Tightened for mobile */
-  }
+.theme-toggle button {
+  border: 1px solid var(--accent);
+  background: var(--tape);
+  color: var(--accent);
+  padding: 4px 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.theme-toggle button:hover {
+  filter: brightness(1.05);
+}
+
+/* ===== Page Flip (Container) ===== */
+
+@media (max-width: 992px) {
+  h1 { font-size: clamp(3.5rem, 10vw, 5rem); }
+
+  body { padding: 2vh 0; }
 
   .container {
-    padding: 0 20px; /* Symmetrical padding */
-    width: auto;     /* Let the browser handle width naturally */
-    margin: 0;       /* Reset desktop centering */
-    border-left: none; 
-    overflow-x: hidden;
+    padding: 0 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: auto;
+    margin: 0;
+    border-left: none;
+    box-shadow: none;
   }
 
-  /* Ensure the "Journal Stamps" stay within bounds */
   .stamp-container {
-    position: relative; /* Removes them from the absolute gutter */
-    left: 0;            /* Aligns them with your text */
-    flex-direction: row; /* Switches from vertical column to horizontal row */
-    flex-wrap: wrap;     /* Allows them to wrap on very small screens */
+    position: relative;
+    left: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 2rem;
-    opacity: 0.8;        /* Slightly more visible for mobile readability */
+    opacity: 0.85;
   }
 
   .stamp {
-    writing-mode: horizontal-tb; /* Resets text to read left-to-right */
-    transform: none;             /* Removes the 180deg rotation */
+    writing-mode: horizontal-tb;
+    transform: none;
     font-size: 0.55rem;
-    padding: 4px 10px;           /* Comfortable tap/read area */
-    border: 1px solid var(--accent); /* Uses your blue for better mobile definition */
-    background: rgba(121, 192, 255, 0.05); /* Subtle tint to match the aesthetic */
+    padding: 4px 10px;
   }
 
-  main {
-    grid-template-columns: 100%; /* Explicit single column */
-    gap: 40px;
-  }
+  main { grid-template-columns: 100%; gap: 40px; }
 
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
-    gap: 12px;
-    margin-bottom: 4vh;
-  }
+  header { flex-direction: column; align-items: flex-start; height: auto; gap: 12px; margin-bottom: 4vh; }
+  .status-box { text-align: left; min-width: 0; width: 100%; }
 
-  .status-box {
-    text-align: left;
-    min-width: 0;
-    width: 100%;
-  }
+  img { max-width: 100%; height: auto; }
 
-  /* Prevent long IDs or Statuses from stretching the header */
-  #sys-status, .header-loc {
-    word-break: break-all;
-    font-size: 0.65rem;
-  }
-
-  /* Lock images to the container width */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* Force 2-column grid for images */
-  .gallery-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 20px !important;
-  }
-
-  /* Reduce polaroid padding for mobile to save space */
-  .polaroid-artifact {
-    padding: 8px 8px 16px 8px;
-    margin-top: 0; /* Reset desktop margin */
-  }
+  .polaroid-artifact { padding: 8px 8px 16px 8px; margin-top: 0; }
 }
 
-/* 2. Narrow Mobile Breakpoint (Phones) */
 @media (max-width: 600px) {
-  .gallery-grid {
-    grid-template-columns: 1fr !important; /* Single column for phones */
-  }
+  .polaroid-artifact { transform: none; }
 }

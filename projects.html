@@ -12,8 +12,10 @@
 <body>
 
 <div class="container">
-  <header style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 12vh; font-family: var(--font-mono); font-size: 0.7rem;">
-    <div>
+  <header style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 12vh; font-family: var(--font-mono); font-size: 0.7rem; margin-right: 5%;">
+    <div class="theme-toggle">
+      <span>THEME</span>
+      <button id="theme-toggle" type="button">DARK</button>
     </div>
     <div style="text-align: right;">
       <span id="sys-status" style="color: var(--risk-green);">SYSTEM_READY</span> <br>
@@ -26,7 +28,7 @@
     <article style="position: relative;">
       <div class="stamp-container">
         <div class="stamp">RESEARCH: USDA_ARS</div>
-        <div class="stamp">SECTOR: OPENAI</div>
+        <div class="stamp">INDUSTRY: OPENAI</div>
         <div class="stamp">STATION: UTA_CS</div>
       </div>
 
@@ -38,22 +40,22 @@
         
         <section style="border-left: 1px solid var(--accent); padding-left: 24px;">
           <span class="label">ASL_RECOGNITION // COMPUTER_VISION</span>
-          <p>Real-time computer vision and ML pipeline built with a custom dataset of 2,000+ labeled samples.
-            Focused on static test-set and live inference disparity.
+          <p>Real-time computer vision + ML pipeline built from a custom dataset of 2,000+ labeled samples.
+            Focused on reliable live inference, confidence controls, and accessible feedback via text and TTS.
           </p>
         </section>
 
         <section style="border-left: 1px solid var(--accent); padding-left: 24px;">
           <span class="label">NEURAL_NET_SCRATCH // FOUNDATIONAL_MODELING</span>
           <p>Manual implementation of a feedforward network (MNIST @ 95%).
-            Designed to visualize and make parameter updates and backpropagation traceable.
+            Built to make gradient flow, parameter updates, and model behavior interpretable.
           </p>
         </section>
 
         <section style="border-left: 1px solid var(--accent); padding-left: 24px;">
           <span class="label">ALGORITHM_LEARNING_PLATFORM // PEDAGOGY</span>
           <p>Interactive platform built in Elm, visualizing 20+ algorithmic processes step-by-step.
-            Adopted by UTA faculty for live lectures and self-paced studying.
+            Used by UTA faculty for live lectures and self-paced study.
           </p>
           <a href="https://www.willmaberry.com/Algorithms-And-Data-Structures/" class="btn" target="_blank">
             DEPLOY_ALGOS_PLATFORM
@@ -62,8 +64,9 @@
 
         <section style="border-left: 1px solid var(--accent); padding-left: 24px;">
           <span class="label">QUEENS_LOGIC_GAME // CONSTRAINT_SATISFACTION</span>
-          <p>Full-stack puzzle system with a bespoke flood-fill board generator guaranteeing unique solutions.
-            Built with a FastAPI/Pydantic backend and Docker deployment.</p>
+          <p>Full-stack puzzle system with a flood-fill generator that guarantees unique solutions.
+            Emphasizes constraint satisfaction, search, and API design.
+          </p>
           <a href="https://games.willmaberry.com/" class="btn" target="_blank">
             ACCESS_QUEENS_ENGINE
           </a>
@@ -87,12 +90,12 @@
       <div style="margin-bottom: 50px;">
         <span class="observation-label">SYSTEM_SPEC</span>
         <div style="font-size: 0.72rem; line-height: 1.4;">
-          <strong>LANGS:</strong> Python, C, Java <br> <br>
-          <strong>ML_DOMAIN:</strong> Time-series, Imbalance, Calibration <br> <br>
+          <strong>CORE_STACK:</strong> Python, C, Java <br> <br>
+          <strong>FORECASTING_FOCUS:</strong> Time-series, Rare Events, Calibration <br> <br>
           <strong>ML_CORE:</strong> PyTorch, TensorFlow, Scikit-learn <br> <br>
-          <strong>ML_METHOD:</strong> SHAP, PCA, Prevalence-Bias <br> <br>
-          <strong>GEOSPATIAL:</strong> GeoPandas, Folium, Matplotlib <br> <br>
-          <strong>BACKEND:</strong> FastAPI, Docker, GitHub Actions
+          <strong>MODEL_DIAGNOSTICS:</strong> SHAP, PCA, Prevalence Bias <br> <br>
+          <strong>SPATIAL_DATA:</strong> GeoPandas, Folium, Matplotlib <br> <br>
+          <strong>DEPLOYMENT:</strong> FastAPI, Docker, GitHub Actions
         </div>
       </div>
 
