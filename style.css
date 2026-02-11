@@ -1,6 +1,7 @@
 /* ===== Base Reset ===== */
 * { box-sizing: border-box; }
 html, body { width: 100%; margin: 0; padding: 0; overflow-x: hidden; }
+html { scrollbar-gutter: stable; }
 
 :root {
   --font-serif: 'Newsreader', 'Crimson Pro', serif;
