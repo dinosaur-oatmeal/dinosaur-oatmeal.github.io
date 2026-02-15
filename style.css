@@ -70,6 +70,7 @@ html[data-theme="dark"] {
   --tape-border: rgba(245, 242, 235, 0.20);
 }
 
+/* ===== 1. SYSTEM BASE RESET ===== */
 body {
   background:
     radial-gradient(1200px 600px at 10% 0%, rgba(255,255,255,0.06), transparent 60%),
@@ -79,12 +80,81 @@ body {
   color: var(--ink);
   font-family: var(--font-serif);
   line-height: 1.8;
-  padding: 8vh 0;
+  padding: 0; /* Changed from 8vh to 0 to prevent top-gap artifacts */
+  margin: 0;
   overflow-x: hidden;
   position: relative;
   perspective: 1400px;
 }
 
+/* ===== 2. THE DUAL-MODE STACK ===== */
+
+/* The Core (witness) View - Hidden behind the curtain */
+.witness-reveal {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  background: #060708; /* War Room Floor */
+}
+
+.witness-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* The System (Corporate) Layer - The sliding curtain */
+.curtain-layer {
+  position: relative;
+  z-index: 2; /* Sits on top of the witness view */
+  background-color:
+  radial-gradient(1200px 600px at 10% 0%, rgba(255,255,255,0.06), transparent 60%),
+  linear-gradient(0deg, var(--grid) 1px, transparent 1px),
+  var(--bg); /* Opaque background prevents frame leaking through */
+  min-height: 100vh; /* Ensures the curtain is at least as tall as the screen */
+  width: 100%;
+  transform: translate3d(0, 0, 0);
+  transform-origin: top center;
+  /* transition matches the 1250ms logic in app.js */
+  transition: transform 1.25s cubic-bezier(0.16, 1, 0.3, 1), filter 1.25s ease;
+  will-change: transform, filter;
+  padding-top: 8vh; /* Moved padding here from body to keep layout consistent */
+}
+
+/* ===== 3. TRIGGERED STATES (Managed by app.js) ===== */
+
+.home-page.is-revealing .witness-reveal,
+.home-page.is-witness .witness-reveal {
+  opacity: 1;
+  visibility: visible;
+}
+
+.home-page.is-revealing .curtain-layer,
+.home-page.is-witness .curtain-layer {
+  transform: translate3d(0, 110vh, 0); /* Pushed further to 110% */
+  filter: brightness(0.82);
+  pointer-events: none;
+  visibility: hidden; /* This makes it "invisible" to the browser */
+}
+
+/* Full visibility only when the mode is active */
+.home-page.is-witness .witness-reveal {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.home-page.is-revealing,
+.home-page.is-witness {
+  overflow: hidden; /* Lock scroll during witness mode */
+}
+
+/* ===== 4. CONTENT CONTAINER ===== */
 .container {
   width: min(92%, 1100px);
   margin: 0 auto;
@@ -92,10 +162,11 @@ body {
   padding-left: 48px;
   border-left: 2px solid var(--line);
   box-shadow: inset 12px 0 24px var(--shadow);
-  background: var(--paper);
+  background: var(--paper); /* Ensures journal appearance is opaque */
   transform-origin: left center;
   backface-visibility: hidden;
   padding-bottom: 20px;
+  min-height: 90vh; /* Adds enough height to prevent bottom-bar artifacts */
 }
 
 /* ===== Journal Stamps ===== */
@@ -274,6 +345,18 @@ nav a:hover::before { opacity: 1; left: -10px; }
   margin-top: 10px;
   transition: all 0.2s ease;
   background: transparent;
+  cursor: pointer;
+}
+
+.witness-trigger {
+  margin-top: 1.6rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+}
+
+.witness-trigger:disabled {
+  opacity: 0.7;
+  cursor: default;
 }
 
 .polaroid-artifact {
@@ -312,7 +395,14 @@ nav a:hover::before { opacity: 1; left: -10px; }
   filter: brightness(1.05);
 }
 
-/* ===== Page Flip (Container) ===== */
+/* ===== Curtain Reveal ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  .witness-reveal,
+  .curtain-layer {
+    transition-duration: 1ms;
+  }
+}
 
 @media (max-width: 992px) {
   h1 { font-size: clamp(3.5rem, 10vw, 5rem); }

@@ -1,40 +1,36 @@
-// app.js (Brand New File)
 if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual'; // Kills the "helpful" memory
+  history.scrollRestoration = 'manual';
 }
 
-// Global UI Arbiter
 document.addEventListener("DOMContentLoaded", () => {
-  
-  // 1. Target the date element
+  // 1. SYSTEM INITIALIZATION
+  window.scrollTo(0, 0);
+
+  // 2. SYSTEM DATE INJECTION
   const dateEl = document.getElementById('current-date');
-  
   if (dateEl) {
     const now = new Date();
     const yyyy = now.getFullYear();
-    // Months are 0-indexed, so we add 1 and pad with a leading zero
     const mm = String(now.getMonth() + 1).padStart(2, '0');
     const dd = String(now.getDate()).padStart(2, '0');
-    
-    // Injects the date: 2026.01.23
     dateEl.textContent = `${yyyy}.${mm}.${dd}`;
   }
 
-  // 2. Keep your scroll reset at the top
-  window.scrollTo(0, 0);
-
-  // System Status Pulse
+  // 3. SYSTEM STATUS PULSE
   const status = document.getElementById('sys-status');
-  const logs = ["INGESTING_DATA", "BUILDING_FORECAST", "CALIBRATING_THRESHOLDS",
-  "PIPELINE_ACTIVE", "SYSTEM_READY",
+  const logs = [
+    "INGESTING_DATA", "BUILDING_FORECAST", 
+    "CALIBRATING_THRESHOLDS", "PIPELINE_ACTIVE", "SYSTEM_READY"
   ];
-  let i = 0;
-  setInterval(() => {
-    status.innerText = logs[i];
-    i = (i + 1) % logs.length;
-  }, 4000);
+  if (status) {
+    let i = 0;
+    setInterval(() => {
+      status.innerText = logs[i];
+      i = (i + 1) % logs.length;
+    }, 4000);
+  }
 
-  // Theme toggle (default = system preference)
+  // 4. THEME ARBITER (Dark/Light)
   const themeToggle = document.getElementById('theme-toggle');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -62,9 +58,104 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   prefersDark.addEventListener('change', () => {
-    if (!localStorage.getItem('theme')) {
-      updateToggleLabel();
+    if (!localStorage.getItem('theme')) updateToggleLabel();
+  });
+
+  // 5. MODE NAVIGATION (Curtain Reveal & Return)
+  const revealButton = document.getElementById('witness-reveal-btn');
+  const modeReturnButton = document.getElementById('corporate-mode-btn');
+
+  if (revealButton) {
+    const revealDurationMs = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 1250;
+    revealButton.addEventListener('click', () => {
+      if (document.body.classList.contains('is-revealing') || document.body.classList.contains('is-witness')) return;
+      revealButton.disabled = true;
+      revealButton.blur();
+      document.body.classList.add('is-revealing');
+      setTimeout(() => {
+        document.body.classList.remove('is-revealing');
+        document.body.classList.add('is-witness');
+      }, revealDurationMs);
+    });
+  }
+
+  if (modeReturnButton) {
+    modeReturnButton.addEventListener('click', () => {
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: 'exit-witness' }, '*');
+      } else {
+        window.location.href = modeReturnButton.dataset.returnHref || 'index.html';
+      }
+    });
+  }
+
+  window.addEventListener('message', (event) => {
+    if (event.data && event.data.type === 'exit-witness') {
+      document.body.classList.add('is-revealing'); // Re-enable transition state for the slide up
+      document.body.classList.remove('is-witness');
+      setTimeout(() => {
+        document.body.classList.remove('is-revealing');
+        if (revealButton) revealButton.disabled = false;
+      }, 50);
     }
   });
 
+  // 6. REDACTION TOGGLE
+  const redactions = document.querySelectorAll('.redaction');
+  redactions.forEach((redaction) => {
+    redaction.addEventListener('click', (e) => {
+      e.preventDefault();
+      redaction.classList.toggle('is-open');
+    });
+  });
+
+  // 7. JITTER ENGINE
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const jitterTargets = document.querySelectorAll('.jitter');
+  if (!prefersReducedMotion) {
+    jitterTargets.forEach((el) => {
+      const x = (Math.random() * 10 - 5).toFixed(2);
+      const y = (Math.random() * 10 - 5).toFixed(2);
+      el.style.translate = `${x}px ${y}px`;
+      el.animate(
+        [
+          { translate: `${x}px ${y}px` },
+          { translate: `${(Math.random() * 10 - 5).toFixed(2)}px ${(Math.random() * 10 - 5).toFixed(2)}px` },
+          { translate: `${x}px ${y}px` }
+        ],
+        {
+          duration: 5000 + Math.random() * 5000,
+          iterations: Infinity,
+          easing: 'ease-in-out',
+        }
+      );
+    });
+  }
+
+  // 8. SMART TOOLTIP EDGE DETECTION
+  const strikes = document.querySelectorAll('.highlight');
+  const edgeThreshold = 130; 
+  strikes.forEach(strike => {
+    strike.addEventListener('mouseenter', function() {
+      this.classList.remove('edge-left', 'edge-right');
+      const rect = this.getBoundingClientRect();
+      const viewportWidth = window.innerWidth;
+      if (rect.left < edgeThreshold) {
+        this.classList.add('edge-left');
+      } else if (viewportWidth - rect.right < edgeThreshold) {
+        this.classList.add('edge-right');
+      }
+    });
+  });
+
+  // 9. FRAGMENT STAGGER ENGINE (Fade-Up Entry)
+  const fragments = document.querySelectorAll('.grid .fragment');
+  fragments.forEach((fragment, index) => {
+    const delay = index * 120; 
+    fragment.style.animationDelay = `${delay}ms`;
+    
+    requestAnimationFrame(() => {
+      fragment.classList.add('is-visible');
+    });
+  });
 });
