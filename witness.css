@@ -423,6 +423,7 @@ h1 {
   }
   
   /* 1. HIDE DECORATIVE ELEMENTS (Stickies, Images, Vertical Text) */
+  .handwritten.small,
   .zone-sticky-cyan,
   .zone-sticky-val,
   .zone-sticky-growth,
