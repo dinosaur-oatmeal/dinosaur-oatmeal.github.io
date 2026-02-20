@@ -3,7 +3,7 @@
   --ink: #111;
   --ink-dim: #4a473f;
   --pencil: #555;
-  --error: #b93434;
+  --error: rgb(223, 44, 44);
   --system-blue: #0000FF;
   --thought-bg: #000;
   --thought-text: #fff;
@@ -270,7 +270,7 @@ h1 {
   box-decoration-break: clone;
 
   /* Initial state */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'%3E%3Cpath d='M0,10 L20,6 L50,13 L80,5 L100,10 L95,16 L70,12 L45,18 L20,14 L0,16 Z' fill='rgba(185, 52, 52, 0.80)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'%3E%3Cpath d='M1,12 C15,8 35,8 50,10 C70,12 85,8 99,10 L98,18 C80,20 60,18 50,16 C30,14 15,18 2,17 Z' fill='rgba(223, 44, 44, 0.70)'/%3E%3C/svg%3E");
   background-size: 100% 1.3em;
   background-position: center;
   background-repeat: no-repeat;
