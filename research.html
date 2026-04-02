@@ -39,32 +39,37 @@
       </div>
 
       <span class="observation-label">OBSERVATION_02 // RESEARCH_INTEREST</span>
-      <h1>Research <br><i><span style="color: var(--accent);">for</span></i> Public Sector.</h1>
+      <h1>Forecasting <br><i><span style="color: var(--accent);">for</span></i> Disease Biosurveillance.</h1>
       
       <p style="font-size: 1.4rem; max-width: 600px; margin-bottom: 2rem; font-weight: 300;">
-        I build end-to-end spatiotemporal infectious disease outbreak forecasting systems, supporting biosurveillance
-        and public health interventions.
+        I build county-level machine learning systems for Highly Pathogenic Avian Influenza (HPAI) detection and one-month-ahead outbreak
+        forecasting, translating environmental and spatial signals into proactive biosurveillance tools.
       </p>
 
       <div class="data-box">
-        <div class="data-row"><span class="data-key">DOMAIN:</span> <span>HPAI H5N1 (Avian Influenza)</span></div>
-        <div class="data-row"><span class="data-key">SCALE:</span> <span>U.S. County &times; Month</span></div>
+        <div class="data-row"><span class="data-key">DOMAIN:</span> <span>H5N1 HPAI (Avian Influenza)</span></div>
+        <div class="data-row"><span class="data-key">SCALE:</span> <span>CONUS County &times; Month</span></div>
+        <div class="data-row"><span class="data-key">HORIZON:</span> <span>1-Month Risk Forecast</span></div>
       </div>
 
-      <h2 style="font-size: 1.8rem; font-weight: 300; margin-top: 3rem;">Forecasting Methodology</h2>
+      <h2 style="font-size: 1.8rem; font-weight: 300; margin-top: 3rem;">Forecasting Framework</h2>
 
       <div style="display: grid; gap: 30px; margin-top: 2rem;">
         <div style="border-left: 1px solid var(--accent); padding-left: 20px;">
-          <span class="label">FORECAST_ORCHESTRATION</span>
-          <p class="small">End-to-end pipelines that move from data ingestion to actionable risk outputs.</p>
+          <span class="label">COUNTY_SCALE_MODELING</span>
+          <p class="small">County-month modeling across the conterminous United States (CONUS), integrating environmental, climatological, and geospatial features with outbreak observations.</p>
         </div>
         <div style="border-left: 1px solid var(--accent); padding-left: 20px;">
-          <span class="label">FEATURE_ENGINEERING</span>
-          <p class="small">Temporal gating and lag structuring, eliminating forward look-ahead leakage.</p>
+          <span class="label">LEAKAGE_SAFE_FEATURES</span>
+          <p class="small">Lagged and time-gated feature construction supports one-month-ahead forecasting without forward look-ahead leakage.</p>
         </div>
         <div style="border-left: 1px solid var(--accent); padding-left: 20px;">
-          <span class="label">DECISION_SUPPORT</span>
-          <p class="small">Risk tiering translates complex modeling outputs into actionable insights for the public.</p>
+          <span class="label">RARE_EVENT_LEARNING</span>
+          <p class="small">Classification and forecasting models are tuned for extreme class imbalance, with recall and balanced accuracy prioritized for disease surveillance.</p>
+        </div>
+        <div style="border-left: 1px solid var(--accent); padding-left: 20px;">
+          <span class="label">INTERPRETABLE_OUTPUTS</span>
+          <p class="small">Feature importance, PCA, calibration checks, and risk tiering make model behavior legible enough for operational decision support.</p>
         </div>
       </div>
 
@@ -73,17 +78,17 @@
     <aside class="marginalia">
       <div style="margin-bottom: 50px;">
         <span class="observation-label">TECH_MANIFEST</span>
-        <strong>[MONTHLY_ARTIFACTS]</strong> <br>
-        > Risk Alert Tiers <br>
-        > Calibration Diagnostics <br>
-        > Interactive Visualizations
+        <strong>[MODEL_OUTPUTS]</strong> <br>
+        > County Risk Classifications <br>
+        > One-Month Forecast Maps <br>
+        > Attribution + Calibration Diagnostics
       </div>
 
       <div class="taped-data" style="background: rgba(99, 102, 241, 0.08); border: 1px solid var(--accent); margin-bottom: 50px; padding: 1.5rem;">
         <span class="observation-label" style="color: var(--risk-red);">SYSTEM_CONSTRAINTS</span>
         <strong>Evaluation Guardrails</strong> <br>
         <span style="font-size: 0.70rem; color: var(--ink-dim);">
-          Walk-forward validation, calibration checks, and stress-testing under rare-event conditions.
+          Held-out county-month testing, unseen future-month evaluation, and confusion-matrix review under ~0.01% positive prevalence.
         </span>
       </div>
 
@@ -91,26 +96,26 @@
         <span class="observation-label">RESEARCH_THEMES</span>
         <ul style="list-style: none; padding: 0; font-size: 0.85rem;">
           <li style="margin-bottom: 15px;">
-            <strong>Spatiotemporal forecasting</strong> <br>
-            <span style="color: var(--ink-dim);">Drift sensitivity and spatial stratification.</span>
+            <strong>Proactive biosurveillance</strong> <br>
+            <span style="color: var(--ink-dim);">County-level HPAI detection and one-month-ahead forecasting for earlier intervention.</span>
           </li>
           <li style="margin-bottom: 15px;">
-            <strong>Rare-event detection</strong> <br>
-            <span style="color: var(--ink-dim);">Prevalence-aware evaluation and intervention costs.</span>
+            <strong>Rare-event disease modeling</strong> <br>
+            <span style="color: var(--ink-dim);">Recall-first evaluation for outbreak systems where missed detections carry real operational cost.</span>
           </li>
           <li style="margin-bottom: 15px;">
-            <strong>Interpretability</strong> <br>
-            <span style="color: var(--ink-dim);">Calibration and stability checking.</span>
+            <strong>Environmental and spatial epidemiology</strong> <br>
+            <span style="color: var(--ink-dim);">Climatological, ecological, and geospatial drivers of spread across poultry and wild bird systems.</span>
           </li>
         </ul>
       </div>
 
       <div class="taped-data" style="background: rgba(99, 102, 241, 0.08); border: 1px solid var(--accent); margin-bottom: 50px; padding: 1.5rem;">
-        <span class="observation-label" style="color: var(--risk-green);">NEXT_DIRECTIONS</span>
+        <span class="observation-label" style="color: var(--risk-green);">FUTURE_WORK</span>
         <span style="font-size: 0.70rem; color: var(--ink-dim);">
-          M.S. Veterinary and Biomedical Science <br>
-          Concentration: Computational Biology <br> 
-          Location: Mississippi State University
+          Forecast spatiotemporal features, not only risk tiers <br>
+          Integrate additional ecological and biological signals <br>
+          Deploy the framework as an operational decision-support tool
         </span>
       </div>
 
