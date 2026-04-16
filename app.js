@@ -61,46 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!localStorage.getItem('theme')) updateToggleLabel();
   });
 
-  // 5. MODE NAVIGATION (Curtain Reveal & Return)
-  const revealButton = document.getElementById('witness-reveal-btn');
-  const modeReturnButton = document.getElementById('corporate-mode-btn');
-
-  if (revealButton) {
-    const revealDurationMs = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 1250;
-    revealButton.addEventListener('click', () => {
-      if (document.body.classList.contains('is-revealing') || document.body.classList.contains('is-witness')) return;
-      revealButton.disabled = true;
-      revealButton.blur();
-      document.body.classList.add('is-revealing');
-      setTimeout(() => {
-        document.body.classList.remove('is-revealing');
-        document.body.classList.add('is-witness');
-      }, revealDurationMs);
-    });
-  }
-
-  if (modeReturnButton) {
-    modeReturnButton.addEventListener('click', () => {
-      if (window.parent && window.parent !== window) {
-        window.parent.postMessage({ type: 'exit-witness' }, '*');
-      } else {
-        window.location.href = modeReturnButton.dataset.returnHref || 'index.html';
-      }
-    });
-  }
-
-  window.addEventListener('message', (event) => {
-    if (event.data && event.data.type === 'exit-witness') {
-      document.body.classList.add('is-revealing'); // Re-enable transition state for the slide up
-      document.body.classList.remove('is-witness');
-      setTimeout(() => {
-        document.body.classList.remove('is-revealing');
-        if (revealButton) revealButton.disabled = false;
-      }, 50);
-    }
-  });
-
-  // 6. REDACTION TOGGLE
+  // 5. REDACTION TOGGLE
   const redactions = document.querySelectorAll('.redaction');
   redactions.forEach((redaction) => {
     redaction.addEventListener('click', (e) => {
@@ -109,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 7. JITTER ENGINE
+  // 6. JITTER ENGINE
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const jitterTargets = document.querySelectorAll('.jitter');
   if (!prefersReducedMotion) {
@@ -132,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 8. SMART TOOLTIP EDGE DETECTION
+  // 7. SMART TOOLTIP EDGE DETECTION
   const strikes = document.querySelectorAll('.highlight');
   const edgeThreshold = 130; 
   strikes.forEach(strike => {
@@ -148,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 9. FRAGMENT STAGGER ENGINE (Fade-Up Entry)
+  // 8. FRAGMENT STAGGER ENGINE (Fade-Up Entry)
   const fragments = document.querySelectorAll('.grid .fragment');
   fragments.forEach((fragment, index) => {
     const delay = index * 120; 
