@@ -20,10 +20,6 @@
       <span>THEME</span>
       <button id="theme-toggle" type="button">DARK</button>
     </div>
-    <div style="text-align: right;">
-      <span style="color: var(--risk-green);">STATUS: ACTIVE</span><br>
-      <span style="color: var(--ink-dim);">UPDATED: <span id="current-date">2026.08</span></span>
-    </div>
   </header>
 
   <main>
@@ -31,129 +27,101 @@
     <article style="position: relative;">
 
       <div class="stamp-container">
-        <div class="stamp">MSU_Graduate_Research_Assistant</div>
-        <div class="stamp">Viral_Disease_Forecasting</div>
+        <div class="stamp">Graduate_Research_Assistant</div>
+        <div class="stamp">Disease_Biosurveillance</div>
       </div>
 
-      <span class="observation-label">RESEARCH FOCUS</span>
-
       <h1>
-        Forecasting <br>
+        Research <br>
         <i><span style="color: var(--accent);">for</span></i> Disease<br>
         Biosurveillance.
       </h1>
 
       <p style="font-size: 1.5rem; max-width: 610px; margin-bottom: 2.5rem;">
-        My research focuses on national-scale biosurveillance of Highly Pathogenic Avian Influenza (HPAI).
-        This work has included classification and forecasting for the USDA ARS and is now continuing
-        under a graduate research assistantship at Mississippi State University, with an emphasis on
-        <span style="color: var(--accent);">forward-looking forecasting, leakage-safe evaluation, and interpretable risk outputs.</span>
+        My current research focus is highly pathogenic avian influenza (HPAI),
+        supporting national-scale outbreak forecasting and biosurveillance.
       </p>
 
-      <div class="data-box">
-        <div class="data-row"><span class="data-key">DOMAIN:</span> <span>H5N1 Highly Pathogenic Avian Influenza</span></div>
-        <div class="data-row"><span class="data-key">SCALE:</span> <span>74,616 county-month forecasts (24-month backtest)</span></div>
-        <div class="data-row"><span class="data-key">HORIZON:</span> <span>One-month-ahead outbreak risk</span></div>
-        <div class="data-row"><span class="data-key">PREVALENCE:</span> <span>0.8% outbreak-positive (rare-event setting)</span></div>
-        <div class="data-row"><span class="data-key">BEST RESULT:</span> <span>73% balanced accuracy / 74% recall</span></div>
-        <div class="data-row"><span class="data-key">OUTPUT:</span> <span>HENCAST — interactive county-level risk dashboard</span></div>
-      </div>
+      <section class="research-entry" aria-labelledby="current-research-title">
+        <span class="observation-label">MISSISSIPPI STATE / CURRENT</span>
+        <h2 id="current-research-title">HPAI Biosurveillance Case-Control Study</h2>
+        <span class="label">STUDY IN DEVELOPMENT</span>
+        <p>
+          I am developing a case-control study of farm biosurveillance practices, contributing to HPAI outbreak factors.
+          This study will use USDA ARS outbreak data and mathematical modeling running on the Atlas supercomputer at Mississippi State University.
+        </p>
+        <p>
+          Study scope and plans are still being finalized.
+        </p>
+        <p class="project-note">
+          Fully funded USDA ARS NACA fellowship, advised by Dr. Isaac Jumper.
+        </p>
+      </section>
 
-      <h2 style="font-size: 1.8rem; font-weight: 300; margin-top: 3rem;">Forecasting Framework</h2>
-
-      <div style="display: grid; gap: 30px; margin-top: 2rem;">
-        <div style="border-left: 1px solid var(--accent); padding-left: 20px;">
-          <span class="label">COUNTY_MONTH_MODELING</span>
-          <p class="small">
-            Modeled HPAI outbreak risk across the conterminous United States using environmental,
-            agricultural, climatological, and geospatial data streams, plus historical outbreak activity
-            and county adjacency structure.
-          </p>
+      <section class="research-entry" aria-labelledby="forecasting-title">
+        <span class="observation-label">USDA ARS / JULY 2025 &ndash; JULY 2026 / PART-TIME</span>
+        <h2 id="forecasting-title">One-Month-Ahead HPAI Forecasting</h2>
+        <p>
+          Developed a national county-level forecasting framework with strict temporal cutoffs and automated monthly backtesting.
+          Building on my prior internship's pseudo-forecasting work, this framework replaced unavailable future covariates with estimates generated from historical data.
+        </p>
+        <p>
+          Evaluated 40 model configurations across a 24-month rolling-origin backtest.
+          Translated raw forecast outputs into biosurveillance tiers in an interactive dashboard.
+        </p>
+        <div class="data-box">
+          <div class="data-row"><span class="data-key">SCALE:</span> <span>74,616 county-month forecasts</span></div>
+          <div class="data-row"><span class="data-key">RESULT:</span> <span>73% balanced accuracy / 74% recall</span></div>
+          <div class="data-row"><span class="data-key">PREVALENCE:</span> <span>0.8% outbreak-positive</span></div>
         </div>
+      </section>
 
-        <div style="border-left: 1px solid var(--accent); padding-left: 20px;">
-          <span class="label">LEAKAGE_SAFE_PIPELINES</span>
-          <p class="small">
-            Built forward-only forecasting infrastructure enforcing a strict temporal cutoff at each
-            forecast origin. Unknown forecast-month covariates were synthesized from historical data,
-            with time-gated feature construction, persisted forecast artifacts, and automated monthly backtesting.
+      <section class="research-entry" aria-labelledby="internship-title">
+        <span class="observation-label">USDA ARS / MAY &ndash; JULY 2025 / INTERNSHIP</span>
+        <h2 id="internship-title">HPAI Risk Classification &amp; Pseudo-Forecasting</h2>
+        <p>
+          Developed national county-month risk models using environmental, agricultural, geospatial, and migratory-bird data from 2022&ndash;2024.
+          Rare-event classification achieved 75%+ balanced accuracy on data with approximately 1% outbreak-positive records.
+        </p>
+        <p>
+          Pseudo-forecasting evaluated performance under temporal shift using future climate covariates.
+          This research aided in determining if early-warning signal could be retained for future forward-looking forecasting models.
+        </p>
+        <p>
+          Presented findings to USDA ARS scientists, the Chief Scientist, and National Program Leaders.
+          This research received the Judge's Choice Award at UTA College of Engineering Innovation Day in 2026.
+        </p>
+        <details class="publication-detail">
+          <summary>Related manuscript &middot; submitted May 2026</summary>
+          <p>
+            Blackstock, J., <b>Maberry, W.</b>, et al.
+            <cite>A forward-looking high pathogenicity avian influenza monthly risk
+            model for counties in the conterminous United States</cite>.
+            Submitted to <i>Scientific Reports</i>.
           </p>
-        </div>
-
-        <div style="border-left: 1px solid var(--accent); padding-left: 20px;">
-          <span class="label">SPATIOTEMPORAL_LEARNING</span>
-          <p class="small">
-            Evaluated 40 combinations of forecasting backend, future-covariate strategy, and graph
-            structure, including spatiotemporal and ensemble modeling.
-          </p>
-        </div>
-
-        <div style="border-left: 1px solid var(--accent); padding-left: 20px;">
-          <span class="label">RARE_EVENT_EVALUATION</span>
-          <p class="small">
-            Designed evaluation workflows for highly imbalanced data (~0.8% positives across
-            74,616 county-month forecasts), prioritizing balanced accuracy and recall,
-            achieving 73% balanced accuracy and 74% recall, correctly identifying 417 of
-            563 outbreak-positive county-months.
-          </p>
-        </div>
-
-        <div style="border-left: 1px solid var(--accent); padding-left: 20px;">
-          <span class="label">DECISION_SUPPORT_OUTPUTS</span>
-          <p class="small">
-            Translated raw model outputs into HENCAST, an interactive dashboard converting county-level
-            risk scores into Low/Medium/High biosurveillance tiers for poultry producers and
-            animal-health professionals.
-          </p>
-        </div>
-      </div>
-
-      <p style="margin-top: 2.5rem; font-size: 0.9rem; color: var(--ink-dim);">
-        This work continues as part of my graduate research assistantship at Mississippi State
-        University, advised by Dr. Isaac Jumper.
-      </p>
+        </details>
+      </section>
 
     </article>
 
     <aside class="marginalia">
 
-      <div class="taped-data" style="background: rgba(99, 102, 241, 0.08); border: 1px solid var(--accent); margin-bottom: 45px; padding: 1.5rem;">
-        <span class="observation-label" style="color: var(--risk-green);">PUBLICATIONS (MAY 2026)</span>
-        <strong>Scientific Reports Submission</strong><br>
-        <span style="font-size: 0.72rem; color: var(--ink-dim); line-height: 1.65; display: block; margin-top: 0.5rem;">
-          Blackstock, J., <b>Maberry, W.</b>, et al.<br>
-          A forward-looking high pathogenicity avian influenza monthly risk
-          model for counties in the conterminous United States
-        </span>
-      </div>
-
-      <div style="margin-bottom: 45px;">
-        <span class="observation-label">RESEARCH THEMES</span>
-        <hr class="sep-line">
-        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-dim); line-height: 1.8;">
-          Spatiotemporal forecasting<br>
-          Computational epidemiology<br>
-          Geospatial machine learning<br>
-          Biosurveillance systems
-        </div>
-      </div>
-
-      <div class="taped-data" style="background: rgba(99, 102, 241, 0.08); border: 1px solid var(--accent); margin-bottom: 45px; padding: 1.5rem;">
-        <span class="observation-label" style="color: var(--risk-red);">EVALUATION GUARDRAILS</span>
-        <span style="font-size: 0.72rem; color: var(--ink-dim); line-height: 1.65; display: block;">
-          Forward-only temporal truncation<br>
-          Held-out county-month evaluation<br>
-          Automated monthly backtesting<br>
-          Rare-event model tuning
-        </span>
+      <div class="sidebar-note">
+        <span class="observation-label">RESEARCH INTERESTS</span>
+        <p>
+          Computational Epidemiology<br>
+          Spatiotemporal Modeling<br>
+          Biosurveillance <br>
+          One Health
+        </p>
       </div>
 
       <span class="observation-label" style="font-size: 1.0rem;">DIRECTORY</span>
       <hr class="sep-line">
 
-      <nav style="display: grid; gap: 18px;">
+      <nav aria-label="Main navigation" style="display: grid; gap: 18px;">
         <a href="index.html">1. <span style="color: var(--accent)">PROFILE</span></a>
-        <a href="research.html">2. <span style="color: var(--ink);">RESEARCH</span></a>
+        <a href="research.html" aria-current="page">2. <span style="color: var(--ink);">RESEARCH</span></a>
         <a href="experience.html">3. <span style="color: var(--accent);">EXPERIENCE</span></a>
         <a href="gallery.html">4. <span style="color: var(--accent);">GALLERY</span></a>
         <a href="files/Will_Maberry_Resume.pdf">5.
